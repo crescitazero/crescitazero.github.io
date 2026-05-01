@@ -5,14 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Il mio blog</title>
   <meta name="description" content="Blog con articoli, analisi e grafici.">
+  <style>
+    :root {
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --background: #ffffff;
+      --accent: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.6;
+    }
+
+    header,
+    main,
+    footer {
+      width: min(100% - 32px, 760px);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 40px 0 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 32px 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 7vw, 3.5rem);
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .article-card {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+    }
+
+    .article-card a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .article-card a:hover {
+      color: var(--accent);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 8px;
+    }
+
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
-  <main>
+  <header>
     <h1>Il mio blog</h1>
-    <p>Questo è il primo test del blog pubblicato con GitHub Pages.</p>
+    <p class="intro">Articoli, analisi e grafici su temi che vogliamo approfondire con metodo.</p>
 
-    <h2>Primo articolo</h2>
-    <p>Qui pubblicheremo articoli con grafici, dati e analisi.</p>
+    <nav aria-label="Navigazione principale">
+      <a href="/">Home</a>
+      <a href="/chi-siamo.html">Chi siamo</a>
+      <a href="/contatti.html">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Ultimi articoli</h2>
+
+    <article class="article-card">
+      <p class="meta">1 maggio 2026</p>
+      <h3><a href="/articoli/primo-articolo.html">Primo articolo con grafico</a></h3>
+      <p>Un esempio di articolo con testo, struttura SEO e spazio per un grafico embedded.</p>
+    </article>
   </main>
+
+  <footer>
+    <p>© 2026 Il mio blog</p>
+  </footer>
 </body>
 </html>
