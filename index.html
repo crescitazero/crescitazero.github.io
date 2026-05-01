@@ -4,138 +4,487 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Il mio blog</title>
-  <meta name="description" content="Blog con articoli, analisi e grafici.">
+  <meta name="description" content="Analisi, dati e grafici per leggere meglio la realtà.">
+
   <style>
     :root {
-      --text: #111827;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --background: #ffffff;
-      --accent: #2563eb;
+      --bg: #fbfaf7;
+      --text: #111111;
+      --muted: #666666;
+      --line: #dedbd2;
+      --soft: #f1efe8;
+      --accent: #2457ff;
+      --accent-soft: #e7ecff;
+      --max: 1080px;
+      --content: 720px;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--background);
-      line-height: 1.6;
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
     }
 
-    header,
-    main,
-    footer {
-      width: min(100% - 32px, 760px);
+    body {
+      margin: 0;
+      background:
+        linear-gradient(to right, rgba(17,17,17,0.035) 1px, transparent 1px),
+        var(--bg);
+      background-size: 80px 80px;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .page {
+      width: min(100% - 32px, var(--max));
       margin: 0 auto;
     }
 
     header {
-      padding: 40px 0 24px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--line);
+      background: rgba(251,250,247,0.88);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--text);
+      display: grid;
+      place-items: center;
+      font-size: 0.8rem;
+      line-height: 1;
     }
 
     nav {
       display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
       font-weight: 600;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    main {
+      padding: 64px 0 40px;
     }
 
-    main {
-      padding: 32px 0;
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 48px;
+      align-items: end;
+      padding: 32px 0 72px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--accent);
+      display: inline-block;
     }
 
     h1 {
-      font-size: clamp(2rem, 7vw, 3.5rem);
-      line-height: 1.1;
+      max-width: 760px;
       margin: 0;
+      font-size: clamp(3.1rem, 10vw, 7.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+      font-weight: 850;
     }
 
-    h2 {
-      margin-top: 40px;
-      font-size: 1.6rem;
-    }
-
-    p {
-      font-size: 1.05rem;
-    }
-
-    .intro {
+    .lead {
+      max-width: 640px;
+      margin: 30px 0 0;
       color: var(--muted);
-      max-width: 620px;
+      font-size: clamp(1.12rem, 2.4vw, 1.35rem);
+      line-height: 1.55;
     }
 
-    .article-card {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
+    .hero-panel {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.5);
+      padding: 22px;
     }
 
-    .article-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.25rem;
+    .panel-label {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .article-card a {
-      color: var(--text);
-      text-decoration: none;
+    .metric {
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
     }
 
-    .article-card a:hover {
-      color: var(--accent);
+    .metric:first-of-type {
+      border-top: 0;
+      padding-top: 0;
     }
 
-    .meta {
+    .metric strong {
+      display: block;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 6px;
       color: var(--muted);
       font-size: 0.95rem;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 48px;
+      padding: 64px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-body {
+      max-width: var(--content);
+    }
+
+    .themes {
+      display: grid;
+      gap: 14px;
+    }
+
+    .theme {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.45);
+    }
+
+    .theme-number {
+      color: var(--accent);
+      font-weight: 850;
+      font-size: 1rem;
+    }
+
+    .theme h3 {
       margin: 0 0 8px;
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    .theme p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .article-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .article {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 24px;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .article:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .article-date {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .article h3 {
+      margin: 0 0 8px;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.12;
+      letter-spacing: -0.05em;
+    }
+
+    .article p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .empty {
+      padding: 28px;
+      border: 1px dashed var(--line);
+      background: rgba(255,255,255,0.35);
+      color: var(--muted);
+    }
+
+    .contact-box {
+      padding: 28px;
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .contact-box p {
+      margin: 0;
+      max-width: 560px;
+      font-size: 1.15rem;
+    }
+
+    .contact-box a {
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     footer {
-      padding: 32px 0;
-      border-top: 1px solid var(--border);
+      padding: 36px 0 52px;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+    }
+
+    footer .page {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        background-size: 56px 56px;
+      }
+
+      .page {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .topbar {
+        min-height: auto;
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      nav {
+        width: 100%;
+        gap: 16px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      main {
+        padding-top: 34px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 20px 0 52px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 18vw, 5.2rem);
+      }
+
+      .hero-panel {
+        padding: 18px;
+      }
+
+      .section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 48px 0;
+      }
+
+      .theme {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 20px;
+      }
+
+      .article {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .contact-box {
+        padding: 22px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Il mio blog</h1>
-    <p class="intro">Articoli, analisi e grafici su temi che vogliamo approfondire con metodo.</p>
+    <div class="page topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark">D</span>
+        <span>Il mio blog</span>
+      </a>
 
-    <nav aria-label="Navigazione principale">
-      <a href="/">Home</a>
-      <a href="/chi-siamo.html">Chi siamo</a>
-      <a href="/contatti.html">Contatti</a>
-    </nav>
+      <nav aria-label="Navigazione principale">
+        <a href="#metodo">Metodo</a>
+        <a href="#articoli">Articoli</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>Ultimi articoli</h2>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <p class="kicker">Data journalism</p>
 
-    <article class="article-card">
-      <p class="meta">1 maggio 2026</p>
-      <h3><a href="/articoli/primo-articolo.html">Primo articolo con grafico</a></h3>
-      <p>Un esempio di articolo con testo, struttura SEO e spazio per un grafico embedded.</p>
-    </article>
+        <h1>Numeri chiari. Grafici leggibili. Idee verificabili.</h1>
+
+        <p class="lead">
+          Un blog per raccontare fenomeni complessi attraverso dati, analisi brevi
+          e visualizzazioni pensate per essere lette bene anche da mobile.
+        </p>
+      </div>
+
+      <aside class="hero-panel" aria-label="Indicatori editoriali">
+        <p class="panel-label">Formato</p>
+
+        <div class="metric">
+          <strong>01</strong>
+          <span>Una domanda per articolo.</span>
+        </div>
+
+        <div class="metric">
+          <strong>02</strong>
+          <span>Dati e fonti sempre espliciti.</span>
+        </div>
+
+        <div class="metric">
+          <strong>03</strong>
+          <span>Grafici embedded e mobile-first.</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="metodo">
+      <h2 class="section-title">Metodo</h2>
+
+      <div class="section-body themes">
+        <div class="theme">
+          <div class="theme-number">01</div>
+          <div>
+            <h3>Partire da una domanda</h3>
+            <p>Ogni articolo nasce da un dubbio chiaro, non da una tesi da confermare.</p>
+          </div>
+        </div>
+
+        <div class="theme">
+          <div class="theme-number">02</div>
+          <div>
+            <h3>Mostrare i dati</h3>
+            <p>Grafici, serie storiche e indicatori vengono usati per rendere leggibile il ragionamento.</p>
+          </div>
+        </div>
+
+        <div class="theme">
+          <div class="theme-number">03</div>
+          <div>
+            <h3>Scrivere poco, scrivere meglio</h3>
+            <p>Testi brevi, struttura chiara, nessun riempitivo. Il lettore deve capire subito il punto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="articoli">
+      <h2 class="section-title">Articoli</h2>
+
+      <div class="section-body">
+        <div class="empty">
+          Gli articoli saranno pubblicati qui. La home è pronta per ospitare analisi, grafici e aggiornamenti.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contatti">
+      <h2 class="section-title">Contatti</h2>
+
+      <div class="section-body contact-box">
+        <p>
+          Per proposte, segnalazioni o fonti da analizzare:
+          <a href="mailto:info@example.com">info@example.com</a>
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2026 Il mio blog</p>
+    <div class="page">
+      <span>© 2026 Il mio blog</span>
+      <span>Analisi, dati, grafici.</span>
+    </div>
   </footer>
 </body>
 </html>
