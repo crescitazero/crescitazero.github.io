@@ -320,10 +320,30 @@
       color: var(--accent);
     }
 
-    .empty {
+    .article-preview {
       padding: 28px;
-      border: 1px dashed var(--line);
-      background: rgba(255,255,255,0.35);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.48);
+    }
+
+    .article-date {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .article-preview h3 {
+      margin: 0 0 10px;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.06em;
+    }
+
+    .article-preview p {
+      margin: 0;
       color: var(--muted);
     }
 
@@ -648,9 +668,11 @@
       <h2 class="section-title">Articoli</h2>
 
       <div class="section-body">
-        <div class="empty">
-          Gli articoli usciranno prima su Substack e saranno poi raccolti qui come archivio ordinato.
-        </div>
+        <article class="article-preview">
+          <p class="article-date">Test</p>
+          <h3><a href="/articoli/coming.html">Coming...</a></h3>
+          <p>Primo articolo test dell’archivio CrescitaZero.</p>
+        </article>
 
         <div class="cta-row">
           <a class="cta" href="https://www.lorenzoruffino.it/">Substack Lorenzo</a>
