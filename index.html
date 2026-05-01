@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CrescitaZero</title>
-  <meta name="description" content="CrescitaZero è un progetto gratuito per capire perché l'Italia non cresce più, attraverso dati, fonti e articoli leggibili.">
+  <meta name="description" content="CrescitaZero è un progetto gratuito per capire perché l'Italia non cresce più, partendo da dati, fonti pubbliche e grafici leggibili.">
 
   <style>
     :root {
@@ -14,9 +14,8 @@
       --line: #dedbd2;
       --soft: #f1efe7;
       --accent: #2457ff;
-      --accent-dark: #1437b8;
       --max: 1080px;
-      --content: 720px;
+      --content: 740px;
     }
 
     * {
@@ -31,7 +30,7 @@
     body {
       margin: 0;
       background:
-        linear-gradient(to right, rgba(17,17,17,0.035) 1px, transparent 1px),
+        linear-gradient(to right, rgba(17,17,17,0.03) 1px, transparent 1px),
         var(--bg);
       background-size: 88px 88px;
       color: var(--text);
@@ -57,7 +56,7 @@
 
     header {
       border-bottom: 1px solid var(--line);
-      background: rgba(251,250,246,0.9);
+      background: rgba(251,250,246,0.92);
       backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
@@ -136,8 +135,8 @@
     h1 {
       max-width: 780px;
       margin: 0;
-      font-size: clamp(3rem, 8vw, 6.4rem);
-      line-height: 0.96;
+      font-size: clamp(3rem, 8vw, 6.2rem);
+      line-height: 0.98;
       letter-spacing: -0.075em;
       font-weight: 850;
     }
@@ -223,10 +222,6 @@
       max-width: var(--content);
     }
 
-    .section-body > p:first-child {
-      margin-top: 0;
-    }
-
     p {
       font-size: 1.05rem;
     }
@@ -289,26 +284,40 @@
       color: var(--muted);
     }
 
-    .byline {
+    .authors {
       display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
 
-    .person {
+    .author {
       padding: 22px;
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.48);
     }
 
-    .person h3 {
+    .author h3 {
       margin: 0 0 8px;
-      font-size: 1.2rem;
-      letter-spacing: -0.035em;
+      font-size: 1.25rem;
+      letter-spacing: -0.04em;
     }
 
-    .person p {
-      margin: 0;
+    .author p {
+      margin: 0 0 14px;
       color: var(--muted);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .links a {
+      font-size: 0.92rem;
+      font-weight: 750;
+      color: var(--accent);
     }
 
     .empty {
@@ -318,21 +327,41 @@
       color: var(--muted);
     }
 
-    .cta {
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .cta,
+    .cta-secondary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-top: 22px;
       padding: 12px 16px;
-      background: var(--text);
-      color: var(--bg);
       font-weight: 750;
       border: 1px solid var(--text);
+    }
+
+    .cta {
+      background: var(--text);
+      color: var(--bg);
     }
 
     .cta:hover {
       background: var(--accent);
       color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .cta-secondary:hover {
+      color: var(--accent);
       border-color: var(--accent);
     }
 
@@ -402,9 +431,9 @@
       }
 
       h1 {
-        font-size: clamp(3rem, 15vw, 5.4rem);
-        line-height: 0.98;
-        letter-spacing: -0.07em;
+        font-size: clamp(2.8rem, 13vw, 5rem);
+        line-height: 1;
+        letter-spacing: -0.065em;
       }
 
       .lead {
@@ -423,6 +452,10 @@
         padding: 20px;
       }
 
+      .authors {
+        grid-template-columns: 1fr;
+      }
+
       .contact-box {
         padding: 22px;
       }
@@ -430,16 +463,16 @@
 
     @media (max-width: 440px) {
       h1 {
-        font-size: clamp(2.65rem, 14vw, 4rem);
-        letter-spacing: -0.06em;
-      }
-
-      .hero-note {
-        padding-left: 14px;
+        font-size: clamp(2.45rem, 12vw, 3.6rem);
+        letter-spacing: -0.055em;
       }
 
       .brand {
         font-size: 1rem;
+      }
+
+      .hero-note {
+        padding-left: 14px;
       }
     }
   </style>
@@ -456,8 +489,8 @@
       <nav aria-label="Navigazione principale">
         <a href="#progetto">Progetto</a>
         <a href="#metodo">Metodo</a>
+        <a href="#autori">Autori</a>
         <a href="#articoli">Articoli</a>
-        <a href="#contatti">Contatti</a>
       </nav>
     </div>
   </header>
@@ -470,8 +503,8 @@
         <h1>Perché l’Italia non cresce più?</h1>
 
         <p class="lead">
-          CrescitaZero è un progetto gratuito per orientarsi tra dati, fonti e idee
-          su uno dei problemi centrali del paese.
+          CrescitaZero è un progetto gratuito per capire uno dei problemi centrali del paese:
+          la lunga difficoltà italiana a crescere.
         </p>
 
         <p class="hero-note">
@@ -486,12 +519,12 @@
 
         <div class="panel-item">
           <strong>Ogni due settimane</strong>
-          <span>Su Substack, di martedì.</span>
+          <span>Su Substack, indicativamente di martedì.</span>
         </div>
 
         <div class="panel-item">
           <strong>Gratis</strong>
-          <span>Articoli, fonti e grafici accessibili.</span>
+          <span>Articoli, fonti pubbliche e grafici leggibili.</span>
         </div>
 
         <div class="panel-item">
@@ -506,19 +539,28 @@
 
       <div class="section-body">
         <p class="big-text">
-          Parlare di crescita significa spesso entrare in temi complessi,
-          tecnici, impopolari. Ma molti problemi italiani hanno una radice comune:
-          la difficoltà di crescere.
+          Parlare di crescita significa affrontare temi complessi, tecnici e spesso impopolari.
+          CrescitaZero nasce per mettere ordine tra numeri, fonti e interpretazioni.
+        </p>
+
+        <p class="muted">
+          Non vogliamo offrire analisi accademiche. Vogliamo aggregare e rendere più leggibili
+          fonti che esistono già, ma che spesso vengono usate poco nel dibattito pubblico italiano.
         </p>
 
         <div class="topics" aria-label="Temi trattati">
           <span class="tag">Salari</span>
+          <span class="tag">Redditi</span>
+          <span class="tag">Produttività</span>
+          <span class="tag">Demografia</span>
+          <span class="tag">Europa</span>
           <span class="tag">Debito pubblico</span>
           <span class="tag">Pensioni</span>
           <span class="tag">Innovazione</span>
-          <span class="tag">Competitività</span>
+          <span class="tag">Startup</span>
+          <span class="tag">Imprese</span>
           <span class="tag">Export</span>
-          <span class="tag">Dibattito pubblico</span>
+          <span class="tag">Sondaggi</span>
         </div>
       </div>
     </section>
@@ -530,10 +572,9 @@
         <div class="card">
           <div class="card-number">01</div>
           <div>
-            <h3>Non siamo economisti</h3>
+            <h3>Partiamo dai dati</h3>
             <p>
-              Non offriamo analisi accademiche. Raccogliamo, organizziamo e rendiamo più accessibili
-              fonti, dati e letture utili.
+              Usiamo soprattutto dati pubblicamente accessibili, come Istat, Eurostat e altre fonti aperte.
             </p>
           </div>
         </div>
@@ -541,10 +582,9 @@
         <div class="card">
           <div class="card-number">02</div>
           <div>
-            <h3>Partiamo dalle fonti</h3>
+            <h3>Limitiamo le opinioni</h3>
             <p>
-              Ogni articolo prova a mettere ordine tra numeri, grafici, studi e interpretazioni,
-              senza fingere certezze dove non ci sono.
+              L’obiettivo non è confermare una tesi, ma spiegare fenomeni complessi partendo da numeri e contesto.
             </p>
           </div>
         </div>
@@ -552,9 +592,9 @@
         <div class="card">
           <div class="card-number">03</div>
           <div>
-            <h3>Scriviamo per capire</h3>
+            <h3>Mostriamo il percorso</h3>
             <p>
-              Testi leggibili, grafici chiari e domande semplici su problemi che semplici non sono.
+              Quando possibile rendiamo trasparenti fonti, elaborazioni, grafici e passaggi intermedi.
             </p>
           </div>
         </div>
@@ -564,24 +604,42 @@
     <section class="section" id="autori">
       <h2 class="section-title">Autori</h2>
 
-      <div class="section-body byline">
-        <div class="person">
-          <h3>Elia Bidut</h3>
-          <p>
-            Scrive, legge dati e segue i temi economici e politici con attenzione alla chiarezza.
-          </p>
-        </div>
+      <div class="section-body">
+        <div class="authors">
+          <article class="author">
+            <h3>Lorenzo Ruffino</h3>
+            <p>
+              Si occupa di dati: li analizza, cerca pattern interessanti e prova a visualizzarli
+              nel modo più chiaro possibile.
+            </p>
+            <p>
+              Scrive di redditi, stipendi, confronto Italia-Europa, demografia, Stati Uniti e sondaggi.
+            </p>
+            <div class="links">
+              <a href="https://www.lorenzoruffino.it/">Substack</a>
+              <a href="https://www.linkedin.com/in/lorenzo-ruffino/">LinkedIn</a>
+            </div>
+          </article>
 
-        <div class="person">
-          <h3>Lorenzo Ruffino</h3>
-          <p>
-            Scrive e lavora su fonti, grafici e spiegazioni accessibili di fenomeni complessi.
-          </p>
+          <article class="author">
+            <h3>Elia Bidut</h3>
+            <p>
+              Ha esperienze in startup e scaleup italiane. Oggi è Customer Success Lead in Stema;
+              prima ha lavorato in Talent Garden e Gellify.
+            </p>
+            <p>
+              Fellow del Think Tank Tortuga, si occupa di innovazione, startup e imprese.
+            </p>
+            <div class="links">
+              <a href="https://lavoroinfatti.substack.com/?utm_campaign=profile_chips">Substack</a>
+              <a href="https://it.linkedin.com/in/elia-bidut">LinkedIn</a>
+            </div>
+          </article>
         </div>
 
         <p class="muted">
-          Abbiamo entrambi una newsletter Substack e abbiamo pubblicato per testate come
-          Il Sole 24 Ore, Pagella Politica e Linkiesta.
+          Abbiamo pubblicato per testate come Il Sole 24 Ore, Pagella Politica e Linkiesta.
+          Elia è anche co-autore di “Ci pensiamo noi”, Tortuga, Egea, 2019.
         </p>
       </div>
     </section>
@@ -591,12 +649,13 @@
 
       <div class="section-body">
         <div class="empty">
-          Gli articoli usciranno prima su Substack e saranno poi raccolti in questo archivio.
+          Gli articoli usciranno prima su Substack e saranno poi raccolti qui come archivio ordinato.
         </div>
 
-        <a class="cta" href="#" aria-label="Vai alla newsletter Substack">
-          Leggi su Substack
-        </a>
+        <div class="cta-row">
+          <a class="cta" href="https://www.lorenzoruffino.it/">Substack Lorenzo</a>
+          <a class="cta-secondary" href="https://lavoroinfatti.substack.com/?utm_campaign=profile_chips">Substack Elia</a>
+        </div>
       </div>
     </section>
 
@@ -605,8 +664,8 @@
 
       <div class="section-body contact-box">
         <p>
-          Per segnalazioni, fonti o proposte:
-          <a href="mailto:info@example.com">info@example.com</a>
+          Per segnalazioni, fonti, domande o proposte:
+          <a href="mailto:info@lorenzoruffino.com">info@lorenzoruffino.com</a>
         </p>
       </div>
     </section>
@@ -615,7 +674,7 @@
   <footer>
     <div class="page">
       <span>© 2026 CrescitaZero</span>
-      <span>Italia, crescita, dati.</span>
+      <span>Dati, crescita, Italia.</span>
     </div>
   </footer>
 </body>
