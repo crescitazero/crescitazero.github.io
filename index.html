@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Il mio blog</title>
-  <meta name="description" content="Analisi, dati e grafici per leggere meglio la realtà.">
+  <title>CrescitaZero</title>
+  <meta name="description" content="CrescitaZero è un progetto gratuito per capire perché l'Italia non cresce più, attraverso dati, fonti e articoli leggibili.">
 
   <style>
     :root {
-      --bg: #fbfaf7;
+      --bg: #fbfaf6;
       --text: #111111;
-      --muted: #666666;
+      --muted: #5f5f5a;
       --line: #dedbd2;
-      --soft: #f1efe8;
+      --soft: #f1efe7;
       --accent: #2457ff;
-      --accent-soft: #e7ecff;
+      --accent-dark: #1437b8;
       --max: 1080px;
       --content: 720px;
     }
@@ -33,10 +33,10 @@
       background:
         linear-gradient(to right, rgba(17,17,17,0.035) 1px, transparent 1px),
         var(--bg);
-      background-size: 80px 80px;
+      background-size: 88px 88px;
       color: var(--text);
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
+      line-height: 1.6;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
@@ -57,7 +57,7 @@
 
     header {
       border-bottom: 1px solid var(--line);
-      background: rgba(251,250,247,0.88);
+      background: rgba(251,250,246,0.9);
       backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
@@ -76,18 +76,20 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      font-weight: 850;
+      letter-spacing: -0.04em;
+      font-size: 1.05rem;
     }
 
     .brand-mark {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border: 2px solid var(--text);
       display: grid;
       place-items: center;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       line-height: 1;
+      letter-spacing: -0.06em;
     }
 
     nav {
@@ -95,19 +97,19 @@
       gap: 22px;
       color: var(--muted);
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 650;
     }
 
     main {
-      padding: 64px 0 40px;
+      padding: 56px 0 40px;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 280px;
-      gap: 48px;
-      align-items: end;
-      padding: 32px 0 72px;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 56px;
+      align-items: start;
+      padding: 40px 0 72px;
       border-bottom: 1px solid var(--line);
     }
 
@@ -115,10 +117,10 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin: 0 0 22px;
+      margin: 0 0 24px;
       color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: 800;
+      font-size: 0.88rem;
+      font-weight: 850;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -132,55 +134,68 @@
     }
 
     h1 {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0;
-      font-size: clamp(3.1rem, 10vw, 7.4rem);
-      line-height: 0.9;
-      letter-spacing: -0.08em;
+      font-size: clamp(3rem, 8vw, 6.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
       font-weight: 850;
     }
 
     .lead {
-      max-width: 640px;
+      max-width: 690px;
       margin: 30px 0 0;
       color: var(--muted);
-      font-size: clamp(1.12rem, 2.4vw, 1.35rem);
-      line-height: 1.55;
+      font-size: clamp(1.12rem, 2.4vw, 1.42rem);
+      line-height: 1.5;
     }
 
-    .hero-panel {
+    .hero-note {
+      margin-top: 34px;
+      max-width: 680px;
+      padding-left: 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--text);
+      font-size: 1.03rem;
+    }
+
+    .hero-note strong {
+      font-weight: 800;
+    }
+
+    .panel {
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.52);
       padding: 22px;
     }
 
     .panel-label {
-      margin: 0 0 16px;
+      margin: 0 0 18px;
       color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 800;
+      font-size: 0.8rem;
+      font-weight: 850;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .metric {
+    .panel-item {
       padding: 16px 0;
       border-top: 1px solid var(--line);
     }
 
-    .metric:first-of-type {
+    .panel-item:first-of-type {
       border-top: 0;
       padding-top: 0;
     }
 
-    .metric strong {
+    .panel-item strong {
       display: block;
-      font-size: 2rem;
-      line-height: 1;
-      letter-spacing: -0.05em;
+      font-size: 1.45rem;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
     }
 
-    .metric span {
+    .panel-item span {
       display: block;
       margin-top: 6px;
       color: var(--muted);
@@ -190,7 +205,7 @@
     .section {
       display: grid;
       grid-template-columns: 220px minmax(0, 1fr);
-      gap: 48px;
+      gap: 56px;
       padding: 64px 0;
       border-bottom: 1px solid var(--line);
     }
@@ -198,8 +213,8 @@
     .section-title {
       margin: 0;
       color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 800;
+      font-size: 0.88rem;
+      font-weight: 850;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -208,69 +223,90 @@
       max-width: var(--content);
     }
 
-    .themes {
+    .section-body > p:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 1.05rem;
+    }
+
+    .big-text {
+      margin: 0;
+      font-size: clamp(1.35rem, 3.4vw, 2rem);
+      line-height: 1.28;
+      letter-spacing: -0.045em;
+      font-weight: 720;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.5);
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    .cards {
       display: grid;
       gap: 14px;
     }
 
-    .theme {
+    .card {
       display: grid;
       grid-template-columns: 48px minmax(0, 1fr);
       gap: 18px;
       padding: 22px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.48);
     }
 
-    .theme-number {
+    .card-number {
       color: var(--accent);
       font-weight: 850;
-      font-size: 1rem;
     }
 
-    .theme h3 {
+    .card h3 {
       margin: 0 0 8px;
-      font-size: 1.25rem;
-      letter-spacing: -0.03em;
+      font-size: 1.22rem;
+      letter-spacing: -0.035em;
     }
 
-    .theme p {
+    .card p {
       margin: 0;
       color: var(--muted);
     }
 
-    .article-list {
+    .byline {
       display: grid;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .article {
-      display: grid;
-      grid-template-columns: 120px minmax(0, 1fr);
-      gap: 24px;
-      padding: 22px 0;
-      border-top: 1px solid var(--line);
+    .person {
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.48);
     }
 
-    .article:first-child {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .article-date {
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 650;
-    }
-
-    .article h3 {
+    .person h3 {
       margin: 0 0 8px;
-      font-size: clamp(1.35rem, 3vw, 2rem);
-      line-height: 1.12;
-      letter-spacing: -0.05em;
+      font-size: 1.2rem;
+      letter-spacing: -0.035em;
     }
 
-    .article p {
+    .person p {
       margin: 0;
       color: var(--muted);
     }
@@ -282,6 +318,24 @@
       color: var(--muted);
     }
 
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 22px;
+      padding: 12px 16px;
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 750;
+      border: 1px solid var(--text);
+    }
+
+    .cta:hover {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
     .contact-box {
       padding: 28px;
       background: var(--text);
@@ -290,8 +344,8 @@
 
     .contact-box p {
       margin: 0;
-      max-width: 560px;
-      font-size: 1.15rem;
+      max-width: 580px;
+      font-size: 1.12rem;
     }
 
     .contact-box a {
@@ -313,9 +367,9 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 820px) {
       body {
-        background-size: 56px 56px;
+        background-size: 58px 58px;
       }
 
       .page {
@@ -338,21 +392,23 @@
       }
 
       main {
-        padding-top: 34px;
+        padding-top: 30px;
       }
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 34px;
-        padding: 20px 0 52px;
+        gap: 36px;
+        padding: 18px 0 52px;
       }
 
       h1 {
-        font-size: clamp(3rem, 18vw, 5.2rem);
+        font-size: clamp(3rem, 15vw, 5.4rem);
+        line-height: 0.98;
+        letter-spacing: -0.07em;
       }
 
-      .hero-panel {
-        padding: 18px;
+      .lead {
+        margin-top: 24px;
       }
 
       .section {
@@ -361,19 +417,29 @@
         padding: 48px 0;
       }
 
-      .theme {
+      .card {
         grid-template-columns: 1fr;
         gap: 8px;
         padding: 20px;
       }
 
-      .article {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
       .contact-box {
         padding: 22px;
+      }
+    }
+
+    @media (max-width: 440px) {
+      h1 {
+        font-size: clamp(2.65rem, 14vw, 4rem);
+        letter-spacing: -0.06em;
+      }
+
+      .hero-note {
+        padding-left: 14px;
+      }
+
+      .brand {
+        font-size: 1rem;
       }
     }
   </style>
@@ -383,11 +449,12 @@
   <header>
     <div class="page topbar">
       <a class="brand" href="/">
-        <span class="brand-mark">D</span>
-        <span>Il mio blog</span>
+        <span class="brand-mark">CZ</span>
+        <span>CrescitaZero</span>
       </a>
 
       <nav aria-label="Navigazione principale">
+        <a href="#progetto">Progetto</a>
         <a href="#metodo">Metodo</a>
         <a href="#articoli">Articoli</a>
         <a href="#contatti">Contatti</a>
@@ -398,63 +465,124 @@
   <main class="page">
     <section class="hero">
       <div>
-        <p class="kicker">Data journalism</p>
+        <p class="kicker">Italia, crescita, dati</p>
 
-        <h1>Numeri chiari. Grafici leggibili. Idee verificabili.</h1>
+        <h1>Perché l’Italia non cresce più?</h1>
 
         <p class="lead">
-          Un blog per raccontare fenomeni complessi attraverso dati, analisi brevi
-          e visualizzazioni pensate per essere lette bene anche da mobile.
+          CrescitaZero è un progetto gratuito per orientarsi tra dati, fonti e idee
+          su uno dei problemi centrali del paese.
+        </p>
+
+        <p class="hero-note">
+          <strong>Senza crescita non c’è futuro.</strong>
+          Salari, debito pubblico, pensioni, innovazione, competitività, export e qualità
+          del dibattito democratico passano anche da qui.
         </p>
       </div>
 
-      <aside class="hero-panel" aria-label="Indicatori editoriali">
+      <aside class="panel" aria-label="Informazioni editoriali">
         <p class="panel-label">Formato</p>
 
-        <div class="metric">
-          <strong>01</strong>
-          <span>Una domanda per articolo.</span>
+        <div class="panel-item">
+          <strong>Ogni due settimane</strong>
+          <span>Su Substack, di martedì.</span>
         </div>
 
-        <div class="metric">
-          <strong>02</strong>
-          <span>Dati e fonti sempre espliciti.</span>
+        <div class="panel-item">
+          <strong>Gratis</strong>
+          <span>Articoli, fonti e grafici accessibili.</span>
         </div>
 
-        <div class="metric">
-          <strong>03</strong>
-          <span>Grafici embedded e mobile-first.</span>
+        <div class="panel-item">
+          <strong>Archivio</strong>
+          <span>Gli articoli saranno raccolti anche qui.</span>
         </div>
       </aside>
+    </section>
+
+    <section class="section" id="progetto">
+      <h2 class="section-title">Progetto</h2>
+
+      <div class="section-body">
+        <p class="big-text">
+          Parlare di crescita significa spesso entrare in temi complessi,
+          tecnici, impopolari. Ma molti problemi italiani hanno una radice comune:
+          la difficoltà di crescere.
+        </p>
+
+        <div class="topics" aria-label="Temi trattati">
+          <span class="tag">Salari</span>
+          <span class="tag">Debito pubblico</span>
+          <span class="tag">Pensioni</span>
+          <span class="tag">Innovazione</span>
+          <span class="tag">Competitività</span>
+          <span class="tag">Export</span>
+          <span class="tag">Dibattito pubblico</span>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="metodo">
       <h2 class="section-title">Metodo</h2>
 
-      <div class="section-body themes">
-        <div class="theme">
-          <div class="theme-number">01</div>
+      <div class="section-body cards">
+        <div class="card">
+          <div class="card-number">01</div>
           <div>
-            <h3>Partire da una domanda</h3>
-            <p>Ogni articolo nasce da un dubbio chiaro, non da una tesi da confermare.</p>
+            <h3>Non siamo economisti</h3>
+            <p>
+              Non offriamo analisi accademiche. Raccogliamo, organizziamo e rendiamo più accessibili
+              fonti, dati e letture utili.
+            </p>
           </div>
         </div>
 
-        <div class="theme">
-          <div class="theme-number">02</div>
+        <div class="card">
+          <div class="card-number">02</div>
           <div>
-            <h3>Mostrare i dati</h3>
-            <p>Grafici, serie storiche e indicatori vengono usati per rendere leggibile il ragionamento.</p>
+            <h3>Partiamo dalle fonti</h3>
+            <p>
+              Ogni articolo prova a mettere ordine tra numeri, grafici, studi e interpretazioni,
+              senza fingere certezze dove non ci sono.
+            </p>
           </div>
         </div>
 
-        <div class="theme">
-          <div class="theme-number">03</div>
+        <div class="card">
+          <div class="card-number">03</div>
           <div>
-            <h3>Scrivere poco, scrivere meglio</h3>
-            <p>Testi brevi, struttura chiara, nessun riempitivo. Il lettore deve capire subito il punto.</p>
+            <h3>Scriviamo per capire</h3>
+            <p>
+              Testi leggibili, grafici chiari e domande semplici su problemi che semplici non sono.
+            </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="autori">
+      <h2 class="section-title">Autori</h2>
+
+      <div class="section-body byline">
+        <div class="person">
+          <h3>Elia Bidut</h3>
+          <p>
+            Scrive, legge dati e segue i temi economici e politici con attenzione alla chiarezza.
+          </p>
+        </div>
+
+        <div class="person">
+          <h3>Lorenzo Ruffino</h3>
+          <p>
+            Scrive e lavora su fonti, grafici e spiegazioni accessibili di fenomeni complessi.
+          </p>
+        </div>
+
+        <p class="muted">
+          Abbiamo entrambi una newsletter Substack e abbiamo pubblicato per testate come
+          Il Sole 24 Ore, Pagella Politica e Linkiesta.
+        </p>
       </div>
     </section>
 
@@ -463,8 +591,12 @@
 
       <div class="section-body">
         <div class="empty">
-          Gli articoli saranno pubblicati qui. La home è pronta per ospitare analisi, grafici e aggiornamenti.
+          Gli articoli usciranno prima su Substack e saranno poi raccolti in questo archivio.
         </div>
+
+        <a class="cta" href="#" aria-label="Vai alla newsletter Substack">
+          Leggi su Substack
+        </a>
       </div>
     </section>
 
@@ -473,7 +605,7 @@
 
       <div class="section-body contact-box">
         <p>
-          Per proposte, segnalazioni o fonti da analizzare:
+          Per segnalazioni, fonti o proposte:
           <a href="mailto:info@example.com">info@example.com</a>
         </p>
       </div>
@@ -482,8 +614,8 @@
 
   <footer>
     <div class="page">
-      <span>© 2026 Il mio blog</span>
-      <span>Analisi, dati, grafici.</span>
+      <span>© 2026 CrescitaZero</span>
+      <span>Italia, crescita, dati.</span>
     </div>
   </footer>
 </body>
