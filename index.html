@@ -137,7 +137,7 @@
       margin: 0;
       font-size: clamp(3rem, 8vw, 6.2rem);
       line-height: 0.98;
-      letter-spacing: -0.075em;
+      letter-spacing: -0.045em;
       font-weight: 850;
     }
 
@@ -160,6 +160,52 @@
 
     .hero-note strong {
       font-weight: 800;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border: 1.5px solid var(--text);
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 750;
+      font-size: 0.98rem;
+      letter-spacing: -0.01em;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .cta:hover {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .cta-outline {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .cta-outline:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .cta-arrow {
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+
+    .cta-meta {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
     .panel {
@@ -418,10 +464,19 @@
         padding: 18px 0 52px;
       }
 
+      .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .cta {
+        justify-content: space-between;
+      }
+
       h1 {
         font-size: clamp(2.8rem, 13vw, 5rem);
         line-height: 1;
-        letter-spacing: -0.065em;
+        letter-spacing: -0.035em;
       }
 
       .lead {
@@ -452,7 +507,7 @@
     @media (max-width: 440px) {
       h1 {
         font-size: clamp(2.45rem, 12vw, 3.6rem);
-        letter-spacing: -0.055em;
+        letter-spacing: -0.03em;
       }
 
       .brand {
@@ -491,8 +546,10 @@
         <h1>Perché l’Italia non cresce più?</h1>
 
         <p class="lead">
-          CrescitaZero è un progetto gratuito per capire uno dei problemi centrali del paese:
-          la lunga difficoltà italiana a crescere.
+          La stagnazione italiana non è un destino. È il risultato di una crisi della
+          produttività con cause identificabili e leve concrete per uscirne: dal nanismo
+          delle imprese alla mancanza di meritocrazia, dal ritardo digitale alle riforme
+          rimaste sulla carta.
         </p>
 
         <p class="hero-note">
@@ -500,24 +557,39 @@
           Salari, debito pubblico, pensioni, innovazione, competitività, export e qualità
           del dibattito democratico passano anche da qui.
         </p>
+
+        <div class="cta-buttons">
+          <a class="cta" href="https://lavoroinfatti.substack.com/" target="_blank" rel="noopener">
+            Newsletter di Elia Bidut
+            <span class="cta-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="cta cta-outline" href="https://www.lorenzoruffino.it/" target="_blank" rel="noopener">
+            Newsletter di Lorenzo Ruffino
+            <span class="cta-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <p class="cta-meta">
+          Iscriviti alle newsletter degli autori per ricevere gli articoli su Substack.
+        </p>
       </div>
 
-      <aside class="panel" aria-label="Informazioni editoriali">
-        <p class="panel-label">Formato</p>
+      <aside class="panel" aria-label="Numeri della stagnazione italiana">
+        <p class="panel-label">L’Italia in tre numeri</p>
 
         <div class="panel-item">
-          <strong>Ogni due settimane</strong>
-          <span>Su Substack, indicativamente di martedì.</span>
+          <strong>+0,3%</strong>
+          <span>La crescita della produttività del lavoro in Italia tra il 2000 e il 2024, contro il +25% della media UE.</span>
         </div>
 
         <div class="panel-item">
-          <strong>Gratis</strong>
-          <span>Articoli, fonti pubbliche e grafici leggibili.</span>
+          <strong>156.000</strong>
+          <span>I cittadini italiani emigrati nel solo 2024. Uno su tre ha tra i 25 e i 34 anni.</span>
         </div>
 
         <div class="panel-item">
-          <strong>Archivio</strong>
-          <span>Gli articoli saranno raccolti anche qui.</span>
+          <strong>137%</strong>
+          <span>Il rapporto tra debito pubblico e PIL: per ogni 100 euro di ricchezza prodotta, lo Stato ne deve quasi 140.</span>
         </div>
       </aside>
     </section>
@@ -601,7 +673,9 @@
               nel modo più chiaro possibile.
             </p>
             <p>
-              Scrive di redditi, stipendi, confronto Italia-Europa, demografia, Stati Uniti e sondaggi.
+              Da oltre cinque anni scrive di attualità italiana e da circa un anno e mezzo
+              cura una newsletter settimanale gratuita su redditi, stipendi, confronto
+              Italia-Europa, demografia, Stati Uniti e sondaggi.
             </p>
             <div class="links">
               <a href="https://www.lorenzoruffino.it/">Substack</a>
