@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gli stipendi crescono solo dove cresce la produttività - CrescitaZero</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="L'Italia è l'unico grande paese europeo con i salari reali più bassi di trent'anni fa. Senza crescita economica e della produttività, gli stipendi non possono crescere.">
+
+  <style>
+    :root {
+      --bg: #fbfaf6;
+      --text: #111111;
+      --muted: #5f5f5a;
+      --line: #dedbd2;
+      --accent: #2457ff;
+      --max: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(to right, rgba(17,17,17,0.03) 1px, transparent 1px),
+        var(--bg);
+      background-size: 88px 88px;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .page {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(251,250,246,0.92);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 850;
+      letter-spacing: -0.04em;
+      font-size: 1.05rem;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border: 2px solid var(--text);
+      display: grid;
+      place-items: center;
+      font-size: 0.78rem;
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    main {
+      padding: 64px 0;
+    }
+
+    .meta {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      font-weight: 850;
+    }
+
+    h2 {
+      margin: 48px 0 20px;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0 0 24px;
+    }
+
+    .lead {
+      margin: 30px 0 36px;
+      color: var(--muted);
+      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      line-height: 1.5;
+    }
+
+    article {
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chart-container {
+      margin: 40px 0;
+    }
+
+    footer {
+      padding: 36px 0 52px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        background-size: 58px 58px;
+      }
+
+      .page {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .topbar {
+        min-height: auto;
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      main {
+        padding: 48px 0;
+      }
+    }
+  </style>
+  <script defer src="https://analyticsprogetti.lorenzoruffino.com/script.js" data-website-id="6a9e05f1-4924-4074-8876-6dde465d52c8"></script>
+</head>
+
+<body>
+  <header>
+    <div class="page topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark">CZ</span>
+        <span>CrescitaZero</span>
+      </a>
+
+      <nav aria-label="Navigazione principale">
+        <a href="/">Home</a>
+        <a href="/#articoli">Articoli</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <article>
+      <p class="meta">Approfondimento</p>
+      <h1>Gli stipendi crescono solo dove cresce la produttività</h1>
+
+      <p class="lead">
+        L'Italia è l'unico grande paese europeo con i salari reali più bassi di trent'anni fa. Senza crescita economica e della produttività, gli stipendi non possono crescere.[cite: 1]
+      </p>
+      
+      <p style="font-style: italic; color: var(--muted); margin-bottom: 32px;">
+        Questo è il terzo approfondimento di CrescitaZero, la serie di articoli scritti insieme a Elia Bidut per capire cos'è successo alla crescita italiana. <a href="http://crescitazero.it">Qui trovi gli altri articoli</a>.[cite: 1]
+      </p>
+
+      <p>
+        L'Italia è l'unico grande paese europeo in cui i salari reali, cioè il potere d'acquisto effettivo delle buste paga al netto dell'inflazione, sono più bassi dei primi anni Novanta[cite: 1]. Secondo l'<a href="https://osservatoriocpi.unicatt.it/ocpi-pubblicazioni-perche-i-salari-sono-cosi-bassi-in-italia" target="_blank" rel="noopener">Osservatorio</a> sui conti pubblici italiani dell'Università Cattolica, tra il 1990 e il 2023 i salari reali sono cresciuti del 31 per cento in Germania e del 25 per cento in Francia, mentre in Italia sono rimasti invariati[cite: 1]. Uno <a href="https://www.sciencedirect.com/science/article/pii/S0954349X25001237" target="_blank" rel="noopener">studio</a> pubblicato nel 2025 sulla serie 1995-2023 calcola per l'Italia un calo del 6,9 per cento, il risultato peggiore dell'Eurozona[cite: 1]. Siamo anche l'unico paese del G7 in cui il <a href="https://wol.iza.org/articles/the-labor-market-in-italy/long" target="_blank" rel="noopener">salario medio</a> annuo è inferiore a quello di vent'anni prima, mentre nei paesi dell'Est Europa, come la Polonia, i salari reali sono nel frattempo più che raddoppiati[cite: 1]. L'inflazione seguita alla pandemia ha allargato ulteriormente la distanza, perché tra il 2019 e il 2024 le buste paga reali italiane sono scese mentre nella media dell'Unione crescevano[cite: 1].
+      </p>
+
+      <div class="chart-container">
+        <iframe title="Grafico CrescitaZero" aria-label="Grafico" id="datawrapper-chart-EteNc" src="https://datawrapper.dwcdn.net/EteNc/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450" loading="lazy"></iframe>
+        <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]) {var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
+      </div>
+
+      <p>
+        Il punto di partenza per capire l'eccezione italiana è il legame tra gli stipendi e la produttività, cioè il valore che ogni ora di lavoro riesce a generare[cite: 1]. Un'economia, come abbiamo visto nella puntata precedente, può discutere di come dividere il valore che crea, ma non può distribuire un valore che non ha creato[cite: 1]. La forza dei sindacati e la generosità dei contratti pesano sulla parte di quel valore che finisce nelle buste paga, mentre la produttività decide quanto ce n'è da dividere e resta così il presupposto di ogni aumento duraturo[cite: 1]. Quel legame però non è più solido come un tempo: negli ultimi quarant'anni si è allentato in quasi tutti i paesi avanzati e in Italia si è trasformato in un circolo vizioso che tiene ferme insieme produttività e retribuzioni[cite: 1].
+      </p>
+
+      <h2>Il meccanismo di fondo</h2>
+
+      <p>
+        In un mercato del lavoro in cui molte imprese competono per molti lavoratori, la teoria economica prevede che ogni dipendente tenda a essere pagato quanto il suo lavoro aggiunge ai ricavi dell'azienda[cite: 1]. Se un'impresa pagasse meno, un concorrente avrebbe convenienza a portarle via il lavoratore offrendogli qualcosa in più[cite: 1]. Se pagasse stabilmente più di quanto quel lavoro produce, accumulerebbe perdite fino a fallire[cite: 1]. Il salario finisce così agganciato alla produttività, anche se la realtà è meno pulita del modello: contano anche il potere negoziale dei lavoratori, le istituzioni e le regole del mercato del lavoro, ma la produttività resta la base su cui tutto il resto si muove[cite: 1].
+      </p>
+
+      <p>
+        Pensiamo a due panifici che producono entrambi mille pagnotte al giorno[cite: 1]. Il primo usa un forno tradizionale e quattro dipendenti per otto ore ciascuno, trentadue ore di lavoro in totale, mentre il secondo ha un forno più efficiente e impiega tre dipendenti per le stesse ore, quindi ventiquattro[cite: 1]. A parità di prezzo delle pagnotte, il secondo panificio crea più valore per ogni ora lavorata, circa un terzo in più, e ha quindi i margini per pagare meglio i suoi dipendenti[cite: 1]. Il primo resta incastrato, perché alzare gli stipendi senza quel valore aggiuntivo significherebbe andare in perdita[cite: 1].
+      </p>
+
+      <p>
+        Anna Stansbury e Lawrence Summers, due economisti di Harvard, hanno <a href="https://www.nber.org/system/files/working_papers/w24165/w24165.pdf" target="_blank" rel="noopener">analizzato</a> i dati dell'economia americana dal 1973 al 2014 trovando che per ogni punto percentuale di crescita della produttività la compensazione dei lavoratori, cioè lo stipendio più i contributi previdenziali e i benefit aziendali, cresce di circa tre quarti di punto[cite: 1]. Il rapporto non è uno a uno, perché una parte dei guadagni va ai profitti delle imprese, ma la relazione è forte, persistente e statisticamente solida[cite: 1].
+      </p>
+
+      <p>
+        Oggi lo stipendio medio tedesco, corretto per il costo della vita, <a href="https://www.oecd.org/en/data/indicators/average-annual-wages.html" target="_blank" rel="noopener">supera</a> quello italiano di circa il 36 per cento, mentre trent'anni fa la differenza era molto più contenuta[cite: 1]. Il lavoratore italiano che fa lo stesso mestiere del collega tedesco, per lo stesso numero di ore e con lo stesso impegno, porta a casa uno stipendio più basso perché opera in un sistema che produce meno valore[cite: 1]. Come abbiamo visto nel primo episodio di questa serie, un'ora di lavoro in Italia genera circa due terzi di quanto genera un'ora in Germania[cite: 1]. Dove la produttività è cresciuta c'era più valore da trasformare in retribuzioni, dove si è fermata non c'era niente da redistribuire[cite: 1].
+      </p>
+
+      <h2>Un legame che si è allentato</h2>
+
+      <p>
+        Per quasi un secolo il legame tra produttività e salari è sembrato una legge ferrea dell'economia[cite: 1]. Negli Stati Uniti tra il 1948 e il 1979 la produttività <a href="https://www.epi.org/productivity-pay-gap/" target="_blank" rel="noopener">crebbe</a> del 108 per cento e la retribuzione oraria media del 107, praticamente in parallelo, e lo stesso accadeva nell'Europa del boom del dopoguerra[cite: 1]. La quota del reddito nazionale che finisce in salari anziché in profitti era così stabile nel tempo che gli economisti la trattavano come una costante[cite: 1].
+      </p>
+
+      <p>
+        A partire dalla fine degli anni Settanta la relazione si è incrinata; i <a href="https://www.epi.org/productivity-pay-gap/" target="_blank" rel="noopener">dati</a> dell'Economic Policy Institute, il centro studi americano che da più tempo ricostruisce queste serie, mostrano che tra il 1979 e il 2024 la produttività degli Stati Uniti è cresciuta del 72 per cento mentre la retribuzione oraria del lavoratore mediano, quello che sta esattamente a metà della distribuzione, è salita del 17 per cento, un divario di 55 punti percentuali accumulato in quarantacinque anni[cite: 1]. Due studiosi del MIT, Erik Brynjolfsson e Andrew McAfee, lo hanno battezzato "Grande Disaccoppiamento", ma il fenomeno va oltre gli Stati Uniti[cite: 1]. Uno <a href="https://www.oecd.org/en/publications/decoupling-of-wages-from-productivity_d4764493-en.html" target="_blank" rel="noopener">studio</a> dell'OCSE del 2018 su 24 paesi documenta che in circa due terzi di essi la quota di reddito destinata al lavoro è diminuita e che quasi ovunque il salario medio è cresciuto più di quello mediano, segno che i guadagni si sono concentrati nella parte alta della distribuzione[cite: 1].
+      </p>
+
+      <p>
+        Una parte del divario dipende da come lo si misura[cite: 1]. La produttività viene calcolata con un indice dei prezzi diverso da quello usato per i salari reali e spesso i grafici più citati confrontano la produttività dell'intera economia con il solo stipendio, senza contributi e benefit[cite: 1]. Gli stessi ricercatori dell'EPI hanno <a href="https://www.epi.org/publication/understanding-the-historic-divergence-between-productivity-and-a-typical-workers-pay-why-it-matters-and-why-its-real/" target="_blank" rel="noopener">rifatto</a> i conti con criteri omogenei e hanno trovato che le correzioni statistiche riducono il divario di circa un quarto, mentre almeno due terzi restano anche dopo le correzioni[cite: 1]. Il disaccoppiamento è dunque meno spettacolare di quanto appaia nei grafici, ma esiste[cite: 1]. Perché è successo?
+      </p>
+
+      <p>
+        La prima spiegazione è la tecnologia, che ha reso il capitale più conveniente del lavoro[cite: 1]. Computer, software e macchinari costano sempre meno in rapporto agli stipendi e per le imprese è diventato razionale sostituire persone con macchine ovunque sia possibile[cite: 1]. Uno <a href="https://www.nber.org/papers/w19136" target="_blank" rel="noopener">studio</a> del 2014 stima che il calo del prezzo dei beni di investimento spieghi circa la metà della riduzione globale della quota di reddito che va al lavoro[cite: 1]. L'automazione ha colpito soprattutto le mansioni ripetitive a media qualifica, dagli impiegati amministrativi agli operai di linea, svuotando il centro della distribuzione dei salari mentre i guadagni si concentravano su chi le macchine le progetta e le gestisce[cite: 1].
+      </p>
+
+      <p>
+        La seconda spiegazione è la globalizzazione, che ha messo i lavoratori dei paesi ricchi in concorrenza diretta con quelli dei paesi emergenti[cite: 1]. L'analisi più <a href="https://www.aeaweb.org/articles?id=10.1257/aer.103.6.2121" target="_blank" rel="noopener">citata</a> sull'ingresso della Cina nel commercio mondiale mostra che le aree degli Stati Uniti più esposte alla concorrenza delle importazioni cinesi hanno subito perdite di occupazione manifatturiera e riduzioni dei salari durate più di un decennio[cite: 1]. La sola possibilità di delocalizzare ha poi indebolito il potere negoziale anche nelle fabbriche rimaste, perché chiedere aumenti è più difficile quando l'alternativa è lo spostamento della produzione all'estero[cite: 1].
+      </p>
+
+      <p>
+        La terza spiegazione riguarda le istituzioni e i rapporti di forza[cite: 1]. Negli Stati Uniti la quota di lavoratori iscritti a un sindacato è passata dal 24 per cento del 1979 a circa il 10 per cento di oggi, il salario minimo federale ha perso circa il 30 per cento del valore reale rispetto al picco del 1968 e le grandi imprese hanno esternalizzato pulizie, sicurezza e logistica verso appaltatori che pagano meno per le stesse mansioni[cite: 1]. Stansbury e Summers hanno <a href="https://www.nber.org/system/files/working_papers/w27193/revisions/w27193.rev0.pdf" target="_blank" rel="noopener">mostrato</a> che il declino del potere contrattuale dei lavoratori spiega l'insieme dei dati americani meglio delle spiegazioni alternative[cite: 1]. Una <a href="https://www.csls.ca/ipm/41/IPM_41_Mishel.pdf" target="_blank" rel="noopener">stima</a> dello stesso EPI attribuisce "almeno tre quarti della divergenza totale" a scelte politiche deliberate, non a forze di mercato ineluttabili[cite: 1].
+      </p>
+
+      <p>
+        Le istituzioni spiegano anche perché il disaccoppiamento non è uguale ovunque[cite: 1]. Lo studio OCSE <a href="http://www.csls.ca/ipm/32/Schwellnus_Kappeler_Pionnier.pdf" target="_blank" rel="noopener">nota</a> che il divario tra produttività e salario mediano è più contenuto nei paesi con contrattazione collettiva più centralizzata e salari minimi più generosi[cite: 1]. In Francia il salario minimo, indicizzato all'inflazione e al potere d'acquisto, ha tenuto le buste paga agganciate alla produttività più che altrove[cite: 1]. La Germania ha attraversato invece un lungo periodo di moderazione salariale dopo le riforme del mercato del lavoro dei primi anni Duemila, con la produttività cresciuta più dei salari per oltre un decennio[cite: 1]. Nei paesi dell'Europa centro-orientale un'<a href="https://wiiw.ac.at/decoupling-of-labour-productivity-growth-from-median-wage-growth-in-central-and-eastern-europe-dlp-5356.pdf" target="_blank" rel="noopener">analisi</a> ha rilevato un disaccoppiamento anche marcato ma salari comunque in forte crescita, perché quando la produttività corre anche una quota ridotta dei guadagni basta a far salire le retribuzioni[cite: 1]. La lezione dei confronti internazionali è che la produttività resta la condizione necessaria per avere salari più alti, mentre le istituzioni decidono quanta parte dei guadagni arriva davvero nelle buste paga[cite: 1].
+      </p>
+
+      <h2>Il circolo vizioso italiano</h2>
+
+      <p>
+        Se il legame funzionasse in una direzione sola, la situazione italiana sarebbe preoccupante ma semplice da diagnosticare: basterebbe trovare il modo di far ripartire la produttività[cite: 1]. La relazione però funziona anche al contrario ed è questo a rendere il caso italiano più insidioso[cite: 1].
+      </p>
+
+      <p>
+        Una <a href="https://www.sciencedirect.com/science/article/abs/pii/S0264999323003838" target="_blank" rel="noopener">ricerca</a> dell'economista Claudia Fontanari su quattordici paesi europei tra il 1995 e il 2018 ha mostrato che quando i salari ristagnano a lungo la produttività stessa smette di crescere, con un effetto persistente che si rafforza nel tempo[cite: 1]. Il meccanismo è abbastanza intuitivo, perché un'impresa che può contare su manodopera a basso costo ha meno incentivi a investire in tecnologia, automazione e organizzazione[cite: 1]. Perché spendere centinaia di migliaia di euro per un macchinario nuovo se si possono assumere lavoratori a costi contenuti? Perché ripensare l'organizzazione del lavoro se quella attuale, per quanto inefficiente, sta in piedi? In un contesto di salari bassi e scarsa concorrenza, la convenienza immediata prevale sull'efficienza di lungo periodo e a sopravvivere non sono le imprese più innovative, ma quelle più brave a contenere il costo del lavoro[cite: 1].
+      </p>
+
+      <p>
+        Uno <a href="https://www.sciencedirect.com/science/article/pii/S0954349X25000815" target="_blank" rel="noopener">studio</a> pubblicato nel 2025 ha confermato questo schema per il caso italiano[cite: 1]. Dagli anni Novanta l'Italia ha attraversato una fase prolungata di moderazione salariale, accompagnata da riforme del mercato del lavoro orientate alla flessibilità[cite: 1]. L'aspettativa era che un costo del lavoro più contenuto avrebbe stimolato l'occupazione e, nel tempo, la competitività[cite: 1]. L'effetto principale è stato invece la sopravvivenza delle imprese meno produttive, tenute in vita proprio dai bassi salari, mentre il sistema nel suo complesso perdeva la pressione a rinnovarsi[cite: 1]. La struttura produttiva ha smesso di evolversi e con lei la produttività[cite: 1]. Paolo Sylos Labini, uno dei maggiori economisti italiani del Novecento, lo sosteneva già negli anni Ottanta: i salari alti spingono le imprese a sostituire lavoro con macchine e a cercare guadagni di efficienza, la manodopera a buon mercato toglie ogni urgenza di farlo[cite: 1].
+      </p>
+
+      <p>
+        È il paradosso con cui l'Italia convive da trent'anni[cite: 1]. I salari sono bassi perché la produttività non cresce e la produttività non cresce anche perché i salari sono bassi, un circolo vizioso che nessuna misura singola può spezzare e che richiede di intervenire su più fronti insieme[cite: 1].
+      </p>
+
+      <h2>Cosa fare</h2>
+
+      <p>
+        Il quadro che emerge è quello di un legame che resta la struttura portante dei salari ma che ha smesso di funzionare in automatico[cite: 1]. La produttività fissa il tetto di quanto un'economia può pagare chi lavora, mentre tecnologia, globalizzazione e soprattutto istituzioni decidono quanto di quel tetto viene effettivamente raggiunto[cite: 1]. Nella maggior parte dei paesi avanzati il problema degli ultimi quarant'anni è stato distributivo, con una produttività in crescita e buste paga che la inseguivano sempre più da lontano[cite: 1]. In Italia il problema è doppio, perché manca la crescita della produttività da distribuire e mancano in parte i meccanismi per distribuirla[cite: 1].
+      </p>
+
+      <p>
+        Senza una produttività che riparte nessuna politica salariale può produrre aumenti duraturi, perché alleggerire le tasse sul lavoro, sostenere i redditi più bassi o rinnovare i contratti sono interventi che spostano porzioni di una torta ferma[cite: 1]. L'experience degli altri paesi insegna allo stesso tempo che la produttività da sola non basta più e che servono meccanismi capaci di trasferirne i guadagni, a partire da una contrattazione che funzioni anche a livello aziendale e da un mercato del lavoro che non intrappoli una parte dei lavoratori nella precarietà[cite: 1]. L'esperienza italiana aggiunge un avvertimento: comprimere i salari per recuperare competitività è una scorciatoia che dopo trent'anni ha lasciato il paese con gli stipendi più bassi e con la stessa produttività di partenza[cite: 1].
+      </p>
+
+      <p style="font-style: italic; color: var(--muted);">
+        Nella prossima puntata di CrescitaZero vedremo come la ridotta dimensione delle aziende italiane abbia creato le condizioni ideali per esacerbare il blocco dei salari e della produttività.[cite: 1]
+      </p>
+    </article>
+  </main>
+
+  <footer class="page">
+    <p>© 2026 CrescitaZero</p>
+  </footer>
+</body>
+</html>
