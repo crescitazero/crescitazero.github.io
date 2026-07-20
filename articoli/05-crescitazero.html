@@ -1,158 +1,351 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>03 - Crescita Zero</title>
-    <style>
-        /* Base e Reset */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La produttività italiana passa anche dalle competenze - CrescitaZero</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="description" content="Sotto la stagnazione della produttività italiana: competenze sotto la media, forti squilibri territoriali e un sistema che fatica a trasformare conoscenza in innovazione diffusa.">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f7f7f7;
-            color: #111111;
-            line-height: 1.6;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
+  <style>
+    :root {
+      --bg: #fbfaf6;
+      --text: #111111;
+      --muted: #5f5f5a;
+      --line: #dedbd2;
+      --accent: #2457ff;
+      --max: 760px;
+    }
 
-        /* Container principale stretto e centrato */
-        .container {
-            max-width: 680px;
-            width: 100%;
-            background: #ffffff;
-            border: 1px solid #e0e0e0;
-            padding: 40px 30px;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        /* Header e Metadati */
-        .issue-number {
-            font-family: monospace;
-            font-size: 0.85rem;
-            color: #666666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
+    html {
+      font-size: 16px;
+    }
 
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-            color: #000000;
-        }
+    body {
+      margin: 0;
+      background:
+        linear-gradient(to right, rgba(17,17,17,0.03) 1px, transparent 1px),
+        var(--bg);
+      background-size: 88px 88px;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .meta {
-            font-size: 0.85rem;
-            color: #888888;
-            border-bottom: 1px solid #eeeeee;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        /* Contenuto */
-        p {
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
-            color: #222222;
-        }
+    a:hover {
+      color: var(--accent);
+    }
 
-        /* Highlight / Box di sintesi */
-        .highlight-box {
-            background-color: #f0f0f0;
-            border-left: 3px solid #000000;
-            padding: 20px;
-            margin: 30px 0;
-            font-style: italic;
-        }
+    .article-link {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
-        .highlight-box p {
-            margin-bottom: 0;
-            font-size: 1rem;
-        }
+    .page {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
 
-        /* Liste minimali */
-        ul {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(251,250,246,0.92);
+      backdrop-filter: blur(10px);
+    }
 
-        ul li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
+    .topbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-        ul li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: #666666;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 850;
+      letter-spacing: -0.04em;
+      font-size: 1.05rem;
+    }
 
-        /* Footer */
-        footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #eeeeee;
-            font-size: 0.8rem;
-            color: #888888;
-            display: flex;
-            justify-content: space-between;
-        }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border: 2px solid var(--text);
+      display: grid;
+      place-items: center;
+      font-size: 0.78rem;
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
 
-        footer a {
-            color: #111111;
-            text-decoration: underline;
-        }
-    </style>
+    nav {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    main {
+      padding: 64px 0;
+    }
+
+    .meta {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      font-weight: 850;
+    }
+
+    h2 {
+      margin: 48px 0 20px;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0 0 24px;
+    }
+
+    .lead {
+      margin: 30px 0 36px;
+      color: var(--muted);
+      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      line-height: 1.5;
+    }
+
+    article {
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chart-container {
+      margin: 40px 0;
+    }
+
+    footer {
+      padding: 36px 0 52px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        background-size: 58px 58px;
+      }
+
+      .page {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .topbar {
+        min-height: auto;
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      main {
+        padding: 48px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <div class="page topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">CZ</span>
+        <span>CrescitaZero</span>
+      </a>
 
-    <div class="container">
-        <div class="issue-number">EDIZIONE #03</div>
-        <h1>Crescita Zero</h1>
-        
-        <div class="meta">
-            Pubblicato il 20 Luglio 2026 • Lettura di 3 min
-        </div>
-
-        <p>
-            L'ossessione per l'espansione costante ha ridefinito il nostro modo di vivere e lavorare. Ma cosa succede quando smettiamo di misurare il valore solo attraverso l'accumulo e l'accelerazione?
-        </p>
-
-        <div class="highlight-box">
-            <p>"La crescita per il solo gusto della crescita è la logica della cellula tumorale."</p>
-        </div>
-
-        <p>
-            Adottare una prospettiva di crescita zero non significa stasi o fallimento, ma il raggiungimento di un equilibrio sostenibile. Ecco i tre pilastri chiave:
-        </p>
-
-        <ul>
-            <li><strong>Ottimizzazione:</strong> Migliorare ciò che esiste invece di creare continuamente il nuovo.</li>
-            <li><strong>Sostenibilità:</strong> Rispettare i limiti delle risorse personali e ambientali.</li>
-            <li><strong>Essenzialità:</strong> Eliminare il superfluo per concentrarsi sul valore reale.</li>
-        </ul>
-
-        <p>
-            Rallentare non è una resa, è una scelta strategica di lungo termine.
-        </p>
-
-        <footer>
-            <span>© Crescita Zero</span>
-            <span><a href="#">Archivio</a> • <a href="#">Condividi</a></span>
-        </footer>
+      <nav aria-label="Navigazione principale">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#articoli">Articoli</a>
+      </nav>
     </div>
+  </header>
 
+  <main class="page">
+    <article>
+      <p class="meta">Approfondimento</p>
+      <h1>La produttività italiana passa anche dalle competenze</h1>
+
+      <p class="lead">
+        Sotto la stagnazione della produttività italiana: competenze sotto la media, forti squilibri territoriali e un sistema che fatica a trasformare conoscenza in innovazione diffusa.
+      </p>
+
+      <p style="font-style: italic; color: var(--muted); margin-bottom: 32px;">
+        Questo è il quinto approfondimento di <a class="article-link" href="https://crescitazero.it/">CrescitaZero</a>, la serie di articoli scritti insieme a <strong>Lorenzo Ruffino</strong> per capire cos'è successo alla crescita italiana. Negli episodi precedenti abbiamo visto perché la <a class="article-link" href="https://lavoroinfatti.substack.com/p/perche-litalia-e-ferma-da-trentanni" target="_blank" rel="noopener">produttività</a> è ferma da trent'anni, perché la crescita è la condizione che tiene in piedi la <a class="article-link" href="https://lavoroinfatti.substack.com/p/perche-la-democrazia-si-regge-sulla" target="_blank" rel="noopener">democrazia</a>, perché i <a class="article-link" href="https://lavoroinfatti.substack.com/p/gli-stipendi-crescono-solo-dove-cresce" target="_blank" rel="noopener">salari</a> italiani non sono cresciuti e perché il <a class="article-link" href="https://lavoroinfatti.substack.com/p/la-trappola-del-piccolo-e-bello-perche" target="_blank" rel="noopener">nanismo</a> delle imprese è un problema. Oggi capiamo perché l'assenza di competenze sufficienti soffochi la crescita.
+      </p>
+
+      <p>
+        Quando in Italia si parla di produttività, il riflesso quasi automatico è guardare alle imprese: quanti investimenti fanno, quanto sono grandi, quanto esportano, quanto pesa il costo dell'energia o della regolazione. Ma tra le leve che abbiamo identificato nel <a class="article-link" href="01-crescitazero.html">primo</a> articolo di questa serie, c'è un livello a monte che spesso resta sullo sfondo: la qualità della forza lavoro, anche nota come capitale umano.
+      </p>
+
+      <p>
+        Tecnologie, software, macchinari e modelli organizzativi non producono gli stessi risultati ovunque: il loro rendimento dipende anche dalla capacità delle persone di usarli bene, adattarsi ai cambiamenti, leggere informazioni complesse, coordinarsi meglio e risolvere problemi nuovi. In questo senso, la produttività non dipende solo da capitale e investimenti, ma anche dalla qualità delle competenze disponibili e da come l'economia riesce a impiegarle.
+      </p>
+
+      <p>
+        Uno studio dell'<a class="article-link" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/06/adult-skills-and-productivity_5e9a03df/12ac6e8c-en.pdf" target="_blank" rel="noopener">OCSE</a> pubblicato a giugno 2025 ha misurato questo legame con i dati della nuova indagine internazionale sulle competenze delle persone adulte. La produttività del lavoro risulta più alta nei settori e nei paesi dove il livello medio delle competenze è più alto, in parte perché a competenze maggiori si accompagna una maggiore intensità di ricerca e sviluppo. Questo primo canale, da solo, spiega circa un quarto delle differenze di produttività tra paesi a parità di settore. Conta però anche dove le competenze finiscono: la produttività è più alta dove i disallineamenti tra le competenze dei lavoratori e quelle richieste dai posti di lavoro, i cosiddetti mismatch, sono minori e dove i lavoratori più preparati sono impiegati nelle imprese più grandi e dinamiche. Secondo lo studio, le differenze in questi meccanismi di allocazione spiegano almeno un altro 12 per cento dei divari di produttività tra paesi.
+      </p>
+
+      <p>
+        In altre parole, le competenze incidono sulla produttività in almeno due modi. La prima via è diretta: competenze più alte aumentano il valore prodotto da ogni ora di lavoro, perché migliorano l'uso di tecnologie e organizzazione. La seconda passa invece dal mercato del lavoro: competenze più solide rendono più fluida la riallocazione verso i contesti produttivi migliori, cioè verso quelle imprese che riescono a trasformare conoscenza in valore aggiunto. Se questo meccanismo si inceppa, anche investimenti e incentivi rischiano di rendere meno del previsto.
+      </p>
+
+      <h2>L'Italia arranca, anche nelle competenze</h2>
+
+      <p>
+        La <a class="article-link" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/survey-of-adults-skills-2023-country-notes_df7b4a60/italy_efb33b22/b03d6066-en.pdf" target="_blank" rel="noopener">Survey of Adult Skills</a>, l'indagine del programma PIAAC dell'OCSE condotta in 31 paesi e pubblicata a dicembre 2024, misura con prove standardizzate le competenze degli adulti tra i 16 e i 65 anni in tre domini: la comprensione dei testi scritti (literacy), l'uso delle informazioni matematiche e numeriche (numeracy) e la capacità di risolvere problemi in situazioni che cambiano (problem solving adattivo). In Italia la rilevazione, curata dall'INAPP, l'Istituto nazionale per l'analisi delle politiche pubbliche, per conto del ministero del Lavoro, ha coinvolto circa 4.800 adulti.
+      </p>
+
+      <p>
+        Gli adulti italiani ottengono in media 245 punti in literacy, 244 in numeracy e 231 nel problem solving adattivo, contro una media OCSE rispettivamente di 260, 263 e 251. In tutti e tre i casi il divario è tra i 15 e i 20 punti, su scale che vanno da 0 a 500. Il dato è importante perché indica una base media di competenze più fragile proprio nelle abilità che aiutano ad assorbire innovazione e lavorare in organizzazioni più complesse.
+      </p>
+
+      <div class="chart-container">
+        <iframe title="Grafico CrescitaZero" aria-label="Grafico" src="https://datawrapper.dwcdn.net/xKQj1/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450" loading="lazy"></iframe>
+        <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
+      </div>
+
+      <p>
+        I punteggi dell'indagine vengono poi raggruppati dall'OCSE in livelli di competenza: chi si ferma al livello 1 o sotto riesce a capire testi brevi e a trovare un'informazione quando è indicata chiaramente, o a fare calcoli di base con numeri interi o con il denaro, mentre va in difficoltà appena un compito richiede più passaggi, come calcolare una proporzione. Ai livelli 4 o 5, i più alti, si valutano criticamente testi lunghi e complessi e si interpretano dati e grafici statistici. In literacy il 35 per cento degli adulti italiani si ferma al livello 1 o sotto, contro il 26 per cento della media OCSE, mentre solo il 5 per cento raggiunge i livelli 4 o 5, contro il 12. In numeracy le proporzioni sono quasi identiche, con il 35 per cento ai livelli bassi contro 25 e il 6 per cento a quelli alti contro 14. Nel problem solving adattivo, dove il livello massimo è il 4, la distanza è ancora più netta: il 46 per cento resta al livello 1 o sotto, contro il 29, riuscendo a risolvere solo problemi semplici che non cambiano mentre li si affronta, e appena l'1 per cento tocca il livello più alto, contro il 5.
+      </p>
+
+      <p>
+        Il problema italiano ha quindi due facce: un punteggio medio più basso e una distribuzione sbilanciata, con pochi adulti molto competenti e una quota ampia con competenze deboli. Per un'economia che deve adottare tecnologie digitali e aumentare il contenuto di conoscenza della produzione, la seconda faccia pesa più di quanto suggerisca un semplice confronto tra medie.
+      </p>
+
+      <div class="chart-container">
+        <iframe title="Grafico CrescitaZero" aria-label="Grafico" src="https://datawrapper.dwcdn.net/bCroa/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450" loading="lazy"></iframe>
+        <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
+      </div>
+
+      <p>
+        Rispetto alla rilevazione di dieci anni prima, i risultati medi italiani in literacy e numeracy sono rimasti sostanzialmente simili, mentre si è ampliato il divario tra gli adulti migliori e peggiori e in literacy è aumentata la quota di chi si ferma ai livelli più bassi. Anche questo è un elemento importante: non c'è solo un problema di ritardo, ma anche di polarizzazione interna delle competenze.
+      </p>
+
+      <p>
+        Un altro tassello del quadro arriva dai più giovani. Le prove <a class="article-link" href="https://www.invalsi.it/wp-content/uploads/2026/07/Presentazione-Risultati-Prove-INVALSI-2026.pdf" target="_blank" rel="noopener">INVALSI 2026</a>, che misurano le competenze fondamentali in italiano, matematica e inglese alla fine dei diversi cicli scolastici, mostrano un profilo molto simile a quello visto per gli adulti: risultati medi sotto la media desiderabile e forti divari territoriali tra Nord e Sud. Se si guarda alle classi terminali, una quota non trascurabile di studenti fatica ancora su comprensione dei testi, uso dei numeri e capacità di applicare ciò che ha studiato a problemi nuovi, cioè esattamente le competenze che serviranno per reggere organizzazioni più complesse e assorbire innovazione una volta entrati nel mercato del lavoro.
+      </p>
+
+      <p>
+        Questo rende evidente che le competenze sono un fenomeno di lungo periodo: i punteggi dei ragazzi di oggi sono, in larga parte, i punteggi dei lavoratori di domani. Se un territorio accumula ritardi già alla scuola secondaria, ritroverà quegli stessi ritardi nella capacità della sua forza lavoro di usare tecnologie, leggere dati, prendere decisioni in contesti incerti, con effetti diretti sia sulla produttività attuale sia sulla velocità con cui riuscirà ad adottare nuovi processi e nuovi strumenti. Visti così, gli esiti INVALSI non sono solo un indicatore del sistema educativo, ma anche una variabile anticipatrice della base di capitale umano su cui si reggerà la crescita futura.
+      </p>
+
+      <h2>L'ennesimo dualismo interno italiano</h2>
+
+      <p>
+        Secondo <a class="article-link" href="https://www.inapp.gov.it/sala-stampa/671613" target="_blank" rel="noopener">l'INAPP</a>, il divario medio italiano riflette soprattutto la debolezza delle regioni meridionali, mentre Nord-Ovest, Nord-Est e Centro in literacy, e il Nord-Est anche in numeracy, registrano risultati statisticamente comparabili alla media OCSE. Questo implica che il problema non è distribuito in modo uniforme sul territorio. All'interno dell'Italia convivono aree che si muovono vicino agli standard internazionali e aree che restano molto più indietro, abbassando la media complessiva del paese.
+      </p>
+
+      <div class="chart-container">
+        <iframe title="Grafico CrescitaZero" aria-label="Grafico" src="https://datawrapper.dwcdn.net/wqMEY/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450" loading="lazy"></iframe>
+        <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
+      </div>
+
+      <p>
+        Michael Kremer, premio Nobel per l'economia nel 2019, propose nel 1993 un modello utile a capire perché una quota ampia di competenze deboli pesa sull'intero sistema, la teoria O-Ring, che prende il nome dalla guarnizione il cui cedimento causò nel 1986 l'esplosione dello Space Shuttle Challenger. Nel modello la produzione è una catena di compiti complementari: il valore finale dipende dalla qualità con cui ogni anello viene svolto e un errore in un solo passaggio può azzerare il valore di tutto il resto, come una guarnizione difettosa distrusse una navetta spaziale. Da questa complementarità discendono due conseguenze. Piccole differenze di competenze si amplificano in grandi differenze di produttività e di salario, perché ogni anello debole riduce il rendimento di tutti gli altri. E i lavoratori tendono a raggrupparsi per livello, così le produzioni più complesse si concentrano dove le competenze sono più alte, mentre i territori con competenze più deboli restano ancorati a produzioni semplici, che generano meno valore aggiunto.
+      </p>
+
+      <p>
+        Il dualismo territoriale è quindi uno dei meccanismi attraverso cui il problema delle competenze si trasforma in un problema di produttività aggregata. Dire che l'Italia è sotto media è corretto, ma il ritardo italiano è anche il risultato di una forte eterogeneità interna, che rende più difficile costruire una base ampia e omogenea di competenze spendibili nell'economia.
+      </p>
+
+      <h2>Perché conta per la produttività</h2>
+
+      <p>
+        Richard Nelson ed Edmund Phelps, quest'ultimo poi premio Nobel per l'economia, proposero nel 1966 l'idea che meglio inquadra questo episodio: il capitale umano determina la velocità con cui un'economia adotta le tecnologie disponibili. Una forza lavoro istruita capisce prima le innovazioni e le adatta meglio al proprio contesto, quindi il vantaggio delle competenze cresce quando la tecnologia cambia rapidamente, come accade oggi con la transizione digitale e l'intelligenza artificiale. Un paese con un capitale umano debole può avere accesso alle stesse tecnologie degli altri, ma le assorbe con anni di ritardo e in una parte più piccola del proprio sistema produttivo.
+      </p>
+
+      <p>
+        È qui che il lavoro <a class="article-link" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/06/adult-skills-and-productivity_5e9a03df/12ac6e8c-en.pdf" target="_blank" rel="noopener">OCSE</a> aiuta a fare un passo in più rispetto al dibattito abituale. Il punto non è soltanto "più istruzione uguale più produttività". Un aumento di una deviazione standard nella numeracy, cioè la distanza che separa un adulto nella media da uno molto sopra la media, si associa a una probabilità di partecipare al mercato del lavoro più alta di 7 punti percentuali e, tra le persone attive, a un rischio di disoccupazione più basso di 3 punti. Tra gli occupati, lo stesso aumento si associa a salari più alti del 5 per cento, a parità di altre caratteristiche osservabili, mentre per confronto una deviazione standard in più di istruzione si associa a salari più alti del 14 per cento. I benefici delle competenze, segnala l'OCSE, vanno oltre quelli legati ai soli titoli di studio.
+      </p>
+
+      <p>
+        Questo aiuta a leggere meglio anche un equivoco frequente del dibattito pubblico. Il problema non è tanto che in Italia ci siano relativamente pochi laureati. La questione più profonda è che una parte troppo ampia della popolazione adulta resta su livelli bassi nelle competenze che servono davvero nei contesti produttivi contemporanei: comprensione di testi complessi, uso dei numeri, capacità di affrontare problemi nuovi, adattabilità ai processi digitali e organizzativi.
+      </p>
+
+      <p>
+        Quando queste capacità mancano, rallenta sia la produttività odierna sia la capacità di adottare nuove tecnologie e riorganizzare il lavoro spostando lavoratori e risorse verso le imprese migliori e sfruttare appieno i benefici degli investimenti. Tramite questo canale blocchiamo anche la produttività di domani, perché dipende dalle scelte e dalle azioni messe in moto oggi. La produttività non è soltanto una questione di capitale fisico o di incentivi alle imprese, ma è soprattutto una questione di persone, di competenze disponibili e di come l'economia riesce a valorizzarle.
+      </p>
+
+      <p>
+        Questo quadro è coerente anche con quanto emerge dalle analisi recenti della <a class="article-link" href="https://www.bancaditalia.it/pubblicazioni/qef/2025-0953/QEF_953.pdf" target="_blank" rel="noopener">Banca d'Italia</a>. In un recente studio sulle dinamiche della produttività, gli autori osservano che tra il 2019 e il 2024 il valore aggiunto del settore privato è aumentato di quasi il 10 per cento, soprattutto grazie a un forte stimolo fiscale. La crescita ha riguardato in particolare costruzioni e servizi, mentre la manifattura ha ristagnato. A trainare è stata soprattutto l'espansione dell'occupazione, a fronte di una dinamica molto più debole della produttività del lavoro, in calo negli ultimi due anni.
+      </p>
+
+      <p>
+        La produttività delle imprese, osserva lo studio, è stata sostenuta da processi riallocativi e dalla crescita delle imprese più efficienti, ma in questo modo è cresciuto il divario tra queste imprese e il resto del tessuto produttivo. Una parte del sistema si è rafforzata, ma la diffusione dei miglioramenti è rimasta incompleta.
+      </p>
+
+      <p>
+        Questo è esattamente il tipo di quadro in cui le competenze fanno la differenza. Quando il capitale umano è debole o troppo polarizzato, la capacità di assorbire innovazione si concentra in pochi segmenti dell'economia. Le imprese più dinamiche riescono comunque a crescere, ma fanno più fatica a trascinare con sé il resto del sistema. E così la produttività resta compressa non solo da un problema di investimenti o di scala, ma anche da una difficoltà più profonda nel costruire e usare conoscenza in modo diffuso.
+      </p>
+
+      <h2>Cosa fare</h2>
+
+      <p>
+        Il tratto chiave di questa serie si potrebbe risolvere con una parola: complessità. Non è che tutto dipenda dalla scuola. E non è nemmeno che basti aumentare la spesa in formazione per risolvere il problema. La lezione più utile dei lavori <a class="article-link" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/06/adult-skills-and-productivity_5e9a03df/12ac6e8c-en.pdf" target="_blank" rel="noopener">OCSE</a> e <a class="article-link" href="https://www.bancaditalia.it/pubblicazioni/qef/2025-0953/QEF_953.pdf" target="_blank" rel="noopener">Banca d'Italia</a> è che la produttività cresce quando una forza lavoro più competente è anche meglio allocata e quando le imprese e il mercato del lavoro riescono a trasformare quelle competenze in innovazione, organizzazione e miglior uso del capitale.
+      </p>
+
+      <p>
+        Le implicazioni sono due. La prima è trattare il capitale umano come una condizione di base della crescita, con politiche che alzino le competenze effettive lungo tutta la vita, dalla scuola alla formazione degli adulti, e con una priorità evidente per i territori più indietro. La seconda è fare in modo che quelle competenze vengano usate, con un mercato del lavoro che aiuti le persone più preparate ad arrivare alle imprese in grado di valorizzarle.
+      </p>
+
+      <p>
+        Per anni abbiamo raccontato la stagnazione italiana come il risultato di un sistema che investe poco. Ed è vero. Ma i dati più recenti suggeriscono che il problema è anche un sistema che fatica a costruire, usare e spostare bene la conoscenza. Se non si rompe questo blocco, anche gli investimenti giusti rischiano di rendere meno del previsto. La produttività italiana è anche un problema di persone e di come l'economia riesce a valorizzarle.
+      </p>
+
+      <hr style="border: none; border-top: 1px solid var(--line); margin: 48px 0 32px;">
+
+      <p style="font-style: italic; color: var(--muted); font-size: 0.95rem;">
+        *La Survey of Adult Skills del programma PIAAC valuta persone tra i 16 e i 65 anni con prove standardizzate in tre ambiti: comprensione di testi scritti (literacy), uso di informazioni matematiche e numeriche (numeracy) e capacità di risolvere problemi in contesti che cambiano (problem solving adattivo). Non si tratta di domande nozionistiche, ma di esercizi pratici: per la literacy, ad esempio, viene chiesto di leggere tabelle, istruzioni, articoli brevi e di individuare informazioni, collegare passaggi, trarre inferenze; per la numeracy, di interpretare percentuali, prezzi, grafici, unità di misura e prendere decisioni quantitative sensate; per il problem solving adattivo, di gestire situazioni in cui cambiano vincoli e obiettivi, scegliendo strategie coerenti e aggiornando le scelte alla luce di nuove informazioni.
+      </p>
+
+      <p style="font-style: italic; color: var(--muted); font-size: 0.95rem;">
+        Ogni risposta viene tradotta in un punteggio su scale che vanno da 0 a 500 e in livelli di competenza, dai più bassi (compiti semplici, altamente strutturati) ai più alti (compiti complessi, con molta informazione da filtrare e integrare). Questo consente non solo di confrontare la media dei paesi, ma anche di capire quanta parte della popolazione si concentra nei livelli bassi o alti, cioè quante persone riescono davvero a usare testi, numeri e strumenti digitali in modo efficace nei contesti di lavoro quotidiani. È in questo incrocio tra punteggi medi, distribuzione dei livelli e uso effettivo delle competenze nell'economia che si gioca, in larga misura, la differenza di produttività tra sistemi più dinamici e sistemi che restano inchiodati a produzioni semplici.
+      </p>
+
+      <hr style="border: none; border-top: 1px solid var(--line); margin: 32px 0;">
+
+      <p style="font-style: italic; color: var(--muted);">
+        La serie CrescitaZero si prende una pausa per agosto. La prossima uscita sarà il 31 agosto.
+      </p>
+    </article>
+  </main>
+
+  <footer class="page">
+    <p>© 2026 CrescitaZero</p>
+  </footer>
 </body>
 </html>
