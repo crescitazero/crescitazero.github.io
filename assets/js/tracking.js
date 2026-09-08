@@ -25,9 +25,9 @@
  *                        · location hero | autori | contatti | article
  *   nav_click            click sulla navigazione in alto della home
  *                        · target   articoli | progetto | metodo | autori
- *   contact_click        click su un contatto (email, LinkedIn)
- *                        · target   email | linkedin
- *                        · author   ruffino | bidut (solo per LinkedIn)
+ *   contact_click        click su un contatto (email, LinkedIn, X)
+ *                        · target   email | linkedin | x
+ *                        · author   ruffino | bidut (per LinkedIn e X)
  *                        · location id della sezione (autori, contatti)
  *   series_nav_click     click sui link «articolo precedente / successivo».
  *                        · direction prev | next

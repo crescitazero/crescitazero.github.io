@@ -2,14 +2,14 @@
 title: "Perché lo Stato finisce per rallentare la crescita"
 description: "In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza"
 authors: ["Lorenzo Ruffino", "Elia Bidut"]
-date: 2026-09-07
+date: 2026-09-14
 canonical: https://crescitazero.it/articoli/08-crescitazero.html
 series: CrescitaZero
 ---
 
 # Perché lo Stato finisce per rallentare la crescita
 
-*Approfondimento* · di Lorenzo Ruffino e Elia Bidut · 7 settembre 2026 · 23 min di lettura
+*Approfondimento* · di Lorenzo Ruffino e Elia Bidut · 14 settembre 2026 · 23 min di lettura
 
 **In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza**
 

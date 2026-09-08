@@ -9,6 +9,29 @@
   },
   "articles": [
     {
+      "slug": "08-crescitazero",
+      "title": "Perché lo Stato finisce per rallentare la crescita",
+      "description": "In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza",
+      "kicker": "Approfondimento",
+      "date": "2026-09-14",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/08-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/08-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/08-crescitazero.png",
+      "reading_minutes": 23,
+      "word_count": 4610,
+      "charts": []
+    },
+    {
       "slug": "h1-2026-crescitazero",
       "title": "In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce",
       "description": "Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.",
@@ -29,29 +52,6 @@
       "image": "https://crescitazero.it/assets/social/h1-2026-crescitazero.png",
       "reading_minutes": 2,
       "word_count": 359,
-      "charts": []
-    },
-    {
-      "slug": "08-crescitazero",
-      "title": "Perché lo Stato finisce per rallentare la crescita",
-      "description": "In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza",
-      "kicker": "Approfondimento",
-      "date": "2026-09-07",
-      "authors": [
-        {
-          "name": "Lorenzo Ruffino",
-          "url": "https://www.lorenzoruffino.it/"
-        },
-        {
-          "name": "Elia Bidut",
-          "url": "https://lavoroinfatti.substack.com/"
-        }
-      ],
-      "url": "https://crescitazero.it/articoli/08-crescitazero.html",
-      "url_md": "https://crescitazero.it/articoli/08-crescitazero.md",
-      "image": "https://crescitazero.it/assets/social/08-crescitazero.png",
-      "reading_minutes": 23,
-      "word_count": 4610,
       "charts": []
     },
     {

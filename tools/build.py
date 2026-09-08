@@ -312,6 +312,18 @@ def persone_sito(html_home):
     return out
 
 
+def handle_x(persone, nome):
+    """L'handle X (@nome) di un autore, dal link x.com nella sezione Autori."""
+    for p in persone:
+        if p["name"] != nome:
+            continue
+        for u in p.get("sameAs", []):
+            m = re.match(r"https?://(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]+)/?$", u)
+            if m:
+                return "@" + m.group(1)
+    return ""
+
+
 def persona(nome, url, sameAs=None):
     p = {"@type": "Person", "name": nome}
     if url:
@@ -444,6 +456,10 @@ def blocco(pagina, persone):
             f'  <meta name="twitter:image" content="{e(pagina.immagine)}">',
             f'  <meta name="twitter:image:alt" content="{e(pagina.titolo_pieno)}">',
         ]
+        # X accetta un solo creator: il primo autore. Gli altri stanno nel JSON-LD.
+        handle = handle_x(persone, pagina.autori[0][0] if pagina.autori else "")
+        if handle:
+            righe.append(f'  <meta name="twitter:creator" content="{e(handle)}">')
 
     righe += jsonld(pagina, persone)
     righe += [f"  {UMAMI}", f"  {TRACKING}", FINE]

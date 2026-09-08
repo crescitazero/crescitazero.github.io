@@ -92,7 +92,8 @@ da solo); mai tracciarli anche da `tracking.js`, conterebbero doppio.
   `python3 tools/datawrapper.py --refresh` e committa.
 - Le card social non vengono rigenerate se esistono: dopo un cambio di titolo, cancella
   `assets/social/<slug>.png` (o `og_card.py --force` per tutte).
-- Date e autori stanno solo nella byline. La data dell'articolo 08 è un segnaposto
-  (`<!-- data da confermare -->`) finché non viene confermata.
+- Date e autori stanno solo nella byline. I profili degli autori (Substack, LinkedIn, X)
+  stanno solo nella sezione Autori di `index.html`: da lì il build ricava `sameAs` nel
+  JSON-LD e il `twitter:creator` (l'handle X del primo autore).
 - Non c'è GA4 e non deve tornare: Umami è cookieless e non richiede banner di consenso.
 - Dettagli sugli script, i file generati e le opzioni: `tools/README.md`.

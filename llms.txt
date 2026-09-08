@@ -25,8 +25,8 @@ per la lettura automatica.
 - [La produttività italiana passa anche dalle competenze](https://crescitazero.it/articoli/05-crescitazero.md): Sotto la stagnazione della produttività italiana: competenze sotto la media, forti squilibri territoriali e un sistema che fatica a trasformare conoscenza in innovazione diffusa.
 - [Cosa leggere quest’estate per capire perché l'Italia non cresce](https://crescitazero.it/articoli/06-crescitazero.md): Una lista di libri, paper e ricerche per il periodo estivo per capire perché l'Italia è ferma da trent'anni.
 - [Il management che manca alla produttività italiana](https://crescitazero.it/articoli/07-crescitazero.md): Le imprese meglio gestite sono più produttive. In Italia c’è un problema di allocazione efficiente del capitale manageriale causato dalla gestione delle persone e dalla diffusione delle PMI.
-- [Perché lo Stato finisce per rallentare la crescita](https://crescitazero.it/articoli/08-crescitazero.md): In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza
 - [In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce](https://crescitazero.it/articoli/h1-2026-crescitazero.md): Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.
+- [Perché lo Stato finisce per rallentare la crescita](https://crescitazero.it/articoli/08-crescitazero.md): In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza
 
 ## Dati e formati
 
