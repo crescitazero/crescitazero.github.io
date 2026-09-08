@@ -32,6 +32,10 @@ jobs:
   anteprime:
     runs-on: ubuntu-latest
 
+    # gli script non devono lasciare in giro __pycache__
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+
     steps:
       - uses: actions/checkout@v4
 
@@ -53,13 +57,13 @@ jobs:
 
       - name: Committa se qualcosa è cambiato
         run: |
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "Nessuna anteprima da aggiornare."
+          git add assets/social index.html articoli
+          if git diff --cached --quiet; then
+            echo 'Nessuna anteprima da aggiornare.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/social index.html articoli
           git commit -m 'Aggiorna anteprime social'
           # un altro push potrebbe essere arrivato nel frattempo
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
