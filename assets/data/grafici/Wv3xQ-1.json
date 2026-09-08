@@ -1,0 +1,34 @@
+{
+  "id": "Wv3xQ",
+  "version": "1",
+  "url": "https://datawrapper.dwcdn.net/Wv3xQ/1/",
+  "title": "Quanto producono le microimprese in Europa?",
+  "intro": "Valore aggiunto per addetto nelle imprese con meno di 10 dipendenti (dati in euro).",
+  "notes": "Elaborazioni Osservatori Politecnico di Milano su dati Eurostat.",
+  "source_name": "",
+  "source_url": "",
+  "byline": "",
+  "type": "d3-bars",
+  "data": [
+    [
+      "Paese",
+      "Valore Aggiunto per Addetto (€)"
+    ],
+    [
+      "Germania",
+      "46000"
+    ],
+    [
+      "Francia",
+      "46000"
+    ],
+    [
+      "Media Unione Europea",
+      "35000"
+    ],
+    [
+      "Italia",
+      "30000"
+    ]
+  ]
+}

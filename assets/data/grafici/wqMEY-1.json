@@ -1,0 +1,56 @@
+{
+  "id": "wqMEY",
+  "version": "1",
+  "url": "https://datawrapper.dwcdn.net/wqMEY/1/",
+  "title": "Nelle competenze degli adulti il ritardo italiano è soprattutto meridionale",
+  "intro": "Punteggio medio degli adulti 16-65 nella Survey of Adult Skills 2023Punteggio medio degli adulti 16-65 per macroarea nella Survey of Adult Skills 2023",
+  "notes": "",
+  "source_name": "OCSE",
+  "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/survey-of-adults-skills-2023-country-notes_df7b4a60/italy_efb33b22/b03d6066-en.pdf",
+  "byline": "",
+  "type": "d3-dot-plot",
+  "data": [
+    [
+      "area",
+      "literacy",
+      "numeracy",
+      "adaptive_problem_solving"
+    ],
+    [
+      "Nord-Est",
+      "262",
+      "263",
+      "243"
+    ],
+    [
+      "Nord-Ovest",
+      "255",
+      "253",
+      "240"
+    ],
+    [
+      "Centro",
+      "253",
+      "253",
+      "235"
+    ],
+    [
+      "Sud e Isole",
+      "224",
+      "222",
+      "214"
+    ],
+    [
+      "Italia",
+      "245",
+      "244",
+      "231"
+    ],
+    [
+      "Media OCSE",
+      "260",
+      "263",
+      "251"
+    ]
+  ]
+}

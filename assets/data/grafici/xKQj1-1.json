@@ -1,0 +1,34 @@
+{
+  "id": "xKQj1",
+  "version": "1",
+  "url": "https://datawrapper.dwcdn.net/xKQj1/1/",
+  "title": "L'Italia è indietro nelle competenze chiave rispetto ai paesi avanzati (Copy)",
+  "intro": "Punteggio medio degli adulti 16-65 nella Survey of Adult Skills 2023",
+  "notes": "",
+  "source_name": "OECD",
+  "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/survey-of-adults-skills-2023-country-notes_df7b4a60/italy_efb33b22/b03d6066-en.pdf",
+  "byline": "",
+  "type": "d3-range-plot",
+  "data": [
+    [
+      "dominio",
+      "italia",
+      "oecd_media"
+    ],
+    [
+      "Literacy",
+      "245",
+      "260"
+    ],
+    [
+      "Numeracy",
+      "244",
+      "263"
+    ],
+    [
+      "Adaptive problem solving",
+      "231",
+      "251"
+    ]
+  ]
+}

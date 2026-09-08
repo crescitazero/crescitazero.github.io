@@ -1,0 +1,42 @@
+{
+  "id": "bCroa",
+  "version": "1",
+  "url": "https://datawrapper.dwcdn.net/bCroa/1/",
+  "title": "In Italia più di un adulto su tre ha competenze di base deboli",
+  "intro": "Quota di adulti 16-65 che si ferma al livello 1 o inferiore nella Survey of Adult Skills 2023",
+  "notes": "",
+  "source_name": "OCSE",
+  "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/survey-of-adults-skills-2023-country-notes_df7b4a60/italy_efb33b22/b03d6066-en.pdf",
+  "byline": "",
+  "type": "d3-bars-split",
+  "data": [
+    [
+      "dominio",
+      "italia_livelli_bassi",
+      "media_ocse_livelli_bassi",
+      "italia_livelli_alti",
+      "media_ocse_livelli_alti"
+    ],
+    [
+      "Literacy",
+      "35",
+      "26",
+      "5",
+      "12"
+    ],
+    [
+      "Numeracy",
+      "35",
+      "25",
+      "6",
+      "14"
+    ],
+    [
+      "Adaptive problem solving",
+      "46",
+      "29",
+      "1",
+      "5"
+    ]
+  ]
+}

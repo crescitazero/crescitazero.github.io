@@ -1,0 +1,34 @@
+{
+  "id": "FOfas",
+  "version": "3",
+  "url": "https://datawrapper.dwcdn.net/FOfas/3/",
+  "title": "La meritocrazia del management correla con la produttività delle imprese",
+  "intro": "Crescita TFP 1995-2006 in base al cluster",
+  "notes": "",
+  "source_name": "",
+  "source_url": "",
+  "byline": "",
+  "type": "d3-bars",
+  "data": [
+    [
+      "group",
+      "tfp_growth_1995_2006_pct"
+    ],
+    [
+      "High meritocracy / High ICT",
+      "19.4"
+    ],
+    [
+      "Low meritocracy / Low ICT",
+      "12.3"
+    ],
+    [
+      "High meritocracy / Low ICT",
+      "9.8"
+    ],
+    [
+      "Low meritocracy / High ICT",
+      "5.3"
+    ]
+  ]
+}

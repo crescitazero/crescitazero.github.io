@@ -1,0 +1,42 @@
+# CrescitaZero
+
+> CrescitaZero è un progetto divulgativo gratuito di Lorenzo Ruffino ed Elia Bidut che
+> prova a rispondere con i dati a una domanda sola: perché l'Italia non cresce più.
+> Ogni episodio prende un pezzo del problema — produttività, salari, dimensione
+> delle imprese, competenze, management, ruolo dello Stato — e lo ricostruisce a
+> partire da fonti pubbliche (Istat, Eurostat, OCSE) e da grafici con i dati
+> scaricabili. I contenuti sono liberamente citabili indicando la fonte con un
+> link alla pagina originale.
+
+Il metodo è dichiarato: si parte dai dati delle istituzioni ufficiali, si
+limitano le opinioni e si rendono trasparenti fonti e metodologie. Lorenzo
+Ruffino si occupa di analisi dati e data journalism; Elia Bidut, dalla
+newsletter Lavoro Infatti, di lavoro, salari e produttività. Di ogni articolo
+esiste la versione Markdown allo stesso indirizzo con estensione .md, pensata
+per la lettura automatica.
+
+## Articoli
+
+- [Capire trent'anni senza crescita](https://crescitazero.it/articoli/coming.md): Primo articolo dell'archivio CrescitaZero.
+- [Perché l'Italia è ferma da trent'anni](https://crescitazero.it/articoli/01-crescitazero.md): Da trent'anni l'Italia cresce meno degli altri paesi europei. La causa non è la sfortuna né la congiuntura: è la produttività, ferma da due decenni.
+- [Perché la crescita è fondamentale per la democrazia](https://crescitazero.it/articoli/02-crescitazero.md): La crescita non è una torta di dimensioni fisse da spartire. È la condizione che tiene in piedi pensioni, conti pubblici e fiducia nelle istituzioni.
+- [Gli stipendi crescono solo dove cresce la produttività](https://crescitazero.it/articoli/03-crescitazero.md): L'Italia è l'unico grande paese europeo con i salari reali più bassi di trent'anni fa. Senza crescita economica e della produttività, gli stipendi non possono crescere.
+- [La trappola del «piccolo è bello»: perché il nanismo aziendale soffoca l'Italia](https://crescitazero.it/articoli/04-crescitazero.md): L'Italia è il secondo paese EU per numero di imprese attive. Ma la dimensione media è un terzo di quella tedesca. Sono troppo piccole per innovare, investire, pagare salari competitivi.
+- [La produttività italiana passa anche dalle competenze](https://crescitazero.it/articoli/05-crescitazero.md): Sotto la stagnazione della produttività italiana: competenze sotto la media, forti squilibri territoriali e un sistema che fatica a trasformare conoscenza in innovazione diffusa.
+- [Cosa leggere quest’estate per capire perché l'Italia non cresce](https://crescitazero.it/articoli/06-crescitazero.md): Una lista di libri, paper e ricerche per il periodo estivo per capire perché l'Italia è ferma da trent'anni.
+- [Il management che manca alla produttività italiana](https://crescitazero.it/articoli/07-crescitazero.md): Le imprese meglio gestite sono più produttive. In Italia c’è un problema di allocazione efficiente del capitale manageriale causato dalla gestione delle persone e dalla diffusione delle PMI.
+- [Perché lo Stato finisce per rallentare la crescita](https://crescitazero.it/articoli/08-crescitazero.md): In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza
+- [In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce](https://crescitazero.it/articoli/h1-2026-crescitazero.md): Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.
+
+## Dati e formati
+
+- [feed.xml](https://crescitazero.it/feed.xml): RSS con il testo completo di ogni articolo.
+- [sitemap.xml](https://crescitazero.it/sitemap.xml): tutte le pagine con la data di pubblicazione.
+- [articoli.json](https://crescitazero.it/articoli.json): indice degli articoli con autori, conteggio parole e grafici usati.
+- [llms-full.txt](https://crescitazero.it/llms-full.txt): tutti gli articoli in Markdown in un file solo.
+- [Dati dei grafici](https://crescitazero.it/assets/data/grafici/): un JSON per grafico con titolo, fonte, note e righe del CSV; i CSV originali stanno su datawrapper.dwcdn.net.
+
+## Autori
+
+- [Lorenzo Ruffino](https://www.lorenzoruffino.it/): newsletter di analisi dati su demografia, economia e politica italiana.
+- [Elia Bidut](https://lavoroinfatti.substack.com/): newsletter Lavoro Infatti, su lavoro, salari e produttività.

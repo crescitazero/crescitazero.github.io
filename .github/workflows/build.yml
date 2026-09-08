@@ -1,8 +1,10 @@
 name: Build sito
 
 # Quando arriva un nuovo articolo (o cambia il titolo/description di uno esistente),
-# genera la card 1200x630 mancante, aggiorna i meta tag e gli script di tracciamento,
-# poi committa il risultato sul branch.
+# genera la card 1200x630 mancante, aggiorna il <head> e la navigazione di serie,
+# riscrive i gemelli Markdown e i file generati alla radice (robots, sitemap, feed,
+# articoli.json, llms.txt, llms-full.txt, 404), poi committa il risultato sul branch.
+# I dati dei grafici arrivano dalla cache committata in assets/data: niente rete.
 
 on:
   push:
@@ -11,8 +13,12 @@ on:
       - 'articoli/**.html'
       - 'index.html'
       - 'assets/js/**'
+      - 'assets/data/**'
+      - '404.html'
       - 'tools/og_card.py'
       - 'tools/build.py'
+      - 'tools/datawrapper.py'
+      - 'tools/md.py'
       - '.github/workflows/build.yml'
   workflow_dispatch:
     inputs:
@@ -53,21 +59,23 @@ jobs:
       - name: Genera le card mancanti
         run: python3 tools/og_card.py --prune ${{ inputs.force && '--force' || '' }}
 
-      - name: Aggiorna i meta tag
+      - name: Aggiorna le pagine e i file generati
         run: python3 tools/build.py
 
       - name: Committa se qualcosa è cambiato
         run: |
-          git add assets/social assets/js index.html articoli
+          # "articoli" comprende sia le pagine sia i gemelli articoli/*.md
+          git add assets/social assets/js assets/data index.html articoli \
+            robots.txt sitemap.xml feed.xml llms.txt llms-full.txt articoli.json 404.html .nojekyll
           if git diff --cached --quiet; then
-            echo 'Nessuna anteprima da aggiornare.'
+            echo 'Niente da aggiornare.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Aggiorna anteprime social'
+          git commit -m 'Aggiorna i file generati dal build'
           # un altro push potrebbe essere arrivato nel frattempo
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
-          echo '### Anteprime aggiornate' >> "$GITHUB_STEP_SUMMARY"
+          echo '### File generati aggiornati' >> "$GITHUB_STEP_SUMMARY"
           git show --stat --oneline HEAD >> "$GITHUB_STEP_SUMMARY"

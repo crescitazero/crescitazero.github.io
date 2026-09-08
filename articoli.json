@@ -1,0 +1,345 @@
+{
+  "site": {
+    "name": "CrescitaZero",
+    "url": "https://crescitazero.it/",
+    "description": "CrescitaZero è un progetto gratuito per capire perché l'Italia non cresce più, partendo da dati, fonti pubbliche e grafici leggibili.",
+    "feed": "https://crescitazero.it/feed.xml",
+    "sitemap": "https://crescitazero.it/sitemap.xml",
+    "llms": "https://crescitazero.it/llms.txt"
+  },
+  "articles": [
+    {
+      "slug": "h1-2026-crescitazero",
+      "title": "In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce",
+      "description": "Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.",
+      "kicker": "Aggiornamento",
+      "date": "2026-09-08",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/h1-2026-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/h1-2026-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/h1-2026-crescitazero.png",
+      "reading_minutes": 2,
+      "word_count": 359,
+      "charts": []
+    },
+    {
+      "slug": "08-crescitazero",
+      "title": "Perché lo Stato finisce per rallentare la crescita",
+      "description": "In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza",
+      "kicker": "Approfondimento",
+      "date": "2026-09-07",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/08-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/08-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/08-crescitazero.png",
+      "reading_minutes": 23,
+      "word_count": 4610,
+      "charts": []
+    },
+    {
+      "slug": "07-crescitazero",
+      "title": "Il management che manca alla produttività italiana",
+      "description": "Le imprese meglio gestite sono più produttive. In Italia c’è un problema di allocazione efficiente del capitale manageriale causato dalla gestione delle persone e dalla diffusione delle PMI.",
+      "kicker": "Approfondimento",
+      "date": "2026-08-31",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/07-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/07-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/07-crescitazero.png",
+      "reading_minutes": 20,
+      "word_count": 3893,
+      "charts": [
+        {
+          "id": "cGOEi",
+          "version": "2",
+          "title": "Valutazione del management tra Paesi",
+          "source": "Bloom et al. 2012",
+          "url": "https://datawrapper.dwcdn.net/cGOEi/2/",
+          "csv_url": "https://datawrapper.dwcdn.net/cGOEi/2/dataset.csv"
+        },
+        {
+          "id": "FOfas",
+          "version": "3",
+          "title": "La meritocrazia del management correla con la produttività delle imprese",
+          "source": "",
+          "url": "https://datawrapper.dwcdn.net/FOfas/3/",
+          "csv_url": "https://datawrapper.dwcdn.net/FOfas/3/dataset.csv"
+        }
+      ]
+    },
+    {
+      "slug": "06-crescitazero",
+      "title": "Cosa leggere quest’estate per capire perché l'Italia non cresce",
+      "description": "Una lista di libri, paper e ricerche per il periodo estivo per capire perché l'Italia è ferma da trent'anni.",
+      "kicker": "Letture",
+      "date": "2026-07-27",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/06-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/06-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/06-crescitazero.png",
+      "reading_minutes": 7,
+      "word_count": 1302,
+      "charts": []
+    },
+    {
+      "slug": "05-crescitazero",
+      "title": "La produttività italiana passa anche dalle competenze",
+      "description": "Sotto la stagnazione della produttività italiana: competenze sotto la media, forti squilibri territoriali e un sistema che fatica a trasformare conoscenza in innovazione diffusa.",
+      "kicker": "Approfondimento",
+      "date": "2026-07-20",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/05-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/05-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/05-crescitazero.png",
+      "reading_minutes": 13,
+      "word_count": 2577,
+      "charts": [
+        {
+          "id": "xKQj1",
+          "version": "1",
+          "title": "L'Italia è indietro nelle competenze chiave rispetto ai paesi avanzati",
+          "source": "OECD",
+          "url": "https://datawrapper.dwcdn.net/xKQj1/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/xKQj1/1/dataset.csv"
+        },
+        {
+          "id": "bCroa",
+          "version": "1",
+          "title": "In Italia più di un adulto su tre ha competenze di base deboli",
+          "source": "OCSE",
+          "url": "https://datawrapper.dwcdn.net/bCroa/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/bCroa/1/dataset.csv"
+        },
+        {
+          "id": "wqMEY",
+          "version": "1",
+          "title": "Nelle competenze degli adulti il ritardo italiano è soprattutto meridionale",
+          "source": "OCSE",
+          "url": "https://datawrapper.dwcdn.net/wqMEY/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/wqMEY/1/dataset.csv"
+        }
+      ]
+    },
+    {
+      "slug": "04-crescitazero",
+      "title": "La trappola del «piccolo è bello»: perché il nanismo aziendale soffoca l'Italia",
+      "description": "L'Italia è il secondo paese EU per numero di imprese attive. Ma la dimensione media è un terzo di quella tedesca. Sono troppo piccole per innovare, investire, pagare salari competitivi.",
+      "kicker": "Approfondimento",
+      "date": "2026-07-06",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/04-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/04-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/04-crescitazero.png",
+      "reading_minutes": 12,
+      "word_count": 2281,
+      "charts": [
+        {
+          "id": "ySqez",
+          "version": "2",
+          "title": "Il costo di essere piccoli in Italia",
+          "source": "Istat",
+          "url": "https://datawrapper.dwcdn.net/ySqez/2/",
+          "csv_url": "https://datawrapper.dwcdn.net/ySqez/2/dataset.csv"
+        },
+        {
+          "id": "Wv3xQ",
+          "version": "1",
+          "title": "Quanto producono le microimprese in Europa?",
+          "source": "",
+          "url": "https://datawrapper.dwcdn.net/Wv3xQ/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/Wv3xQ/1/dataset.csv"
+        }
+      ]
+    },
+    {
+      "slug": "03-crescitazero",
+      "title": "Gli stipendi crescono solo dove cresce la produttività",
+      "description": "L'Italia è l'unico grande paese europeo con i salari reali più bassi di trent'anni fa. Senza crescita economica e della produttività, gli stipendi non possono crescere.",
+      "kicker": "Approfondimento",
+      "date": "2026-06-22",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/03-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/03-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/03-crescitazero.png",
+      "reading_minutes": 11,
+      "word_count": 2149,
+      "charts": [
+        {
+          "id": "EteNc",
+          "version": "1",
+          "title": "Gli stipendi italiani sono fermi a oltre vent'anni fa",
+          "source": "OECD",
+          "url": "https://datawrapper.dwcdn.net/EteNc/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/EteNc/1/dataset.csv"
+        }
+      ]
+    },
+    {
+      "slug": "02-crescitazero",
+      "title": "Perché la crescita è fondamentale per la democrazia",
+      "description": "La crescita non è una torta di dimensioni fisse da spartire. È la condizione che tiene in piedi pensioni, conti pubblici e fiducia nelle istituzioni.",
+      "kicker": "Approfondimento",
+      "date": "2026-06-08",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/02-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/02-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/02-crescitazero.png",
+      "reading_minutes": 12,
+      "word_count": 2445,
+      "charts": [
+        {
+          "id": "u1vDd",
+          "version": "1",
+          "title": "L'emigrazione verso l'estero sta crescendo",
+          "source": "Istat",
+          "url": "https://datawrapper.dwcdn.net/u1vDd/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/u1vDd/1/dataset.csv"
+        }
+      ]
+    },
+    {
+      "slug": "01-crescitazero",
+      "title": "Perché l'Italia è ferma da trent'anni",
+      "description": "Da trent'anni l'Italia cresce meno degli altri paesi europei. La causa non è la sfortuna né la congiuntura: è la produttività, ferma da due decenni.",
+      "kicker": "Analisi Strutturale",
+      "date": "2026-05-25",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/01-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/01-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/01-crescitazero.png",
+      "reading_minutes": 10,
+      "word_count": 1654,
+      "charts": [
+        {
+          "id": "ZJWmq",
+          "version": "1",
+          "title": "L'Italia è il paese che cresce meno",
+          "source": "Eurostat",
+          "url": "https://datawrapper.dwcdn.net/ZJWmq/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/ZJWmq/1/dataset.csv"
+        },
+        {
+          "id": "I86Mq",
+          "version": "1",
+          "title": "L'Italia sta diventando meno produttiva",
+          "source": "Our World in Data",
+          "url": "https://datawrapper.dwcdn.net/I86Mq/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/I86Mq/1/dataset.csv"
+        }
+      ]
+    },
+    {
+      "slug": "coming",
+      "title": "Capire trent'anni senza crescita",
+      "description": "Primo articolo dell'archivio CrescitaZero.",
+      "kicker": "Presentazione",
+      "date": "2026-05-18",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/coming.html",
+      "url_md": "https://crescitazero.it/articoli/coming.md",
+      "image": "https://crescitazero.it/assets/social/coming.png",
+      "reading_minutes": 3,
+      "word_count": 665,
+      "charts": [
+        {
+          "id": "fV1lN",
+          "version": "1",
+          "title": "L'Italia è il paese che è cresciuto meno in Europa",
+          "source": "Eurostat",
+          "url": "https://datawrapper.dwcdn.net/fV1lN/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/fV1lN/1/dataset.csv"
+        }
+      ]
+    }
+  ]
+}

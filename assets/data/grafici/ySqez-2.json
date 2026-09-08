@@ -1,0 +1,29 @@
+{
+  "id": "ySqez",
+  "version": "2",
+  "url": "https://datawrapper.dwcdn.net/ySqez/2/",
+  "title": "Il costo di essere piccoli in Italia",
+  "intro": "Confronto tra valore aggiunto per addetto e stipendio lordo medio annuale.",
+  "notes": "",
+  "source_name": "Istat",
+  "source_url": "",
+  "byline": "",
+  "type": "d3-bars-split",
+  "data": [
+    [
+      "Dimensione Impresa",
+      "Valore Aggiunto per Addetto (€)",
+      "Stipendio Lordo Medio (€)"
+    ],
+    [
+      "Microimprese (0-9 addetti)",
+      "36400",
+      "26600.0"
+    ],
+    [
+      "Grandi Imprese (250+ addetti)",
+      "81600",
+      "46400.0"
+    ]
+  ]
+}
