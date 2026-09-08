@@ -613,6 +613,34 @@
       <h2 class="section-title">Articoli</h2>
       <div class="section-body">
         
+        <!-- Aggiornamento H1 2026 -->
+        <article class="article-preview">
+          <p class="article-date">AGGIORNAMENTO</p>
+          <h3><a href="articoli/h1-2026-crescitazero.html" data-umami-event="homepage_article_click" data-article="h1-2026-produttivita">In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce.</a></h3>
+          <p>Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.</p>
+        </article>
+
+        <!-- Articolo 08 -->
+        <article class="article-preview">
+          <p class="article-date">APPROFONDIMENTO</p>
+          <h3><a href="articoli/08-crescitazero.html" data-umami-event="homepage_article_click" data-article="08-ruolo-stato">Perché lo Stato finisce per rallentare la crescita.</a></h3>
+          <p>In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a impedire il cambiamento.</p>
+        </article>
+
+        <!-- Articolo 07 -->
+        <article class="article-preview">
+          <p class="article-date">APPROFONDIMENTO</p>
+          <h3><a href="articoli/07-crescitazero.html" data-umami-event="homepage_article_click" data-article="07-management">Il management che manca alla produttività italiana.</a></h3>
+          <p>Le imprese meglio gestite sono più produttive. In Italia c’è un problema di allocazione efficiente del capitale manageriale causato dalla gestione delle persone e dalla diffusione delle PMI.</p>
+        </article>
+
+        <!-- Articolo 06 -->
+        <article class="article-preview">
+          <p class="article-date">LETTURE</p>
+          <h3><a href="articoli/06-crescitazero.html" data-umami-event="homepage_article_click" data-article="06-consigli-libri">Cosa leggere quest’estate per capire perché l'Italia non cresce.</a></h3>
+          <p>Una lista di libri, paper e ricerche per il periodo estivo per capire perché l'Italia è ferma da trent'anni.</p>
+        </article>
+
         <!-- Articolo 05 -->
         <article class="article-preview">
           <p class="article-date">APPROFONDIMENTO</p>
@@ -758,5 +786,30 @@
       <span>Dati, crescita, Italia.</span>
     </div>
   </footer>
+  <script>
+    (() => {
+      const sentDepths = new Set();
+      const track = (name, data = {}) => {
+        if (window.umami && typeof window.umami.track === "function") window.umami.track(name, data);
+      };
+      document.addEventListener("click", (event) => {
+        const link = event.target.closest("a[data-umami-event]");
+        if (!link) return;
+        track(link.dataset.umamiEvent, { article: link.dataset.article, location: "homepage" });
+      });
+      const reportDepth = () => {
+        const available = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = available <= 0 ? 100 : Math.min(100, Math.round(window.scrollY / available * 100));
+        [25, 50, 75, 100].forEach((depth) => {
+          if (progress >= depth && !sentDepths.has(depth)) {
+            sentDepths.add(depth);
+            track("homepage_engagement", { depth });
+          }
+        });
+      };
+      window.addEventListener("scroll", reportDepth, { passive: true });
+      window.addEventListener("load", reportDepth, { once: true });
+    })();
+  </script>
 </body>
 </html>
