@@ -82,7 +82,8 @@ def apply(path, url, og_type, image, check=False):
         title = "CrescitaZero — Perché l’Italia non cresce più?"
     else:
         title = f"{title} — CrescitaZero"
-    alt = f"CrescitaZero — {page_meta(path)[0]}"
+    # la card mostra marchio, occhiello e titolo: il titolo stesso la descrive
+    alt = title
 
     new = block(url, title, description or "", image, og_type, alt)
     cleaned = BLOCK_RE.sub("", html)
