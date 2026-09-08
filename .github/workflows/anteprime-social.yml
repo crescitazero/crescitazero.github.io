@@ -1,0 +1,68 @@
+name: Anteprime social
+
+# Quando arriva un nuovo articolo (o cambia il titolo/description di uno esistente),
+# genera la card 1200x630 mancante e aggiorna i meta tag Open Graph / X,
+# poi committa il risultato sul branch.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'articoli/**.html'
+      - 'index.html'
+      - 'tools/og_card.py'
+      - 'tools/social-meta.py'
+      - '.github/workflows/anteprime-social.yml'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Rigenera tutte le card, anche quelle già presenti'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+# Un run alla volta: i run in coda si accodano invece di spingere in parallelo.
+concurrency:
+  group: anteprime-social
+  cancel-in-progress: false
+
+jobs:
+  anteprime:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installa Pillow e il font
+        run: |
+          python -m pip install --quiet --disable-pip-version-check Pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-liberation
+
+      - name: Genera le card mancanti
+        run: python3 tools/og_card.py --prune ${{ inputs.force && '--force' || '' }}
+
+      - name: Aggiorna i meta tag
+        run: python3 tools/social-meta.py
+
+      - name: Committa se qualcosa è cambiato
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nessuna anteprima da aggiornare."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/social index.html articoli
+          git commit -m 'Aggiorna anteprime social'
+          # un altro push potrebbe essere arrivato nel frattempo
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo '### Anteprime aggiornate' >> "$GITHUB_STEP_SUMMARY"
+          git show --stat --oneline HEAD >> "$GITHUB_STEP_SUMMARY"
