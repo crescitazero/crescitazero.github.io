@@ -7,8 +7,9 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <meta name="description" content="CrescitaZero è un progetto gratuito per capire perché l'Italia non cresce più, partendo da dati, fonti pubbliche e grafici leggibili.">
 
-  <!-- social: generato da tools/social-meta.py -->
+  <!-- build: generato da tools/build.py -->
   <link rel="canonical" href="https://crescitazero.it/">
+  <meta name="author" content="Lorenzo Ruffino, Elia Bidut">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CrescitaZero">
   <meta property="og:locale" content="it_IT">
@@ -25,7 +26,9 @@
   <meta name="twitter:description" content="CrescitaZero è un progetto gratuito per capire perché l&#x27;Italia non cresce più, partendo da dati, fonti pubbliche e grafici leggibili.">
   <meta name="twitter:image" content="https://crescitazero.it/assets/social/default.png">
   <meta name="twitter:image:alt" content="CrescitaZero — Perché l’Italia non cresce più?">
-  <!-- /social -->
+  <script defer src="https://analyticsprogetti.lorenzoruffino.com/script.js" data-website-id="6a9e05f1-4924-4074-8876-6dde465d52c8" data-domains="crescitazero.it"></script>
+  <script defer src="/assets/js/tracking.js"></script>
+  <!-- /build -->
 
   <style>
     :root {
@@ -544,19 +547,9 @@
       }
     }
   </style>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YNLC51YP93"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YNLC51YP93');
-  </script>
-  <script defer src="https://analyticsprogetti.lorenzoruffino.com/script.js" data-website-id="6a9e05f1-4924-4074-8876-6dde465d52c8"></script>
 </head>
 
-<body>
+<body data-article="home">
   <header>
     <div class="page topbar">
       <a class="brand" href="index.html">
@@ -565,10 +558,10 @@
       </a>
 
       <nav aria-label="Navigazione principale">
-        <a href="#articoli">Articoli</a>
-        <a href="#progetto">Progetto</a>
-        <a href="#metodo">Metodo</a>
-        <a href="#autori">Autori</a>
+        <a href="#articoli" data-umami-event="nav_click" data-umami-event-target="articoli">Articoli</a>
+        <a href="#progetto" data-umami-event="nav_click" data-umami-event-target="progetto">Progetto</a>
+        <a href="#metodo" data-umami-event="nav_click" data-umami-event-target="metodo">Metodo</a>
+        <a href="#autori" data-umami-event="nav_click" data-umami-event-target="autori">Autori</a>
       </nav>
     </div>
   </header>
@@ -594,11 +587,11 @@
         </p>
 
         <div class="cta-buttons">
-          <a class="cta" href="https://lavoroinfatti.substack.com/" target="_blank" rel="noopener">
+          <a class="cta" href="https://lavoroinfatti.substack.com/" target="_blank" rel="noopener" data-umami-event="newsletter_cta_click" data-umami-event-author="bidut" data-umami-event-location="hero">
             Newsletter di Elia Bidut
             <span class="cta-arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="cta cta-outline" href="https://www.lorenzoruffino.it/" target="_blank" rel="noopener">
+          <a class="cta cta-outline" href="https://www.lorenzoruffino.it/" target="_blank" rel="noopener" data-umami-event="newsletter_cta_click" data-umami-event-author="ruffino" data-umami-event-location="hero">
             Newsletter di Lorenzo Ruffino
             <span class="cta-arrow" aria-hidden="true">↗</span>
           </a>
@@ -636,70 +629,70 @@
         <!-- Aggiornamento H1 2026 -->
         <article class="article-preview">
           <p class="article-date">AGGIORNAMENTO</p>
-          <h3><a href="articoli/h1-2026-crescitazero.html" data-umami-event="homepage_article_click" data-article="h1-2026-produttivita">In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce.</a></h3>
+          <h3><a href="articoli/h1-2026-crescitazero.html" data-umami-event="article_open" data-umami-event-article="h1-2026-crescitazero" data-umami-event-position="1">In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce.</a></h3>
           <p>Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.</p>
         </article>
 
         <!-- Articolo 08 -->
         <article class="article-preview">
           <p class="article-date">APPROFONDIMENTO</p>
-          <h3><a href="articoli/08-crescitazero.html" data-umami-event="homepage_article_click" data-article="08-ruolo-stato">Perché lo Stato finisce per rallentare la crescita.</a></h3>
+          <h3><a href="articoli/08-crescitazero.html" data-umami-event="article_open" data-umami-event-article="08-crescitazero" data-umami-event-position="2">Perché lo Stato finisce per rallentare la crescita.</a></h3>
           <p>In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a impedire il cambiamento.</p>
         </article>
 
         <!-- Articolo 07 -->
         <article class="article-preview">
           <p class="article-date">APPROFONDIMENTO</p>
-          <h3><a href="articoli/07-crescitazero.html" data-umami-event="homepage_article_click" data-article="07-management">Il management che manca alla produttività italiana.</a></h3>
+          <h3><a href="articoli/07-crescitazero.html" data-umami-event="article_open" data-umami-event-article="07-crescitazero" data-umami-event-position="3">Il management che manca alla produttività italiana.</a></h3>
           <p>Le imprese meglio gestite sono più produttive. In Italia c’è un problema di allocazione efficiente del capitale manageriale causato dalla gestione delle persone e dalla diffusione delle PMI.</p>
         </article>
 
         <!-- Articolo 06 -->
         <article class="article-preview">
           <p class="article-date">LETTURE</p>
-          <h3><a href="articoli/06-crescitazero.html" data-umami-event="homepage_article_click" data-article="06-consigli-libri">Cosa leggere quest’estate per capire perché l'Italia non cresce.</a></h3>
+          <h3><a href="articoli/06-crescitazero.html" data-umami-event="article_open" data-umami-event-article="06-crescitazero" data-umami-event-position="4">Cosa leggere quest’estate per capire perché l'Italia non cresce.</a></h3>
           <p>Una lista di libri, paper e ricerche per il periodo estivo per capire perché l'Italia è ferma da trent'anni.</p>
         </article>
 
         <!-- Articolo 05 -->
         <article class="article-preview">
           <p class="article-date">APPROFONDIMENTO</p>
-          <h3><a href="articoli/05-crescitazero.html">La produttività italiana passa anche dalle competenze.</a></h3>
+          <h3><a href="articoli/05-crescitazero.html" data-umami-event="article_open" data-umami-event-article="05-crescitazero" data-umami-event-position="5">La produttività italiana passa anche dalle competenze.</a></h3>
           <p>Sotto la stagnazione italiana: competenze medie sotto la media OCSE, forti squilibri territoriali e un sistema che fatica a trasformare la conoscenza in innovazione diffusa.</p>
         </article>
 
         <!-- Articolo 04 -->
         <article class="article-preview">
           <p class="article-date">APPROFONDIMENTO</p>
-          <h3><a href="articoli/04-crescitazero.html">Perché il nanismo delle imprese è un problema.</a></h3>
+          <h3><a href="articoli/04-crescitazero.html" data-umami-event="article_open" data-umami-event-article="04-crescitazero" data-umami-event-position="6">Perché il nanismo delle imprese è un problema.</a></h3>
           <p>La prevalenza di micro e piccole imprese frena gli investimenti in tecnologia, l'innovazione e la produttività, condizionando la crescita dell'intero sistema Paese.</p>
         </article>
 
         <!-- Articolo 03 -->
         <article class="article-preview">
           <p class="article-date">APPROFONDIMENTO</p>
-          <h3><a href="articoli/03-crescitazero.html">Gli stipendi crescono solo dove cresce la produttività.</a></h3>
+          <h3><a href="articoli/03-crescitazero.html" data-umami-event="article_open" data-umami-event-article="03-crescitazero" data-umami-event-position="7">Gli stipendi crescono solo dove cresce la produttività.</a></h3>
           <p>L'Italia è l'unico grande paese europeo con i salari reali più bassi di trent'anni fa. Capiamo il legame strutturale e il circolo vizioso tra dinamica salariale e produttività.</p>
         </article>
 
         <!-- Articolo 02 -->
         <article class="article-preview">
           <p class="article-date">APPROFONDIMENTO</p>
-          <h3><a href="articoli/02-crescitazero.html">Perché la crescita è fondamentale per la democrazia.</a></h3>
+          <h3><a href="articoli/02-crescitazero.html" data-umami-event="article_open" data-umami-event-article="02-crescitazero" data-umami-event-position="8">Perché la crescita è fondamentale per la democrazia.</a></h3>
           <p>La crescita non è una torta di dimensioni fisse da spartire. È la condizione che tiene in piedi pensioni, conti pubblici e fiducia nelle istituzioni.</p>
         </article>
 
         <!-- Articolo 01 -->
         <article class="article-preview">
           <p class="article-date">APPROFONDIMENTO</p>
-          <h3><a href="articoli/01-crescitazero.html">Perché l'Italia è ferma da trent'anni.</a></h3>
+          <h3><a href="articoli/01-crescitazero.html" data-umami-event="article_open" data-umami-event-article="01-crescitazero" data-umami-event-position="9">Perché l'Italia è ferma da trent'anni.</a></h3>
           <p>Da trent'anni l'Italia cresce meno degli altri paesi europei. La causa non è la sfortuna né la congiuntura: è la produttività, ferma da due decenni.</p>
         </article>
 
         <!-- Manifesto -->
         <article class="article-preview">
           <p class="article-date">MANIFESTO</p>
-          <h3><a href="articoli/coming.html">Capire trent'anni senza crescita.</a></h3>
+          <h3><a href="articoli/coming.html" data-umami-event="article_open" data-umami-event-article="coming" data-umami-event-position="10">Capire trent'anni senza crescita.</a></h3>
           <p>Nasce CrescitaZero, un nuovo progetto divulgativo per analizzare con i dati le cause strutturali del declino economico italiano e discutere delle leve per una vera ripartenza.</p>
         </article>
       </div>
@@ -766,16 +759,16 @@
             <h3>Lorenzo Ruffino</h3>
             <p>Si occupa di analisi dati e data journalism. Analizza la demografia, le tendenze economiche e la politica italiana attraverso i numeri nel suo Substack.</p>
             <div class="links">
-              <a href="https://www.lorenzoruffino.it/">Substack</a>
-              <a href="https://www.linkedin.com/in/lorenzo-ruffino/">LinkedIn</a>
+              <a href="https://www.lorenzoruffino.it/" data-umami-event="newsletter_cta_click" data-umami-event-author="ruffino" data-umami-event-location="autori">Substack</a>
+              <a href="https://www.linkedin.com/in/lorenzo-ruffino/" data-umami-event="contact_click" data-umami-event-target="linkedin" data-umami-event-author="ruffino" data-umami-event-location="autori">LinkedIn</a>
             </div>
           </article>
           <article class="author">
             <h3>Elia Bidut</h3>
             <p>Ha esperienze in ambito startup e innovazione tecnologica. Esplora le dinamiche del mercato del lavoro, dei salari e della produttività all'interno della newsletter Lavoro Infatti.</p>
             <div class="links">
-              <a href="https://lavoroinfatti.substack.com/?utm_campaign=profile_chips">Substack</a>
-              <a href="https://it.linkedin.com/in/elia-bidut">LinkedIn</a>
+              <a href="https://lavoroinfatti.substack.com/?utm_campaign=profile_chips" data-umami-event="newsletter_cta_click" data-umami-event-author="bidut" data-umami-event-location="autori">Substack</a>
+              <a href="https://it.linkedin.com/in/elia-bidut" data-umami-event="contact_click" data-umami-event-target="linkedin" data-umami-event-author="bidut" data-umami-event-location="autori">LinkedIn</a>
             </div>
           </article>
         </div>
@@ -788,13 +781,13 @@
       <div class="section-body contact-box">
         <p>
           Per segnalazioni, fonti, domande o proposte:
-          <a href="mailto:info@lorenzoruffino.com">info@lorenzoruffino.com</a>
+          <a href="mailto:info@lorenzoruffino.com" data-umami-event="contact_click" data-umami-event-target="email" data-umami-event-location="contatti">info@lorenzoruffino.com</a>
         </p>
         <p class="contact-links">
           Newsletter:
-          <a href="https://www.lorenzoruffino.it/">Lorenzo Ruffino</a>
+          <a href="https://www.lorenzoruffino.it/" data-umami-event="newsletter_cta_click" data-umami-event-author="ruffino" data-umami-event-location="contatti">Lorenzo Ruffino</a>
           <span>·</span>
-          <a href="https://lavoroinfatti.substack.com/?utm_campaign=profile_chips">Elia Bidut</a>
+          <a href="https://lavoroinfatti.substack.com/?utm_campaign=profile_chips" data-umami-event="newsletter_cta_click" data-umami-event-author="bidut" data-umami-event-location="contatti">Elia Bidut</a>
         </p>
       </div>
     </section>
@@ -806,30 +799,5 @@
       <span>Dati, crescita, Italia.</span>
     </div>
   </footer>
-  <script>
-    (() => {
-      const sentDepths = new Set();
-      const track = (name, data = {}) => {
-        if (window.umami && typeof window.umami.track === "function") window.umami.track(name, data);
-      };
-      document.addEventListener("click", (event) => {
-        const link = event.target.closest("a[data-umami-event]");
-        if (!link) return;
-        track(link.dataset.umamiEvent, { article: link.dataset.article, location: "homepage" });
-      });
-      const reportDepth = () => {
-        const available = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = available <= 0 ? 100 : Math.min(100, Math.round(window.scrollY / available * 100));
-        [25, 50, 75, 100].forEach((depth) => {
-          if (progress >= depth && !sentDepths.has(depth)) {
-            sentDepths.add(depth);
-            track("homepage_engagement", { depth });
-          }
-        });
-      };
-      window.addEventListener("scroll", reportDepth, { passive: true });
-      window.addEventListener("load", reportDepth, { once: true });
-    })();
-  </script>
 </body>
 </html>

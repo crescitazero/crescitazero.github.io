@@ -1,7 +1,7 @@
-name: Anteprime social
+name: Build sito
 
 # Quando arriva un nuovo articolo (o cambia il titolo/description di uno esistente),
-# genera la card 1200x630 mancante e aggiorna i meta tag Open Graph / X,
+# genera la card 1200x630 mancante, aggiorna i meta tag e gli script di tracciamento,
 # poi committa il risultato sul branch.
 
 on:
@@ -10,9 +10,10 @@ on:
     paths:
       - 'articoli/**.html'
       - 'index.html'
+      - 'assets/js/**'
       - 'tools/og_card.py'
-      - 'tools/social-meta.py'
-      - '.github/workflows/anteprime-social.yml'
+      - 'tools/build.py'
+      - '.github/workflows/build.yml'
   workflow_dispatch:
     inputs:
       force:
@@ -25,11 +26,11 @@ permissions:
 
 # Un run alla volta: i run in coda si accodano invece di spingere in parallelo.
 concurrency:
-  group: anteprime-social
+  group: build-sito
   cancel-in-progress: false
 
 jobs:
-  anteprime:
+  build:
     runs-on: ubuntu-latest
 
     # gli script non devono lasciare in giro __pycache__
@@ -53,11 +54,11 @@ jobs:
         run: python3 tools/og_card.py --prune ${{ inputs.force && '--force' || '' }}
 
       - name: Aggiorna i meta tag
-        run: python3 tools/social-meta.py
+        run: python3 tools/build.py
 
       - name: Committa se qualcosa è cambiato
         run: |
-          git add assets/social index.html articoli
+          git add assets/social assets/js index.html articoli
           if git diff --cached --quiet; then
             echo 'Nessuna anteprima da aggiornare.'
             exit 0
