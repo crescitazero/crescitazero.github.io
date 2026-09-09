@@ -2,7 +2,7 @@
   "site": {
     "name": "CrescitaZero",
     "url": "https://crescitazero.it/",
-    "description": "CrescitaZero è un progetto gratuito per capire perché l'Italia non cresce più, partendo da dati, fonti pubbliche e grafici leggibili.",
+    "description": "Perché in Italia la crescita si è fermata: produttività, salari e lavoro spiegati con i dati di Istat, Eurostat e OCSE. Progetto gratuito, grafici scaricabili.",
     "feed": "https://crescitazero.it/feed.xml",
     "sitemap": "https://crescitazero.it/sitemap.xml",
     "llms": "https://crescitazero.it/llms.txt"
@@ -34,7 +34,7 @@
     {
       "slug": "h1-2026-crescitazero",
       "title": "In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce",
-      "description": "Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.",
+      "description": "Nel secondo trimestre 2026 la produttività del lavoro in Italia è scesa dello 0,3 per cento per ora lavorata, mentre nell'Unione europea è cresciuta dello 0,8.",
       "kicker": "Aggiornamento",
       "date": "2026-09-08",
       "authors": [
@@ -51,7 +51,7 @@
       "url_md": "https://crescitazero.it/articoli/h1-2026-crescitazero.md",
       "image": "https://crescitazero.it/assets/social/h1-2026-crescitazero.png",
       "reading_minutes": 2,
-      "word_count": 359,
+      "word_count": 364,
       "charts": []
     },
     {
@@ -312,7 +312,7 @@
     {
       "slug": "coming",
       "title": "Capire trent'anni senza crescita",
-      "description": "Primo articolo dell'archivio CrescitaZero.",
+      "description": "Nasce CrescitaZero, il progetto di Lorenzo Ruffino ed Elia Bidut per capire con i dati perché in Italia la crescita si è fermata da trent'anni.",
       "kicker": "Presentazione",
       "date": "2026-05-18",
       "authors": [

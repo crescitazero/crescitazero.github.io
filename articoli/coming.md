@@ -1,6 +1,6 @@
 ---
 title: "Capire trent'anni senza crescita"
-description: "Primo articolo dell'archivio CrescitaZero."
+description: "Nasce CrescitaZero, il progetto di Lorenzo Ruffino ed Elia Bidut per capire con i dati perché in Italia la crescita si è fermata da trent'anni."
 authors: ["Lorenzo Ruffino", "Elia Bidut"]
 date: 2026-05-18
 canonical: https://crescitazero.it/articoli/coming.html

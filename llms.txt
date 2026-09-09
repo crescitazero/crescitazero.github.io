@@ -17,7 +17,7 @@ per la lettura automatica.
 
 ## Articoli
 
-- [Capire trent'anni senza crescita](https://crescitazero.it/articoli/coming.md): Primo articolo dell'archivio CrescitaZero.
+- [Capire trent'anni senza crescita](https://crescitazero.it/articoli/coming.md): Nasce CrescitaZero, il progetto di Lorenzo Ruffino ed Elia Bidut per capire con i dati perché in Italia la crescita si è fermata da trent'anni.
 - [Perché l'Italia è ferma da trent'anni](https://crescitazero.it/articoli/01-crescitazero.md): Da trent'anni l'Italia cresce meno degli altri paesi europei. La causa non è la sfortuna né la congiuntura: è la produttività, ferma da due decenni.
 - [Perché la crescita è fondamentale per la democrazia](https://crescitazero.it/articoli/02-crescitazero.md): La crescita non è una torta di dimensioni fisse da spartire. È la condizione che tiene in piedi pensioni, conti pubblici e fiducia nelle istituzioni.
 - [Gli stipendi crescono solo dove cresce la produttività](https://crescitazero.it/articoli/03-crescitazero.md): L'Italia è l'unico grande paese europeo con i salari reali più bassi di trent'anni fa. Senza crescita economica e della produttività, gli stipendi non possono crescere.
@@ -25,7 +25,7 @@ per la lettura automatica.
 - [La produttività italiana passa anche dalle competenze](https://crescitazero.it/articoli/05-crescitazero.md): Sotto la stagnazione della produttività italiana: competenze sotto la media, forti squilibri territoriali e un sistema che fatica a trasformare conoscenza in innovazione diffusa.
 - [Cosa leggere quest’estate per capire perché l'Italia non cresce](https://crescitazero.it/articoli/06-crescitazero.md): Una lista di libri, paper e ricerche per il periodo estivo per capire perché l'Italia è ferma da trent'anni.
 - [Il management che manca alla produttività italiana](https://crescitazero.it/articoli/07-crescitazero.md): Le imprese meglio gestite sono più produttive. In Italia c’è un problema di allocazione efficiente del capitale manageriale causato dalla gestione delle persone e dalla diffusione delle PMI.
-- [In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce](https://crescitazero.it/articoli/h1-2026-crescitazero.md): Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.
+- [In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce](https://crescitazero.it/articoli/h1-2026-crescitazero.md): Nel secondo trimestre 2026 la produttività del lavoro in Italia è scesa dello 0,3 per cento per ora lavorata, mentre nell'Unione europea è cresciuta dello 0,8.
 - [Perché lo Stato finisce per rallentare la crescita](https://crescitazero.it/articoli/08-crescitazero.md): In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza
 
 ## Dati e formati

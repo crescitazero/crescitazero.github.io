@@ -4,7 +4,7 @@
     <title>CrescitaZero</title>
     <link>https://crescitazero.it/</link>
     <atom:link href="https://crescitazero.it/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>CrescitaZero è un progetto gratuito per capire perché l'Italia non cresce più, partendo da dati, fonti pubbliche e grafici leggibili.</description>
+    <description>Perché in Italia la crescita si è fermata: produttività, salari e lavoro spiegati con i dati di Istat, Eurostat e OCSE. Progetto gratuito, grafici scaricabili.</description>
     <language>it</language>
     <lastBuildDate>Mon, 14 Sep 2026 12:00:00 +0200</lastBuildDate>
     <item>
@@ -64,8 +64,8 @@
       <dc:creator>Lorenzo Ruffino</dc:creator>
       <dc:creator>Elia Bidut</dc:creator>
       <category>Aggiornamento</category>
-      <description>Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.</description>
-      <content:encoded><![CDATA[<p><em>Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.</em></p>
+      <description>Nel secondo trimestre 2026 la produttività del lavoro in Italia è scesa dello 0,3 per cento per ora lavorata, mentre nell'Unione europea è cresciuta dello 0,8.</description>
+      <content:encoded><![CDATA[<p><em>Una nota fuori programma sui dati Eurostat del secondo trimestre: la produttività del lavoro cala in Italia e sale in quasi tutta l'Unione europea.</em></p>
 <figure>
 <img alt="Produttività del lavoro per addetto e ora lavorata nel secondo trimestre 2026" height="563" src="https://crescitazero.it/assets/h1-2026-labour-productivity-q2.png" width="1000">
 </figure>
@@ -679,7 +679,7 @@ La stagnazione italiana ha cause precise che hanno soluzioni precise.
       <dc:creator>Lorenzo Ruffino</dc:creator>
       <dc:creator>Elia Bidut</dc:creator>
       <category>Presentazione</category>
-      <description>Primo articolo dell'archivio CrescitaZero.</description>
+      <description>Nasce CrescitaZero, il progetto di Lorenzo Ruffino ed Elia Bidut per capire con i dati perché in Italia la crescita si è fermata da trent'anni.</description>
       <content:encoded><![CDATA[<p>
 Un nuovo progetto — ogni due settimane — per capire perché il Paese si è fermato.
 </p>

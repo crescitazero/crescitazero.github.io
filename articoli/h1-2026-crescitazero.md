@@ -1,6 +1,6 @@
 ---
 title: "In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce"
-description: "Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi."
+description: "Nel secondo trimestre 2026 la produttività del lavoro in Italia è scesa dello 0,3 per cento per ora lavorata, mentre nell'Unione europea è cresciuta dello 0,8."
 authors: ["Lorenzo Ruffino", "Elia Bidut"]
 date: 2026-09-08
 canonical: https://crescitazero.it/articoli/h1-2026-crescitazero.html
@@ -11,7 +11,7 @@ series: CrescitaZero
 
 *Aggiornamento* · di Lorenzo Ruffino e Elia Bidut · 8 settembre 2026 · 2 min di lettura
 
-*Una breve nota per guardare ai dati Eurostat sulla produttività del lavoro: CrescitaZero è il tema del momento oggi.*
+*Una nota fuori programma sui dati Eurostat del secondo trimestre: la produttività del lavoro cala in Italia e sale in quasi tutta l'Unione europea.*
 
 ![Produttività del lavoro per addetto e ora lavorata nel secondo trimestre 2026](https://crescitazero.it/assets/h1-2026-labour-productivity-q2.png)
 
