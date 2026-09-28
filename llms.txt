@@ -27,6 +27,7 @@ per la lettura automatica.
 - [Il management che manca alla produttività italiana](https://crescitazero.it/articoli/07-crescitazero.md): Le imprese meglio gestite sono più produttive. In Italia c’è un problema di allocazione efficiente del capitale manageriale causato dalla gestione delle persone e dalla diffusione delle PMI.
 - [In Italia la produttività del lavoro cala nel 2026, mentre in quasi tutta Europa cresce](https://crescitazero.it/articoli/h1-2026-crescitazero.md): Nel secondo trimestre 2026 la produttività del lavoro in Italia è scesa dello 0,3 per cento per ora lavorata, mentre nell'Unione europea è cresciuta dello 0,8.
 - [Perché lo Stato finisce per rallentare la crescita](https://crescitazero.it/articoli/08-crescitazero.md): In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza
+- [Perché i sindacati italiani hanno rinunciato a far crescere gli stipendi](https://crescitazero.it/articoli/09-crescitazero.md): I contratti nazionali coprono quasi tutti i dipendenti italiani. Ma gli iscritti effettivi ai sindacati sono tra il 18 e il 25 per cento e nessuno ha mai misurato quanto siano davvero rappresentativi.
 
 ## Dati e formati
 

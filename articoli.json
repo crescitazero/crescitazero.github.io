@@ -9,6 +9,54 @@
   },
   "articles": [
     {
+      "slug": "09-crescitazero",
+      "title": "Perché i sindacati italiani hanno rinunciato a far crescere gli stipendi",
+      "description": "I contratti nazionali coprono quasi tutti i dipendenti italiani. Ma gli iscritti effettivi ai sindacati sono tra il 18 e il 25 per cento e nessuno ha mai misurato quanto siano davvero rappresentativi.",
+      "kicker": "Approfondimento",
+      "date": "2026-09-28",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/09-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/09-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/09-crescitazero.png",
+      "reading_minutes": 22,
+      "word_count": 4359,
+      "charts": [
+        {
+          "id": "sl0S0",
+          "version": "1",
+          "title": "Nei servizi il rinnovo del contratto arriva più tardi",
+          "source": "Istat",
+          "url": "https://datawrapper.dwcdn.net/sl0S0/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/sl0S0/1/dataset.csv"
+        },
+        {
+          "id": "RbCFr",
+          "version": "1",
+          "title": "I sindacati hanno meno iscritti di quanti ne dichiarano",
+          "source": "OCSE/AIAS ICTWSS e Batut, Lojkine e Santini (2024)",
+          "url": "https://datawrapper.dwcdn.net/RbCFr/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/RbCFr/1/dataset.csv"
+        },
+        {
+          "id": "qZEgn",
+          "version": "1",
+          "title": "Quattro iscritti ai sindacati su dieci sono pensionati",
+          "source": "Cgil, Cisl e Uil",
+          "url": "https://datawrapper.dwcdn.net/qZEgn/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/qZEgn/1/dataset.csv"
+        }
+      ]
+    },
+    {
       "slug": "08-crescitazero",
       "title": "Perché lo Stato finisce per rallentare la crescita",
       "description": "In Italia metà del Pil passa dallo Stato. La crescita nasce dalla selezione tra imprese, ma chi governa ha interesse a proteggere chi c’è già e a bloccare la concorrenza",
