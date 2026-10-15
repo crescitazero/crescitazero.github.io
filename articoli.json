@@ -9,6 +9,46 @@
   },
   "articles": [
     {
+      "slug": "10-crescitazero",
+      "title": "L’Italia innova, ma per crescere realmente serve sviluppare nuova tecnologia",
+      "description": "Le imprese italiane innovano migliorando prodotti e processi, ma investono poco per sviluppare tecnologie completamente nuove.",
+      "kicker": "Approfondimento",
+      "date": "2026-10-12",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/10-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/10-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/10-crescitazero.png",
+      "reading_minutes": 15,
+      "word_count": 2931,
+      "charts": [
+        {
+          "id": "EFDNw",
+          "version": "2",
+          "title": "Sono trent'anni che l'Italia spende meno dell'Europa in Ricerca e Sviluppo",
+          "source": "Eurostat",
+          "url": "https://datawrapper.dwcdn.net/EFDNw/2/",
+          "csv_url": "https://datawrapper.dwcdn.net/EFDNw/2/dataset.csv"
+        },
+        {
+          "id": "gHdGz",
+          "version": "3",
+          "title": "Il gap italiano è soprattutto privato",
+          "source": "",
+          "url": "https://datawrapper.dwcdn.net/gHdGz/3/",
+          "csv_url": "https://datawrapper.dwcdn.net/gHdGz/3/dataset.csv"
+        }
+      ]
+    },
+    {
       "slug": "09-crescitazero",
       "title": "Perché i sindacati italiani hanno rinunciato a far crescere gli stipendi",
       "description": "I contratti nazionali coprono quasi tutti i dipendenti italiani. Ma gli iscritti effettivi ai sindacati sono tra il 18 e il 25 per cento e nessuno ha mai misurato quanto siano davvero rappresentativi.",

@@ -1,0 +1,84 @@
+{
+  "id": "gHdGz",
+  "version": "3",
+  "url": "https://datawrapper.dwcdn.net/gHdGz/3/",
+  "title": "<span style=\"font-weight:normal;\" id=\"docs-internal-guid-be32ca7e-7fff-da1f-52e1-d3f61cbe96d0\"><span style=\"font-size: 13pt; font-family: Arial, sans-serif; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Il gap italiano è soprattutto privato</span></span>",
+  "intro": "",
+  "notes": "",
+  "source_name": "",
+  "source_url": "",
+  "byline": "",
+  "type": "d3-bars",
+  "data": [
+    [
+      "Country",
+      "Business R&D (% GDP)",
+      "Reference year"
+    ],
+    [
+      "Corea del Sud",
+      "3.93",
+      "2023"
+    ],
+    [
+      "Giappone",
+      "2.72",
+      "2023"
+    ],
+    [
+      "USA",
+      "2.70",
+      "2023"
+    ],
+    [
+      "Svezia",
+      "2.61",
+      "2024"
+    ],
+    [
+      "Belgio",
+      "2.43",
+      "2024"
+    ],
+    [
+      "Austria",
+      "2.25",
+      "2024"
+    ],
+    [
+      "Svizzera",
+      "2.23",
+      "2023"
+    ],
+    [
+      "Finlandia",
+      "2.19",
+      "2024"
+    ],
+    [
+      "Germania",
+      "2.14",
+      "2024"
+    ],
+    [
+      "Danimarca",
+      "1.89",
+      "2024"
+    ],
+    [
+      "UE27",
+      "1.49",
+      "2024"
+    ],
+    [
+      "Rep. Ceca",
+      "1.18",
+      "2024"
+    ],
+    [
+      "Italia",
+      "0.79",
+      "2024"
+    ]
+  ]
+}
