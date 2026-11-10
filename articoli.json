@@ -9,6 +9,52 @@
   },
   "articles": [
     {
+      "slug": "12-crescitazero",
+      "title": "Perché l’Italia rischia di perdere anche la rivoluzione dell’intelligenza artificiale",
+      "description": "Negli anni Novanta le imprese italiane non si sono riorganizzate intorno a internet. Con l’intelligenza artificiale il rischio è lo stesso, ma è anche un’occasione per recuperare il ritardo.",
+      "kicker": "Approfondimento",
+      "date": "2026-11-09",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/12-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/12-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/12-crescitazero.png",
+      "reading_minutes": 23,
+      "word_count": 4943,
+      "charts": []
+    },
+    {
+      "slug": "11-crescitazero",
+      "title": "Il paradosso italiano delle imprese più produttive",
+      "description": "Oggi il 5 per cento delle imprese più produttive in Italia genera quasi un terzo della crescita della produttività e concentra circa il 40 per cento degli investimenti. Ma non riescono a crescere.",
+      "kicker": "Approfondimento",
+      "date": "2026-10-26",
+      "authors": [
+        {
+          "name": "Lorenzo Ruffino",
+          "url": "https://www.lorenzoruffino.it/"
+        },
+        {
+          "name": "Elia Bidut",
+          "url": "https://lavoroinfatti.substack.com/"
+        }
+      ],
+      "url": "https://crescitazero.it/articoli/11-crescitazero.html",
+      "url_md": "https://crescitazero.it/articoli/11-crescitazero.md",
+      "image": "https://crescitazero.it/assets/social/11-crescitazero.png",
+      "reading_minutes": 12,
+      "word_count": 2520,
+      "charts": []
+    },
+    {
       "slug": "10-crescitazero",
       "title": "L’Italia innova, ma per crescere realmente serve sviluppare nuova tecnologia",
       "description": "Le imprese italiane innovano migliorando prodotti e processi, ma investono poco per sviluppare tecnologie completamente nuove.",

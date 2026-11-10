@@ -29,6 +29,8 @@ per la lettura automatica.
 - [Perché lo Stato finisce per rallentare la crescita](https://crescitazero.it/articoli/08-crescitazero.md): In Italia metà del Pil passa dallo Stato.
 - [Perché i sindacati italiani hanno rinunciato a far crescere gli stipendi](https://crescitazero.it/articoli/09-crescitazero.md): I contratti nazionali coprono quasi tutti i dipendenti italiani.
 - [L’Italia innova, ma per crescere realmente serve sviluppare nuova tecnologia](https://crescitazero.it/articoli/10-crescitazero.md): Le imprese italiane innovano migliorando prodotti e processi, ma investono poco per sviluppare tecnologie completamente nuove.
+- [Il paradosso italiano delle imprese più produttive](https://crescitazero.it/articoli/11-crescitazero.md): Oggi il 5 per cento delle imprese più produttive in Italia genera quasi un terzo della crescita della produttività e concentra circa il 40 per cento degli investimenti.
+- [Perché l’Italia rischia di perdere anche la rivoluzione dell’intelligenza artificiale](https://crescitazero.it/articoli/12-crescitazero.md): Negli anni Novanta le imprese italiane non si sono riorganizzate intorno a internet.
 
 ## Dati e formati
 
