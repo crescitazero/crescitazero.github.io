@@ -1,0 +1,34 @@
+{
+  "id": "jsozD",
+  "version": "2",
+  "url": "https://datawrapper.dwcdn.net/jsozD/2/",
+  "title": "Il 5% delle imprese più produttive genera il 40% degli investimenti italiani",
+  "intro": "Peso del 5% delle imprese più produttive di ciascun settore sull'economia italiana, 2019–2023.",
+  "notes": "",
+  "source_name": "Banca d'Italia, Questioni di Economia e Finanza n. 953 (2025)",
+  "source_url": "https://www.bancaditalia.it/pubblicazioni/qef/2025-0953/QEF_953.pdf",
+  "byline": "",
+  "type": "d3-bars-split",
+  "data": [
+    [
+      "Indicatore",
+      "Percentuale"
+    ],
+    [
+      "Numero di imprese",
+      "5"
+    ],
+    [
+      "Occupati",
+      "20"
+    ],
+    [
+      "Investimenti",
+      "40"
+    ],
+    [
+      "Contributo alla crescita della produttività",
+      "30"
+    ]
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "33B6U",
+  "version": "1",
+  "url": "https://datawrapper.dwcdn.net/33B6U/1/",
+  "title": "Il ritardo italiano sull'AI è tutto nelle piccole imprese",
+  "intro": "Quota di imprese che usano almeno una tecnologia di intelligenza artificiale, per numero di addetti. Valori in percentuale, 2025.",
+  "notes": "",
+  "source_name": "Eurostat",
+  "source_url": "",
+  "byline": "",
+  "type": "d3-bars-split",
+  "data": [
+    [
+      "Dimensione",
+      "Italia",
+      "Media Ue",
+      "Germania",
+      "Francia",
+      "Spagna",
+      "Danimarca"
+    ],
+    [
+      "Piccole (10-49 addetti)",
+      "14,2",
+      "17,0",
+      "23,1",
+      "15,0",
+      "17,2",
+      "37,5"
+    ],
+    [
+      "Medie (50-249 addetti)",
+      "27,6",
+      "30,4",
+      "35,6",
+      "30,8",
+      "30,1",
+      "58,3"
+    ],
+    [
+      "Grandi (250 addetti e oltre)",
+      "53,1",
+      "55,0",
+      "57,0",
+      "58,0",
+      "57,5",
+      "74,5"
+    ]
+  ]
+}

@@ -28,8 +28,25 @@
       "url_md": "https://crescitazero.it/articoli/12-crescitazero.md",
       "image": "https://crescitazero.it/assets/social/12-crescitazero.png",
       "reading_minutes": 23,
-      "word_count": 4943,
-      "charts": []
+      "word_count": 4976,
+      "charts": [
+        {
+          "id": "Nb0uZ",
+          "version": "1",
+          "title": "L’Italia è tra i paesi europei che usano meno l’intelligenza artificiale nelle imprese",
+          "source": "Eurostat",
+          "url": "https://datawrapper.dwcdn.net/Nb0uZ/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/Nb0uZ/1/dataset.csv"
+        },
+        {
+          "id": "33B6U",
+          "version": "1",
+          "title": "Il ritardo italiano sull'AI è tutto nelle piccole imprese",
+          "source": "Eurostat",
+          "url": "https://datawrapper.dwcdn.net/33B6U/1/",
+          "csv_url": "https://datawrapper.dwcdn.net/33B6U/1/dataset.csv"
+        }
+      ]
     },
     {
       "slug": "11-crescitazero",
@@ -51,8 +68,17 @@
       "url_md": "https://crescitazero.it/articoli/11-crescitazero.md",
       "image": "https://crescitazero.it/assets/social/11-crescitazero.png",
       "reading_minutes": 12,
-      "word_count": 2520,
-      "charts": []
+      "word_count": 2564,
+      "charts": [
+        {
+          "id": "jsozD",
+          "version": "2",
+          "title": "Il 5% delle imprese più produttive genera il 40% degli investimenti italiani",
+          "source": "Banca d'Italia, Questioni di Economia e Finanza n. 953 (2025)",
+          "url": "https://datawrapper.dwcdn.net/jsozD/2/",
+          "csv_url": "https://datawrapper.dwcdn.net/jsozD/2/dataset.csv"
+        }
+      ]
     },
     {
       "slug": "10-crescitazero",
