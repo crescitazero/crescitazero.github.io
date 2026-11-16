@@ -15,6 +15,11 @@ newsletter Lavoro Infatti, di lavoro, salari e produttività. Di ogni articolo
 esiste la versione Markdown allo stesso indirizzo con estensione .md, pensata
 per la lettura automatica.
 
+## Il libro
+
+- [Crescita Zero](https://crescitazero.it/libro): il libro nato dalla serie.
+- [Note](https://crescitazero.it/note): le 755 note del libro.
+
 ## Articoli
 
 - [Capire trent'anni senza crescita](https://crescitazero.it/articoli/coming.md): Nasce CrescitaZero, il progetto di Lorenzo Ruffino ed Elia Bidut per capire con i dati perché in Italia la crescita si è fermata da trent'anni.

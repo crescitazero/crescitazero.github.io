@@ -6,6 +6,11 @@ Uso:
     python3 tools/build.py --check    # verifica soltanto, exit 1 se c'è da aggiornare
     python3 tools/build.py --no-card  # salta la generazione delle card
 
+Oltre a home, 404 e articoli, il build tratta libro.html e note.html (alla
+radice): stesso blocco nel <head>, ma JSON-LD Book / WebPage e card dedicate
+(assets/social/libro.png e note.png, con la copertina). L'elenco delle 755 note
+dentro note.html non lo scrive questo script ma tools/note_libro.py.
+
 La pagina HTML resta l'unica fonte di verità: titolo, occhiello, description,
 data, autori e tempo di lettura vengono letti dalla pagina stessa (<title>,
 <meta name="description">, <p class="meta">, <p class="byline">). Da lì
@@ -23,7 +28,7 @@ Fuori dalle pagine genera:
 
     articoli/<slug>.md    il gemello Markdown di ogni articolo
     robots.txt            crawler dei motori e degli assistenti: tutti ammessi
-    sitemap.xml           home e articoli, lastmod = data di pubblicazione
+    sitemap.xml           home, libro, note e articoli, lastmod = data di pubblicazione
     feed.xml              RSS 2.0 con il testo completo in content:encoded
     articoli.json         indice leggibile da una macchina
     llms.txt              guida sintetica per i modelli linguistici
@@ -59,6 +64,19 @@ from og_card import ROOT, page_meta  # noqa: E402
 SITE = "https://crescitazero.it"
 TITOLO_HOME = "CrescitaZero — Perché l’Italia non cresce più?"
 SERIE = "CrescitaZero"
+
+# il libro: titolo, formati e link di acquisto (esclusiva Amazon)
+LIBRO_TITOLO = "Crescita Zero"
+LIBRO_SOTTOTITOLO = "Perché l’Italia non cresce da trent’anni e come può ripartire"
+LIBRO_URL = f"{SITE}/libro"
+LIBRO_NOTE_URL = f"{SITE}/note"
+LIBRO_COPERTINA = f"{SITE}/assets/libro/copertina-1200.jpg"
+LIBRO_PAGINE = 253
+LIBRO_FORMATI = [
+    # (bookFormat schema.org, nome, prezzo in euro, link Amazon)
+    ("https://schema.org/EBook", "Kindle", "4.90", "https://www.amazon.it/dp/B0HRQB1452"),
+    ("https://schema.org/Paperback", "Cartaceo, copertina flessibile", "12.00", "https://www.amazon.it/dp/B0HRFZ3QNH"),
+]
 
 INIZIO = "  <!-- build: generato da tools/build.py -->"
 FINE = "  <!-- /build -->"
@@ -153,6 +171,13 @@ def elenco_pagine():
                 "articolo",
                 f"{SITE}/assets/social/{nome[:-5]}.png",
             ))
+    for nome, url in (("libro", LIBRO_URL), ("note", LIBRO_NOTE_URL)):
+        out.append((
+            os.path.join(ROOT, f"{nome}.html"),
+            url,
+            nome,
+            f"{SITE}/assets/social/{nome}.png",
+        ))
     out.append((os.path.join(ROOT, "404.html"), f"{SITE}/404.html", "404", LOGO))
     return out
 
@@ -358,6 +383,29 @@ def grafo(pagina, persone):
         nodi += [persona(p["name"], p["url"], p["sameAs"]) for p in persone]
         return nodi
 
+    if pagina.tipo == "libro":
+        return grafo_libro(pagina, persone)
+
+    if pagina.tipo == "note":
+        return [{
+            "@type": "WebPage",
+            "@id": f"{pagina.url}#webpage",
+            "name": pagina.titolo,
+            "url": pagina.url,
+            "description": pagina.descrizione,
+            "inLanguage": "it",
+            "image": pagina.immagine,
+            "about": {"@id": f"{LIBRO_URL}#book"},
+            "isPartOf": {"@type": "WebSite", "name": SERIE, "url": f"{SITE}/"},
+        }, {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+                {"@type": "ListItem", "position": 2, "name": LIBRO_TITOLO, "item": LIBRO_URL},
+                {"@type": "ListItem", "position": 3, "name": "Note", "item": pagina.url},
+            ],
+        }]
+
     if pagina.tipo == "404":
         return [{
             "@type": "WebPage",
@@ -397,6 +445,57 @@ def grafo(pagina, persone):
     return [articolo, briciole]
 
 
+def grafo_libro(pagina, persone):
+    """Il libro come Book, con le due edizioni (Kindle e cartaceo) e le offerte Amazon."""
+    autori = [persona(p["name"], p["url"], p["sameAs"]) for p in persone] or [
+        persona(nome, url) for nome, url in AUTORI_FALLBACK
+    ]
+    edizioni = []
+    for formato, nome, prezzo, link in LIBRO_FORMATI:
+        edizione = {
+            "@type": "Book",
+            "name": f"{LIBRO_TITOLO}. {LIBRO_SOTTOTITOLO} ({nome})",
+            "bookFormat": formato,
+            "inLanguage": "it",
+            "url": link,
+            "offers": {
+                "@type": "Offer",
+                "price": prezzo,
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "url": link,
+                "seller": {"@type": "Organization", "name": "Amazon.it"},
+            },
+        }
+        if formato.endswith("Paperback"):
+            edizione["numberOfPages"] = LIBRO_PAGINE
+        edizioni.append(edizione)
+    libro = {
+        "@type": "Book",
+        "@id": f"{LIBRO_URL}#book",
+        "name": f"{LIBRO_TITOLO}. {LIBRO_SOTTOTITOLO}",
+        "alternativeName": LIBRO_TITOLO,
+        "description": pagina.descrizione,
+        "url": LIBRO_URL,
+        "image": LIBRO_COPERTINA,
+        "inLanguage": "it",
+        "numberOfPages": LIBRO_PAGINE,
+        "author": autori,
+        "sameAs": [link for _, _, _, link in LIBRO_FORMATI],
+        "workExample": edizioni,
+        "isPartOf": {"@type": "CreativeWorkSeries", "name": SERIE, "url": f"{SITE}/"},
+        "mainEntityOfPage": LIBRO_URL,
+    }
+    briciole = {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+            {"@type": "ListItem", "position": 2, "name": LIBRO_TITOLO, "item": LIBRO_URL},
+        ],
+    }
+    return [libro, briciole]
+
+
 def jsonld(pagina, persone):
     dati = {"@context": "https://schema.org", "@graph": grafo(pagina, persone)}
     testo = json.dumps(dati, ensure_ascii=False, indent=2)
@@ -429,7 +528,7 @@ def blocco(pagina, persone):
     righe.append(f'  <link rel="apple-touch-icon" href="{SITE}/favicon.png">')
 
     if pagina.tipo != "404":
-        og_type = "article" if pagina.tipo == "articolo" else "website"
+        og_type = {"articolo": "article", "libro": "book"}.get(pagina.tipo, "website")
         righe += [
             f'  <meta property="og:type" content="{og_type}">',
             f'  <meta property="og:site_name" content="{SERIE}">',
@@ -443,6 +542,9 @@ def blocco(pagina, persone):
             '  <meta property="og:image:height" content="630">',
             f'  <meta property="og:image:alt" content="{e(pagina.titolo_pieno)}">',
         ]
+        if pagina.tipo == "libro":
+            for _, indirizzo in pagina.autori:
+                righe.append(f'  <meta property="book:author" content="{e(indirizzo)}">')
         if pagina.tipo == "articolo":
             if pagina.data:
                 righe.append(f'  <meta property="article:published_time" content="{pagina.data}">')
@@ -764,6 +866,9 @@ def sitemap(elenco, ultima):
         f"    <lastmod>{ultima}</lastmod>",
         "  </url>",
     ]
+    # le pagine del libro non hanno una data di pubblicazione: niente lastmod
+    for url in (LIBRO_URL, LIBRO_NOTE_URL):
+        righe += ["  <url>", f"    <loc>{url}</loc>", "  </url>"]
     for pagina in elenco:
         righe += [
             "  <url>",
@@ -843,6 +948,21 @@ def indice(elenco, descrizione):
             "sitemap": f"{SITE}/sitemap.xml",
             "llms": f"{SITE}/llms.txt",
         },
+        "book": {
+            "title": LIBRO_TITOLO,
+            "subtitle": LIBRO_SOTTOTITOLO,
+            "authors": [{"name": n, "url": u} for n, u in AUTORI_FALLBACK],
+            "url": LIBRO_URL,
+            "notes_url": LIBRO_NOTE_URL,
+            "notes_json": f"{SITE}/assets/data/note-libro.json",
+            "cover": LIBRO_COPERTINA,
+            "pages_print": LIBRO_PAGINE,
+            "language": "it",
+            "formats": [
+                {"name": nome, "price_eur": prezzo, "url": link}
+                for _, nome, prezzo, link in LIBRO_FORMATI
+            ],
+        },
         "articles": [],
     }
     for pagina in elenco:
@@ -907,7 +1027,16 @@ def llms(elenco):
 
 
 def _llms(elenco, corte):
-    righe = [intestazione_llms(), "## Articoli", ""]
+    righe = [
+        intestazione_llms(),
+        "## Il libro",
+        "",
+        f"- [{LIBRO_TITOLO}]({LIBRO_URL}): il libro nato dalla serie.",
+        f"- [Note]({LIBRO_NOTE_URL}): le 755 note del libro.",
+        "",
+        "## Articoli",
+        "",
+    ]
     for pagina in elenco:
         descrizione = prima_frase(pagina.descrizione) if corte else pagina.descrizione
         righe.append(f"- [{pagina.titolo}]({pagina.slug_md}): {descrizione}")
@@ -948,12 +1077,12 @@ def genera_card():
     import og_card
 
     print(f"font: {og_card.font_name()}")
-    for out_path, titolo, occhiello, sottotitolo in og_card.cards():
+    for out_path, titolo, occhiello, sottotitolo, copertina in og_card.cards():
         rel = os.path.relpath(out_path, ROOT)
         if os.path.exists(out_path):
             print(f"esiste  {rel}")
             continue
-        og_card.make_card(titolo, occhiello, out_path, sottotitolo)
+        og_card.make_card(titolo, occhiello, out_path, sottotitolo, copertina)
         print(f"scritto {rel}")
 
 

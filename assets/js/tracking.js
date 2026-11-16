@@ -8,7 +8,7 @@
  * Ogni evento porta con sé due proprietà comuni:
  *   article — lo slug della pagina, dall'attributo data-article del <body>
  *             (per la home vale "home"); lo inietta tools/build.py
- *   page    — "home" oppure "article"
+ *   page    — "home", "libro", "note" oppure "article"
  *
  * SCHEMA DEGLI EVENTI
  * ===========================================================================
@@ -24,11 +24,20 @@
  *                        · author   ruffino | bidut
  *                        · location hero | autori | contatti | article
  *   nav_click            click sulla navigazione in alto della home
- *                        · target   articoli | progetto | metodo | autori
+ *                        · target   libro | note | articoli | progetto | metodo | autori
  *   contact_click        click su un contatto (email, LinkedIn, X)
  *                        · target   email | linkedin | x
  *                        · author   ruffino | bidut (per LinkedIn e X)
  *                        · location id della sezione (autori, contatti)
+ *   book_click           click su un bottone d'acquisto del libro (Amazon)
+ *                        · format   kindle | cartaceo
+ *                        · location hero | libro | pagina-libro
+ *                                   (hero e libro sono le sezioni della home)
+ *   book_link_click      click su un link interno al libro o alle sue note
+ *                        · target   libro | note | articoli
+ *                        · location hero | libro | pagina-libro | articolo
+ *   note_chapter_click   click sull'indice dei capitoli in /note
+ *                        · chapter  prologo | cap1 … cap11 | conclusione
  *   series_nav_click     click sui link «articolo precedente / successivo».
  *                        · direction prev | next
  *                        NON ancora presente nelle pagine: i link prev/next
@@ -51,6 +60,11 @@
  *                    · label       testo del link, max 80 caratteri
  *   copy_text        copia di una selezione più lunga di 40 caratteri
  *                    · length numero di caratteri copiati (max 1 ogni 5 s)
+ *   note_search      ricerca nelle note del libro (/note): scatta 1,2 secondi dopo
+ *                    l'ultimo carattere digitato, con almeno 3 caratteri. Non
+ *                    manda mai il testo cercato.
+ *                    · chars   lunghezza della ricerca
+ *                    · results numero di note trovate
  *
  * Il file gestisce anche il ridimensionamento degli iframe Datawrapper
  * (messaggio "datawrapper-height"), che prima stava nello script inline delle
@@ -65,7 +79,7 @@
   if (!body) return;
 
   const article = body.dataset.article || "";
-  const page = article === "home" ? "home" : "article";
+  const page = article === "home" || article === "libro" || article === "note" ? article : "article";
   const isArticle = page === "article";
 
   /** Manda l'evento solo se Umami è stato caricato davvero. */
@@ -194,6 +208,26 @@
       label: (link.textContent || "").trim().replace(/\s+/g, " ").slice(0, 80),
     });
   });
+
+  // --- ricerca nelle note del libro ------------------------------------------
+
+  // il filtro vive nella pagina /note; qui si conta soltanto, con debounce, e
+  // il testo cercato non viene mai mandato
+  const campoNote = document.querySelector("[data-note-search]");
+  if (campoNote) {
+    let attesa = null;
+    campoNote.addEventListener("input", () => {
+      window.clearTimeout(attesa);
+      attesa = window.setTimeout(() => {
+        const chars = campoNote.value.trim().length;
+        if (chars < 3) return;
+        track("note_search", {
+          chars,
+          results: Number(campoNote.getAttribute("data-risultati")) || 0,
+        });
+      }, 1200);
+    });
+  }
 
   // --- testo copiato --------------------------------------------------------
 

@@ -2,10 +2,42 @@
   "site": {
     "name": "CrescitaZero",
     "url": "https://crescitazero.it/",
-    "description": "Perché in Italia la crescita si è fermata: produttività, salari e lavoro spiegati con i dati di Istat, Eurostat e OCSE. Progetto gratuito, grafici scaricabili.",
+    "description": "Perché in Italia la crescita si è fermata, spiegato con i dati di Istat, Eurostat e OCSE. Articoli gratuiti con grafici scaricabili e il libro Crescita Zero di Lorenzo Ruffino ed Elia Bidut.",
     "feed": "https://crescitazero.it/feed.xml",
     "sitemap": "https://crescitazero.it/sitemap.xml",
     "llms": "https://crescitazero.it/llms.txt"
+  },
+  "book": {
+    "title": "Crescita Zero",
+    "subtitle": "Perché l’Italia non cresce da trent’anni e come può ripartire",
+    "authors": [
+      {
+        "name": "Lorenzo Ruffino",
+        "url": "https://www.lorenzoruffino.it/"
+      },
+      {
+        "name": "Elia Bidut",
+        "url": "https://lavoroinfatti.substack.com/"
+      }
+    ],
+    "url": "https://crescitazero.it/libro",
+    "notes_url": "https://crescitazero.it/note",
+    "notes_json": "https://crescitazero.it/assets/data/note-libro.json",
+    "cover": "https://crescitazero.it/assets/libro/copertina-1200.jpg",
+    "pages_print": 253,
+    "language": "it",
+    "formats": [
+      {
+        "name": "Kindle",
+        "price_eur": "4.90",
+        "url": "https://www.amazon.it/dp/B0HRQB1452"
+      },
+      {
+        "name": "Cartaceo, copertina flessibile",
+        "price_eur": "12.00",
+        "url": "https://www.amazon.it/dp/B0HRFZ3QNH"
+      }
+    ]
   },
   "articles": [
     {
