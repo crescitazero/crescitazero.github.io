@@ -2,8 +2,9 @@
 
 Sito statico su GitHub Pages (dominio `crescitazero.it`, dal file `CNAME`) della serie
 CrescitaZero di Lorenzo Ruffino ed Elia Bidut. Niente framework, niente build tool
-esterni: `index.html`, `404.html` e `articoli/*.html` sono scritti a mano con CSS
-inline. Tutto il resto lo generano gli script in `tools/`, che girano da soli in CI.
+esterni: `index.html`, `libro.html`, `note.html`, `404.html` e `articoli/*.html` sono
+scritti a mano con CSS inline (in `note.html` l'elenco delle note lo scrive
+`tools/note_libro.py`, vedi sotto). Tutto il resto lo generano gli script in `tools/`, che girano da soli in CI.
 
 ## La regola che tiene insieme tutto
 
@@ -14,7 +15,8 @@ inline. Tutto il resto lo generano gli script in `tools/`, che girano da soli in
 - nel `<head>`, un blocco `<!-- build: … --> … <!-- /build -->`: canonical, Open Graph,
   Twitter card, author, robots, JSON-LD, link a feed/Markdown/llms.txt, script Umami e
   `tracking.js`;
-- sul `<body>`, `data-article="<slug>"` (slug = nome file senza estensione, `home` per la home);
+- sul `<body>`, `data-article="<slug>"` (slug = nome file senza estensione, `home` per la home,
+  `libro` e `note` per le pagine del libro);
 - negli articoli, la navigazione precedente/successivo (`<!-- build:nav -->`);
 - in home, gli attributi `data-umami-event` sui link della lista articoli, numerati;
 - fuori dalle pagine: `assets/social/*.png`, `articoli/*.md`, `robots.txt`, `sitemap.xml`,
@@ -32,6 +34,27 @@ Conseguenze pratiche:
 - `.nojekyll` alla radice **deve restare**: senza, GitHub Pages passerebbe i `.md` per
   Jekyll e sovrascriverebbe gli articoli HTML.
 
+## Il libro: pagine `/libro` e `/note`
+
+Il sito è anche il sito del libro «Crescita Zero» (Amazon: Kindle 4,90 €, cartaceo 12 €).
+
+- `libro.html` (URL canonico `crescitazero.it/libro`): scheda del libro, indice, formati,
+  bottoni Amazon. `note.html` (`/note`): le 755 note, con indice dei capitoli, ricerca
+  dal vivo e pagina del cartaceo. Per entrambe il build scrive blocco `<head>`, card
+  (`assets/social/libro.png`, `note.png`, con la copertina in `assets/libro/`), sitemap
+  e `llms.txt`; il JSON-LD di `/libro` è un `Book` con le due edizioni e le offerte.
+- In home la sezione `#libro` (dopo la hero) e la copertina nella hero rimandano a queste
+  pagine. Link e prezzi di Amazon stanno scritti nell'HTML di home e `libro.html` e in
+  `tools/build.py` (`LIBRO_FORMATI`, per il JSON-LD): se cambiano, vanno cambiati in tutti
+  e tre i posti.
+- **Le note non si modificano a mano in `note.html`**: l'elenco tra `<!-- note:inizio -->` e
+  `<!-- note:fine -->` (e l'indice dei capitoli) lo genera `tools/note_libro.py` a partire
+  dal `.docx` del libro e dal PDF di stampa, e scrive `assets/data/note-libro.json`.
+  Se il libro cambia, si rilancia lo script (istruzioni in `tools/README.md`) e si
+  committano JSON e pagina. Il build normale non ha bisogno di docx e PDF.
+- In fondo a ogni articolo, dopo la navigazione di serie, c'è il riquadro `.libro-box`
+  che rimanda a `/libro`: sta fuori da `<article>`, quindi non finisce in `.md` e feed.
+
 ## Nuovo articolo: cosa fare
 
 1. Crea `articoli/<slug>.html` copiando l'articolo più recente dello stesso tipo
@@ -48,6 +71,8 @@ Conseguenze pratiche:
    - l'`<article>` che racchiude il testo (è quello che diventa Markdown e feed)
 3. Aggiungi la voce in cima alla lista in `index.html` (sezione `#articoli`), copiando la
    precedente. **Non serve** scrivere `data-umami-event`: li numera il build.
+   Copia dall'articolo precedente anche il riquadro `.libro-box` dopo `<!-- /build:nav -->`
+   (e la sua regola CSS), che rimanda al libro.
 4. Committa e pusha su `main`. Il workflow genera card, `.md`, dati dei grafici, aggiorna
    sitemap/feed/llms e committa. Fine.
 
@@ -62,7 +87,7 @@ Dopo il push, quando il workflow è verde (Actions → «Build sito»):
    `/assets/js/tracking.js`, e che il `<body>` abbia `data-article="<slug>"`. In locale, la
    stessa verifica è `python3 tools/build.py --check` (deve esser tutto `ok`) più:
    ```bash
-   grep -c 'analyticsprogetti' index.html articoli/*.html   # 1 per pagina
+   grep -c 'analyticsprogetti' index.html libro.html note.html articoli/*.html   # 1 per pagina
    grep -o 'data-umami-event-position="[0-9]*"' index.html  # 1…N senza buchi
    ```
 2. Apri l'articolo **da fuori la rete di casa** (telefono con rete dati, o un altro

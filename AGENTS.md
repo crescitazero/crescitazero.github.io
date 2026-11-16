@@ -10,7 +10,9 @@ possono ignorare nemmeno per un intervento piccolo.
 2. **Non modificare a mano** i blocchi `<!-- build -->`, `<!-- build:nav -->`, il CSS
    `/* build:nav */` né i file generati (`articoli/*.md`, `robots.txt`, `sitemap.xml`,
    `feed.xml`, `llms.txt`, `llms-full.txt`, `articoli.json`, `assets/social/`,
-   `assets/data/`). Il workflow `.github/workflows/build.yml` li riscrive a ogni push.
+   `assets/data/`). Vale anche per `libro.html` e `note.html`; in quest'ultima l'elenco
+   delle note (tra `<!-- note:inizio -->` e `<!-- note:fine -->`) e
+   `assets/data/note-libro.json` li genera `tools/note_libro.py`. Il workflow `.github/workflows/build.yml` li riscrive a ogni push.
 3. **`.nojekyll` deve restare** alla radice, altrimenti GitHub Pages sovrascrive gli
    articoli HTML con i `.md`.
 4. Dopo una modifica, `python3 tools/build.py --check` deve stampare solo `ok`; se no,
