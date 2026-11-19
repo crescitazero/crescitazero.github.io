@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Perché l'Italia non cresce: produttività, salari, lavoro</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <meta name="description" content="Perché in Italia la crescita si è fermata: produttività, salari e lavoro spiegati con i dati di Istat, Eurostat e OCSE. Progetto gratuito, grafici scaricabili.">
+  <meta name="description" content="Perché in Italia la crescita si è fermata, spiegato con i dati di Istat, Eurostat e OCSE. Articoli gratuiti con grafici scaricabili e il libro Crescita Zero di Lorenzo Ruffino ed Elia Bidut.">
 
   <!-- build: generato da tools/build.py -->
   <link rel="canonical" href="https://crescitazero.it/">
@@ -19,7 +19,7 @@
   <meta property="og:locale" content="it_IT">
   <meta property="og:url" content="https://crescitazero.it/">
   <meta property="og:title" content="CrescitaZero — Perché l’Italia non cresce più?">
-  <meta property="og:description" content="Perché in Italia la crescita si è fermata: produttività, salari e lavoro spiegati con i dati di Istat, Eurostat e OCSE. Progetto gratuito, grafici scaricabili.">
+  <meta property="og:description" content="Perché in Italia la crescita si è fermata, spiegato con i dati di Istat, Eurostat e OCSE. Articoli gratuiti con grafici scaricabili e il libro Crescita Zero di Lorenzo Ruffino ed Elia Bidut.">
   <meta property="og:image" content="https://crescitazero.it/assets/social/default.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
@@ -27,7 +27,7 @@
   <meta property="og:image:alt" content="CrescitaZero — Perché l’Italia non cresce più?">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CrescitaZero — Perché l’Italia non cresce più?">
-  <meta name="twitter:description" content="Perché in Italia la crescita si è fermata: produttività, salari e lavoro spiegati con i dati di Istat, Eurostat e OCSE. Progetto gratuito, grafici scaricabili.">
+  <meta name="twitter:description" content="Perché in Italia la crescita si è fermata, spiegato con i dati di Istat, Eurostat e OCSE. Articoli gratuiti con grafici scaricabili e il libro Crescita Zero di Lorenzo Ruffino ed Elia Bidut.">
   <meta name="twitter:image" content="https://crescitazero.it/assets/social/default.png">
   <meta name="twitter:image:alt" content="CrescitaZero — Perché l’Italia non cresce più?">
   <meta name="twitter:creator" content="@Ruffino_Lorenzo">
@@ -40,7 +40,7 @@
         "@id": "https://crescitazero.it/#website",
         "name": "CrescitaZero",
         "url": "https://crescitazero.it/",
-        "description": "Perché in Italia la crescita si è fermata: produttività, salari e lavoro spiegati con i dati di Istat, Eurostat e OCSE. Progetto gratuito, grafici scaricabili.",
+        "description": "Perché in Italia la crescita si è fermata, spiegato con i dati di Istat, Eurostat e OCSE. Articoli gratuiti con grafici scaricabili e il libro Crescita Zero di Lorenzo Ruffino ed Elia Bidut.",
         "inLanguage": "it",
         "publisher": {
           "@id": "https://crescitazero.it/#organization"
@@ -240,6 +240,7 @@
 
     .cta-buttons {
       display: flex;
+      flex-wrap: wrap;
       gap: 12px;
       margin-top: 32px;
     }
@@ -284,43 +285,33 @@
       font-size: 0.9rem;
     }
 
-    .panel {
+    .cover {
+      margin: 0;
+    }
+
+    .cover a {
+      display: block;
+    }
+
+    .cover img {
+      display: block;
+      width: 100%;
+      height: auto;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.52);
-      padding: 22px;
+      box-shadow: 0 18px 40px rgba(17,17,17,0.14);
     }
 
-    .panel-label {
-      margin: 0 0 18px;
+    .cta-secondary {
+      margin-top: 14px;
       color: var(--muted);
-      font-size: 0.8rem;
-      font-weight: 850;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-size: 0.9rem;
     }
 
-    .panel-item {
-      padding: 16px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .panel-item:first-of-type {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .panel-item strong {
-      display: block;
-      font-size: 1.45rem;
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-    }
-
-    .panel-item span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .cta-secondary a {
+      color: var(--text);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .section {
@@ -473,6 +464,67 @@
       color: var(--muted);
     }
 
+    .link-testo {
+      color: var(--accent);
+      font-weight: 750;
+    }
+
+    .indice {
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .indice > li {
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+      font-weight: 650;
+      line-height: 1.4;
+    }
+
+    .indice > li:first-child {
+      border-top: 0;
+    }
+
+    .indice .parte {
+      display: block;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .indice ol {
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .indice ol li {
+      padding: 3px 0;
+      font-weight: 500;
+    }
+
+    .indice ol li span {
+      display: inline-block;
+      min-width: 2.2em;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .libro-numeri {
+      margin: 24px 0 0;
+      padding-left: 18px;
+      border-left: 3px solid var(--accent);
+      font-size: 1.03rem;
+    }
+
+    .libro-link {
+      margin: 18px 0 0;
+      font-size: 0.98rem;
+    }
+
     .contact-box {
       padding: 28px;
       background: var(--text);
@@ -529,8 +581,8 @@
 
       nav {
         width: 100%;
-        gap: 16px;
-        overflow-x: auto;
+        flex-wrap: wrap;
+        gap: 6px 16px;
         padding-bottom: 2px;
       }
 
@@ -542,6 +594,10 @@
         grid-template-columns: 1fr;
         gap: 36px;
         padding: 18px 0 52px;
+      }
+
+      .cover {
+        width: min(70%, 300px);
       }
 
       .cta-buttons {
@@ -610,6 +666,8 @@
       </a>
 
       <nav aria-label="Navigazione principale">
+        <a href="#libro" data-umami-event="nav_click" data-umami-event-target="libro">Libro</a>
+        <a href="note.html" data-umami-event="nav_click" data-umami-event-target="note">Note</a>
         <a href="#articoli" data-umami-event="nav_click" data-umami-event-target="articoli">Articoli</a>
         <a href="#progetto" data-umami-event="nav_click" data-umami-event-target="progetto">Progetto</a>
         <a href="#metodo" data-umami-event="nav_click" data-umami-event-target="metodo">Metodo</a>
@@ -621,15 +679,14 @@
   <main class="page">
     <section class="hero">
       <div>
-        <p class="kicker">Italia, crescita, dati</p>
+        <p class="kicker">Il libro di Lorenzo Ruffino ed Elia Bidut</p>
 
         <h1>Perché l’Italia non cresce più?</h1>
 
         <p class="lead">
-          La stagnazione italiana non è un destino. È il risultato di una crisi della
-          produttività con cause identificabili e leve concrete per uscirne: dal nanismo
-          delle imprese alla mancanza di meritocrazia, dal ritardo digitale alle riforme
-          rimaste sulla carta.
+          <strong>Crescita Zero</strong> racconta perché l’Italia non cresce da trent’anni e come può
+          ripartire: imprese troppo piccole, competenze che mancano, poca ricerca, regole che
+          proteggono chi c’è già. Con i dati e 755 note di fonti.
         </p>
 
         <p class="hero-note">
@@ -639,39 +696,108 @@
         </p>
 
         <div class="cta-buttons">
-          <a class="cta" href="https://lavoroinfatti.substack.com/" target="_blank" rel="noopener" data-umami-event="newsletter_cta_click" data-umami-event-author="bidut" data-umami-event-location="hero">
-            Newsletter di Elia Bidut
+          <a class="cta" href="https://www.amazon.it/dp/B0HRQB1452?maas=maas_adg_AC96CEA082780CAE0EB668892DC62839_afap_abs&amp;ref_=aa_maas&amp;tag=maas" target="_blank" rel="noopener" data-umami-event="book_click" data-umami-event-format="kindle" data-umami-event-location="hero">
+            Kindle · 4,90 €
             <span class="cta-arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="cta cta-outline" href="https://www.lorenzoruffino.it/" target="_blank" rel="noopener" data-umami-event="newsletter_cta_click" data-umami-event-author="ruffino" data-umami-event-location="hero">
-            Newsletter di Lorenzo Ruffino
+          <a class="cta cta-outline" href="https://www.amazon.it/dp/B0HRFZ3QNH" target="_blank" rel="noopener" data-umami-event="book_click" data-umami-event-format="cartaceo" data-umami-event-location="hero">
+            Cartaceo · 12 €
             <span class="cta-arrow" aria-hidden="true">↗</span>
           </a>
         </div>
 
         <p class="cta-meta">
-          Iscriviti alle newsletter degli autori per ricevere gli articoli su Substack.
+          In esclusiva su Amazon. <a class="link-testo" href="libro.html" data-umami-event="book_link_click" data-umami-event-target="libro" data-umami-event-location="hero">Scopri il libro</a>
+        </p>
+
+        <p class="cta-secondary">
+          Gli articoli di CrescitaZero arrivano anche via newsletter:
+          <a href="https://lavoroinfatti.substack.com/" target="_blank" rel="noopener" data-umami-event="newsletter_cta_click" data-umami-event-author="bidut" data-umami-event-location="hero">Elia Bidut</a>
+          ·
+          <a href="https://www.lorenzoruffino.it/" target="_blank" rel="noopener" data-umami-event="newsletter_cta_click" data-umami-event-author="ruffino" data-umami-event-location="hero">Lorenzo Ruffino</a>
         </p>
       </div>
 
-      <aside class="panel" aria-label="Numeri della stagnazione italiana">
-        <p class="panel-label">L’Italia in tre numeri</p>
+      <figure class="cover">
+        <a href="libro.html" data-umami-event="book_link_click" data-umami-event-target="libro" data-umami-event-location="hero">
+          <img src="assets/libro/copertina-600.jpg"
+               srcset="assets/libro/copertina-600.jpg 600w, assets/libro/copertina-1200.jpg 1200w"
+               sizes="(max-width: 820px) 70vw, 300px"
+               width="600" height="900"
+               alt="Copertina di Crescita Zero. Perché l’Italia non cresce da trent’anni e come può ripartire, di Lorenzo Ruffino ed Elia Bidut">
+        </a>
+      </figure>
+    </section>
 
-        <div class="panel-item">
-          <strong>+0,3%</strong>
-          <span>La crescita media annua della produttività del lavoro in Italia tra il 1995 e il 2022, un dato nettamente inferiore ai principali partner europei.</span>
+    <section class="section" id="libro">
+      <h2 class="section-title">Il libro</h2>
+      <div class="section-body">
+        <p class="big-text">
+          Nel 1997 l’Italia riportava il deficit entro il 3 per cento del Pil per entrare nell’euro. Da allora il Pil è cresciuto più del 2 per cento solo in tre anni, due dei quali di rimbalzo dopo la pandemia.
+        </p>
+        <p class="muted">
+          Crescita Zero parte dai dati per capire dove la crescita si è inceppata. Il ritardo sta quasi tutto nella produttività: in imprese troppo piccole e gestite con pratiche poco moderne, in un percorso formativo che perde persone a ogni passaggio, in una ricerca che arriva poco a chi produce, in regole che proteggono chi è già sul mercato.
+        </p>
+        <p class="muted">
+          Il libro racconta anche come l’Italia ci era riuscita negli anni del miracolo economico e come ne sono usciti paesi che partivano da condizioni peggiori, dalla Svezia all’Australia, dalla Polonia al Canada. Nella conclusione gli autori indicano da dove ripartire. Tornare a crescere si può, ma servono scelte che durino più di un governo.
+        </p>
+
+        <ul class="indice" aria-label="Indice del libro">
+          <li>Prologo – La piazza e la cassa</li>
+          <li>
+            <span class="parte">Parte prima</span>
+            Il problema
+            <ol>
+              <li><span>1</span>La parola scomparsa</li>
+              <li><span>2</span>Dalla crescita dipende quasi tutto</li>
+              <li><span>3</span>Trent’anni fermi</li>
+            </ol>
+          </li>
+          <li>
+            <span class="parte">Parte seconda</span>
+            Dove la crescita si blocca
+            <ol>
+              <li><span>4</span>Dentro le imprese</li>
+              <li><span>5</span>Le persone che mancano</li>
+              <li><span>6</span>Le idee che mancano</li>
+              <li><span>7</span>La prossima occasione</li>
+              <li><span>8</span>Le regole del gioco</li>
+            </ol>
+          </li>
+          <li>
+            <span class="parte">Parte terza</span>
+            Come se ne esce
+            <ol>
+              <li><span>9</span>L’occasione mancata</li>
+              <li><span>10</span>Una volta ci siamo riusciti</li>
+              <li><span>11</span>Chi ne è uscito</li>
+            </ol>
+          </li>
+          <li>Conclusione – I cantieri per tornare a crescere</li>
+        </ul>
+
+        <p class="libro-numeri">
+          Circa 200 pagine di testo più un apparato di 755 note, con 37 figure. Le note, con
+          tutte le fonti, sono anche online:
+          <a class="link-testo" href="note.html" data-umami-event="book_link_click" data-umami-event-target="note" data-umami-event-location="libro">leggi e cerca le note</a>.
+        </p>
+
+        <div class="cta-buttons">
+          <a class="cta" href="https://www.amazon.it/dp/B0HRQB1452?maas=maas_adg_AC96CEA082780CAE0EB668892DC62839_afap_abs&amp;ref_=aa_maas&amp;tag=maas" target="_blank" rel="noopener" data-umami-event="book_click" data-umami-event-format="kindle" data-umami-event-location="libro">
+            Kindle · 4,90 €
+            <span class="cta-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="cta cta-outline" href="https://www.amazon.it/dp/B0HRFZ3QNH" target="_blank" rel="noopener" data-umami-event="book_click" data-umami-event-format="cartaceo" data-umami-event-location="libro">
+            Cartaceo · 12 €
+            <span class="cta-arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
 
-        <div class="panel-item">
-          <strong>156.000</strong>
-          <span>I cittadini italiani che hanno trasferito la propria residenza all'estero nel solo 2023, confermando una tendenza di lungo periodo legata alla ricerca di migliori opportunità.</span>
-        </div>
-
-        <div class="panel-item">
-          <strong>137%</strong>
-          <span>Il rapporto tra debito pubblico e PIL stimato per il 2024, un livello tra i più alti al mondo che vincola pesantemente la politica di bilancio e gli investimenti.</span>
-        </div>
-      </aside>
+        <p class="libro-link">
+          In esclusiva su Amazon.
+          <a class="link-testo" href="libro.html" data-umami-event="book_link_click" data-umami-event-target="libro" data-umami-event-location="libro">Tutte le informazioni sul libro</a>
+        </p>
+      </div>
     </section>
 
     <section class="section" id="articoli">

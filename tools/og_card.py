@@ -120,7 +120,7 @@ def fit_title(draw, title, max_w, max_lines=4, sizes=(66, 60, 54, 48, 44, 40)):
     return f, wrap(draw, title, f, max_w)[:max_lines], sizes[-1]
 
 
-def make_card(title, kicker, out_path, subtitle=None):
+def make_card(title, kicker, out_path, subtitle=None, cover=None):
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
 
@@ -132,6 +132,19 @@ def make_card(title, kicker, out_path, subtitle=None):
     d.rectangle([0, 0, 10, H], fill=ACCENT)
 
     inner = W - PAD - 60
+
+    # copertina del libro a destra: il testo si stringe di conseguenza
+    cover_w = 0
+    if cover:
+        cover_h = 400
+        c = Image.open(cover).convert("RGB")
+        cover_w = round(c.width * cover_h / c.height)
+        c = c.resize((cover_w, cover_h), Image.LANCZOS)
+        cx, cy = W - PAD - cover_w, 56
+        d.rectangle([cx + 10, cy + 10, cx + cover_w + 10, cy + cover_h + 10], fill=LINE)
+        img.paste(c, (cx, cy))
+        d.rectangle([cx - 1, cy - 1, cx + cover_w, cy + cover_h], outline=LINE, width=1)
+    text_w = inner - PAD - (cover_w + 48 if cover else 0)
 
     # marchio CZ + wordmark
     box = 54
@@ -149,7 +162,7 @@ def make_card(title, kicker, out_path, subtitle=None):
     draw_tracked(d, (PAD, ky), kicker.upper(), fk, ACCENT, tracking=2.4)
 
     # titolo
-    ft, lines, size = fit_title(d, title, inner - PAD, max_lines=4 if subtitle else 5)
+    ft, lines, size = fit_title(d, title, text_w, max_lines=4 if subtitle else 5)
     y = ky + 52
     leading = int(size * 1.18)
     for line in lines:
@@ -160,7 +173,7 @@ def make_card(title, kicker, out_path, subtitle=None):
     if subtitle:
         fs = font(25, 0)
         y += 12
-        for line in wrap(d, subtitle, fs, inner - PAD)[:2]:
+        for line in wrap(d, subtitle, fs, text_w)[:3]:
             d.text((PAD, y), line, font=fs, fill=MUTED)
             y += 34
 
@@ -192,12 +205,28 @@ def page_meta(path):
     return title, kicker, desc
 
 
+COPERTINA = os.path.join(ROOT, "assets", "libro", "copertina-1200.jpg")
+
+
 def cards():
     out = [(
         os.path.join(OUT_DIR, "default.png"),
         "Perché l’Italia non cresce più?",
         "Italia, crescita, dati",
         "Un progetto gratuito per capire la stagnazione italiana partendo dai dati.",
+        None,
+    ), (
+        os.path.join(OUT_DIR, "libro.png"),
+        "Crescita Zero",
+        "Il libro",
+        "Perché l’Italia non cresce da trent’anni e come può ripartire.",
+        COPERTINA,
+    ), (
+        os.path.join(OUT_DIR, "note.png"),
+        "Le note di Crescita Zero",
+        "Il libro",
+        "755 note con fonti e link, capitolo per capitolo, con ricerca.",
+        COPERTINA,
     )]
     art_dir = os.path.join(ROOT, "articoli")
     for name in sorted(os.listdir(art_dir)):
@@ -209,6 +238,7 @@ def cards():
             os.path.join(OUT_DIR, name.replace(".html", ".png")),
             title,
             kicker,
+            None,
             None,
         ))
     return out
@@ -228,7 +258,7 @@ def main():
     if not args.list:
         print(f"font: {font_name()}")
 
-    wanted = {out_path for out_path, _, _, _ in cards()}
+    wanted = {c[0] for c in cards()}
     if args.prune and os.path.isdir(OUT_DIR):
         for name in sorted(os.listdir(OUT_DIR)):
             path = os.path.join(OUT_DIR, name)
@@ -236,7 +266,7 @@ def main():
                 os.remove(path)
                 print(f"rimosso {os.path.relpath(path, ROOT)}")
 
-    for out_path, title, kicker, subtitle in cards():
+    for out_path, title, kicker, subtitle, cover in cards():
         rel = os.path.relpath(out_path, ROOT)
         if args.list:
             print(f"{rel}\n  [{kicker}] {title}")
@@ -244,7 +274,7 @@ def main():
         if os.path.exists(out_path) and not args.force:
             print(f"esiste  {rel}")
             continue
-        make_card(title, kicker, out_path, subtitle)
+        make_card(title, kicker, out_path, subtitle, cover)
         print(f"scritto {rel}")
 
 

@@ -305,6 +305,10 @@
         padding: 48px 0;
       }
     }
+    .libro-box { margin: 32px 0 8px; padding: 18px 20px; border: 1px solid var(--line); border-left: 3px solid var(--accent); background: rgba(255,255,255,0.5); }
+    .libro-box p { margin: 0; font-size: 1rem; line-height: 1.5; }
+    .libro-box .libro-box-kicker { margin-bottom: 6px; color: var(--accent); font-size: 0.78rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+    .libro-box a { display: inline-block; margin-top: 10px; color: var(--accent); font-weight: 750; }
     /* build:nav */
     .series-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 44px 0 8px; }
     .series-nav-item { display: block; padding: 16px 18px; border: 1px solid var(--line); }
@@ -515,6 +519,11 @@
       </a>
     </nav>
     <!-- /build:nav -->
+    <aside class="libro-box" aria-label="Il libro">
+      <p class="libro-box-kicker">Il libro</p>
+      <p>La serie CrescitaZero è diventata un libro, riscritto e ampliato: <strong>Crescita Zero</strong>, di Lorenzo Ruffino ed Elia Bidut.</p>
+      <a href="../libro.html" data-umami-event="book_link_click" data-umami-event-target="libro" data-umami-event-location="articolo">Scopri il libro →</a>
+    </aside>
   </main>
 
   <footer class="page">

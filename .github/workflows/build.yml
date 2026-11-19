@@ -3,7 +3,7 @@ name: Build sito
 # Quando arriva un nuovo articolo (o cambia il titolo/description di uno esistente),
 # genera la card 1200x630 mancante, aggiorna il <head> e la navigazione di serie,
 # riscrive i gemelli Markdown e i file generati alla radice (robots, sitemap, feed,
-# articoli.json, llms.txt, llms-full.txt, 404), poi committa il risultato sul branch.
+# articoli.json, llms.txt, llms-full.txt, 404; libro.html e note.html comprese), poi committa il risultato sul branch.
 # I dati dei grafici arrivano dalla cache committata in assets/data: niente rete.
 
 on:
@@ -12,6 +12,9 @@ on:
     paths:
       - 'articoli/**.html'
       - 'index.html'
+      - 'libro.html'
+      - 'note.html'
+      - 'assets/libro/**'
       - 'assets/js/**'
       - 'assets/data/**'
       - '404.html'
@@ -65,7 +68,7 @@ jobs:
       - name: Committa se qualcosa è cambiato
         run: |
           # "articoli" comprende sia le pagine sia i gemelli articoli/*.md
-          git add assets/social assets/js assets/data index.html articoli \
+          git add assets/social assets/js assets/data index.html libro.html note.html articoli \
             robots.txt sitemap.xml feed.xml llms.txt llms-full.txt articoli.json 404.html .nojekyll
           if git diff --cached --quiet; then
             echo 'Niente da aggiornare.'

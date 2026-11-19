@@ -1,6 +1,6 @@
 # Build del sito
 
-Tre script preparano quello che le pagine non contengono a mano: le anteprime
+Quattro script preparano quello che le pagine non contengono a mano: le anteprime
 social, i dati dei grafici e tutto quello che si può dedurre dalle pagine —
 tag nel `<head>`, navigazione tra episodi, versioni Markdown, feed, sitemap.
 
@@ -10,6 +10,7 @@ tag nel `<head>`, navigazione tra episodi, versioni Markdown, feed, sitemap.
 | `datawrapper.py` | Scarica in `assets/data/grafici/` titolo, fonte e dati dei grafici incorporati |
 | `md.py` | Converte l'HTML di un articolo in Markdown (e in HTML ripulito per il feed) |
 | `build.py` | Usa gli altri tre e scrive tutto il resto |
+| `note_libro.py` | Estrae le note del libro dal `.docx` e scrive `assets/data/note-libro.json` e l'elenco in `note.html` (a mano, non in CI) |
 
 Tutto parte dalla pagina stessa: `<title>`, `<meta name="description">`,
 l'occhiello `<p class="meta">` e — per data, autori e minuti di lettura — la
@@ -23,7 +24,7 @@ passo-passo per un nuovo articolo è in [`CLAUDE.md`](../CLAUDE.md).
 ## In automatico
 
 Il workflow [`build.yml`](../.github/workflows/build.yml) gira a ogni push su `main`
-che tocca `index.html`, `404.html`, `articoli/*.html`, `assets/js/`, `assets/data/`
+che tocca `index.html`, `libro.html`, `note.html`, `404.html`, `articoli/*.html`, `assets/js/`, `assets/data/`, `assets/libro/`
 o gli script, genera le card mancanti, riscrive le pagine e i file generati e
 committa il risultato. Non serve fare nulla a mano.
 
@@ -49,6 +50,49 @@ Altre opzioni:
 - `datawrapper.py --prune` — elimina le cache di grafici non più incorporati
 - `build.py --check` — verifica soltanto, esce con 1 se qualcosa è da aggiornare
 - `build.py --no-card` — salta la generazione delle card (utile in locale senza Pillow aggiornato)
+
+## Le pagine del libro: `/libro` e `/note`
+
+`libro.html` e `note.html` stanno alla radice e hanno URL canonico senza estensione
+(`crescitazero.it/libro`, `/note`; GitHub Pages serve `libro.html` anche come `/libro`).
+Per il build sono pagine come le altre, con differenze:
+
+- `<p class="meta">` è l'occhiello letto da `og_card.py`; non hanno byline, quindi data e
+  `lastmod` mancano (in sitemap compaiono senza `lastmod`);
+- le card `assets/social/libro.png` e `note.png` sono definite esplicitamente in
+  `og_card.cards()` e portano la copertina (`assets/libro/copertina-1200.jpg`);
+- JSON-LD: `/libro` ha un `Book` (autori, 253 pagine, `sameAs` ai due link Amazon,
+  `workExample` EBook e Paperback con `Offer`) più `BreadcrumbList`, og:type `book`;
+  `/note` un `WebPage` che ha come soggetto il libro. Titolo, sottotitolo, prezzi, link e
+  pagine sono costanti in testa a `build.py` (`LIBRO_*`);
+- `llms.txt` ha una sezione «Il libro», `articoli.json` una chiave `book`.
+
+### Le note: `note_libro.py`
+
+Le note non nascono dalle pagine ma dal libro, quindi questo script si lancia a mano
+(servono `python-docx` e `pymupdf`, non Pillow) e il risultato si committa:
+
+```bash
+python3 tools/note_libro.py --docx CrescitaZero_KDP_finale.docx --pdf CrescitaZero_KDP_stampa.pdf
+python3 tools/note_libro.py --docx CrescitaZero_KDP_finale.docx --verifica   # confronto con il docx
+python3 tools/note_libro.py                                                  # rigenera note.html dal JSON
+```
+
+- dopo il titolo «Note» del `.docx`, i paragrafi senza «N.<tab>» sono titoli di capitolo e
+  gli altri le note (numerate da 1 in ogni capitolo); testo, apostrofi e corsivi restano
+  identici. Ancore: `prologo-12`, `cap3-7`, `conclusione-4`;
+- URL cliccabili (`target="_blank" rel="noopener"`) senza `.,;:»”` finali né `)` non
+  bilanciata; «nota N» diventa link solo nelle forme non ambigue («della/nella/con la nota N»,
+  «(nota N)» e l'elenco di note della nota che lo dichiara). «cit., p. 45 e nota 36» è la
+  nota dell'opera citata e resta testo;
+- la pagina del cartaceo è quella del richiamo in apice (corpo 6,7) nel PDF di stampa, con il
+  numero stampato a piè di pagina. Se in un capitolo i richiami non sono 1..N in ordine, o
+  l'inizio del capitolo non coincide con l'indice, per quel capitolo non si scrivono pagine
+  (lo script lo segnala): meglio nessuna pagina che una sbagliata;
+- `--verifica` confronta, per ogni nota, JSON e testo letto da `note.html` con il `.docx`.
+
+La ricerca in `note.html` è uno script inline senza librerie (senza JS la pagina resta
+completa, il campo compare solo con JS); l'evento `note_search` lo manda `tracking.js`.
 
 ## `.nojekyll`
 
@@ -161,9 +205,9 @@ proprietà — ed è quella la documentazione da tenere aggiornata.
 In breve: i click su link e bottoni sono **dichiarativi** (attributi
 `data-umami-event` / `data-umami-event-<proprietà>` scritti nell'HTML, Umami li
 manda da solo: `article_open`, `newsletter_cta_click`, `nav_click`,
-`contact_click`, `series_nav_click`), mentre lettura e interazione sono mandati
+`contact_click`, `series_nav_click`, `book_click`, `book_link_click`, `note_chapter_click`), mentre lettura e interazione sono mandati
 da `tracking.js` (`read_depth`, `read_time`, `article_complete`, `chart_view`,
-`outbound_click`, `copy_text`). Un elemento con `data-umami-event` non va mai
+`outbound_click`, `copy_text`, `note_search`). Un elemento con `data-umami-event` non va mai
 tracciato anche da `tracking.js`, altrimenti conta doppio.
 
 ## Note
